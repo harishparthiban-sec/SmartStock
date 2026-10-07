@@ -173,13 +173,18 @@ export async function askCopilot(query: string, history?: { role: string; conten
       const data = await res.json();
       if (data && data.reply) {
         const referenced: string[] = data.referenced_products || [];
-        const items = MOCK_INVENTORY.filter(i => referenced.includes(i.product_id));
+        const isOrderQuery = q.includes("order") && (q.includes("today") || q.includes("what") || q.includes("should") || q.includes("recommend") || q.includes("now"));
+        let items = MOCK_INVENTORY.filter(i => referenced.includes(i.product_id));
+        if (items.length === 0 && isOrderQuery) {
+          items = MOCK_INVENTORY.filter(i => i.order_qty > 0 || i.status === 'CRITICAL');
+        }
         const timeline: TimelineItem[] | undefined = data.timeline && data.timeline.length > 0 ? data.timeline : undefined;
+        const intent = timeline ? "TIMELINE" : (isOrderQuery ? "ORDER_TODAY" : (referenced.length === 1 ? "WHY_ORDER" : "AT_RISK"));
         return {
           message: data.reply,
           items: items.length > 0 ? items : undefined,
           timeline: timeline,
-          intent: timeline ? "TIMELINE" : (referenced.length === 1 ? "WHY_ORDER" : "AT_RISK"),
+          intent: intent,
         };
       }
     }
@@ -207,17 +212,19 @@ export async function askCopilot(query: string, history?: { role: string; conten
       action_needed: `Order ${item.order_qty} units by ${item.order_by_date || '2026-10-07'}`,
     }));
     return {
-      message: "🚨 Stockout Priority Overview:\nHere is your real-time depletion timeline. Review the prioritized sequence below to protect service levels:",
+      message: "Stockout Priority Overview:\nHere is your real-time depletion timeline. Review the prioritized sequence below to protect service levels:",
       timeline,
       items: sorted.slice(0, 4),
       intent: "TIMELINE",
     };
   }
 
-  if (q.includes("order today") || q.includes("what should i order") || q.includes("what to order")) {
+  if (q.includes("order today") || q.includes("what should i order") || q.includes("what to order") || (q.includes("order") && (q.includes("what") || q.includes("today")))) {
     const items = MOCK_INVENTORY.filter(i => i.order_qty > 0 || i.status === 'CRITICAL');
     return {
-      message: items.length > 0 ? `I found ${items.length} products requiring attention today.` : "No immediate reorder actions found. Inventory levels are sufficient.",
+      message: items.length > 0 
+        ? `Recommended Purchase Orders for Today (${items.length} products):\nReview the prioritized replenishment orders below to prevent shelf stockouts:`
+        : "No immediate reorder actions found. Inventory levels are sufficient.",
       items: items.length > 0 ? items : undefined,
       intent: "ORDER_TODAY"
     };

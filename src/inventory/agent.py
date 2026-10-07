@@ -188,37 +188,92 @@ def generate_fallback_response(
             markdown_pct = row.get("recommended_markdown_pct")
 
             lines = [
-                f"### AI Copilot Insight for **{name} ({p_id})**",
-                f"- **Status**: `{status}` (Urgency: **{urgency}**)",
-                f"- **Current Stock**: {current_stock:,.0f} units ({days_left:.1f} days remaining)",
-                f"- **Supplier Lead Time**: {lead_time} days",
+                f"AI Copilot Insight for {name} ({p_id})",
+                f"- Status: {status} (Urgency: {urgency})",
+                f"- Current Stock: {current_stock:,.0f} units ({days_left:.1f} days remaining)",
+                f"- Supplier Lead Time: {lead_time} days",
             ]
 
             if status in ["ORDER NOW", "ORDER SOON"]:
                 lines.extend([
-                    f"- **Recommended Reorder**: **{order_qty:,.0f} units**",
-                    f"- **Order By Deadline**: `{order_by_date}` (Projected stockout: `{stockout_date}`)",
-                    f"- **Recommended Action**: {copilot_action}",
-                    f"- **Decision Rationale**: {copilot_reason}",
+                    f"- Recommended Reorder: {order_qty:,.0f} units",
+                    f"- Order By Deadline: {order_by_date} (Projected stockout: {stockout_date})",
+                    f"- Recommended Action: {copilot_action}",
+                    f"- Decision Rationale: {copilot_reason}",
                 ])
                 if pd.notna(analog_growth):
                     lines.append(
-                        f"- **Demand Time Machine Signal**: Historical analog growth of "
-                        f"**{analog_growth:+.1f}%** factored into safety buffer."
+                        f"- Demand Time Machine Signal: Historical analog growth of "
+                        f"{analog_growth:+.1f}% factored into safety buffer."
                     )
             elif status == "OVERSTOCK":
                 lines.extend([
-                    f"- **Excess Holding**: {row.get('excess_units', 0):,.0f} units",
-                    f"- **Markdown Recommendation**: Apply **{markdown_pct:.0f}% promotional discount**.",
-                    f"- **Recommended Action**: {copilot_action}",
-                    f"- **Decision Rationale**: {copilot_reason}",
+                    f"- Excess Holding: {row.get('excess_units', 0):,.0f} units",
+                    f"- Markdown Recommendation: Apply {markdown_pct:.0f}% promotional discount.",
+                    f"- Recommended Action: {copilot_action}",
+                    f"- Decision Rationale: {copilot_reason}",
                 ])
             else:
-                lines.append("- **Inventory Health**: Healthy stock balance. No reorder required.")
+                lines.append("- Inventory Health: Healthy stock balance. No reorder required.")
 
             return "\n".join(lines)
 
-    # Case 2: Stockout / Urgent / Run-out-first query
+    # Case 2: What should I order today / reorder recommendations
+    order_today_keywords = [
+        "what should i order", "what to order", "order today", "reorder today",
+        "what do i order", "items to order", "products to order",
+        "which products to order", "which items to order", "recommend reorder",
+        "recommended orders", "reorder list", "what needs to be ordered",
+        "what needs ordering", "what to reorder", "should i order today",
+        "what should we order",
+    ]
+    is_order_query = any(k in query_lower for k in order_today_keywords) or (
+        "order" in query_lower and any(w in query_lower for w in ["today", "what", "should", "recommend", "need"])
+    )
+    if is_order_query:
+        reorder_df = df[df["order_qty"] > 0].copy()
+        if reorder_df.empty:
+            return (
+                "Reorder Recommendations for Today:\n\n"
+                "No purchase orders are required today. All monitored products have healthy stock balances "
+                "above their reorder thresholds."
+            )
+
+        urgency_rank = {"CRITICAL": 0, "HIGH": 1, "MEDIUM": 2, "LOW": 3}
+        reorder_df["_rank"] = reorder_df["urgency"].map(lambda u: urgency_rank.get(str(u).upper(), 4))
+        reorder_df = reorder_df.sort_values(by=["_rank", "days_of_stock_left"])
+
+        total_units = reorder_df["order_qty"].sum()
+        total_items = len(reorder_df)
+
+        lines = [
+            f"Recommended Purchase Orders for Today ({total_items} products | {total_units:,.0f} total units):\n"
+        ]
+        for idx, (_, row) in enumerate(reorder_df.iterrows(), 1):
+            p_id = row.get("product_id")
+            p_name = row.get("name", p_id)
+            urgency = row.get("urgency", "LOW")
+            status = row.get("status", "ORDER NOW")
+            order_qty = float(row.get("order_qty", 0))
+            order_by = row.get("order_by_date", "ASAP")
+            stockout = row.get("stockout_date", "N/A")
+            days_left = float(row.get("days_of_stock_left", 0))
+            lead_time = int(row.get("lead_time_days", 1))
+
+            lines.append(
+                f"{idx}. {p_name} ({p_id}) - {urgency} ({status})\n"
+                f"   - Recommended Order: {order_qty:,.0f} units\n"
+                f"   - Order By Deadline: {order_by} (Projected stockout: {stockout})\n"
+                f"   - Remaining Cover: {days_left:.1f} days (Supplier lead time: {lead_time} days)\n"
+            )
+
+        lines.append(
+            f"Action Required: Approve and place these purchase orders today before supplier cutoff "
+            f"to prevent store stockouts."
+        )
+        return "\n".join(lines)
+
+    # Case 3: Stockout / Urgent / Run-out-first query
     stockout_keywords = [
         "critical", "urgent", "stockout", "risk", "warning",
         "out of stock", "run out", "first", "soonest", "empty",
@@ -234,62 +289,63 @@ def generate_fallback_response(
             critical_names = [r.get("name", r["product_id"]) for _, r in sorted_df.iterrows() if float(r.get("days_of_stock_left", 0)) <= int(r.get("lead_time_days", 1))]
             warning_text = f"Prioritize {', '.join(critical_names[:2])} first because remaining stock is already within supplier lead time." if critical_names else "Review the schedule below to protect service levels."
             return (
-                f"**[ALERT] Stockout Priority Overview**\n\n"
+                f"Stockout Priority Overview:\n\n"
                 f"Here is your real-time depletion timeline. {warning_text}\n\n"
                 f"Review the prioritized product cards below to take action:"
             )
 
         if critical_df.empty:
             return (
-                "**Stockout Assessment**: All products currently have healthy stock levels above their "
+                "Stockout Assessment: All products currently have healthy stock levels above their "
                 "reorder points. No immediate critical stockout risks detected."
             )
 
         lines = [
-            f"**[CRITICAL ALERT] Urgent Stockout Warning ({len(critical_df)} items need immediate attention):**\n"
+            f"CRITICAL ALERT: Urgent Stockout Warning ({len(critical_df)} items need immediate attention):\n"
         ]
         for _, row in critical_df.iterrows():
             lines.append(
-                f"- **{row.get('name', row['product_id'])} ({row['product_id']})**: "
-                f"**{row.get('urgency')}** urgency. Only **{row.get('days_of_stock_left', 0):.1f} days** of stock left "
+                f"- {row.get('name', row['product_id'])} ({row['product_id']}): "
+                f"{row.get('urgency')} urgency. Only {row.get('days_of_stock_left', 0):.1f} days of stock left "
                 f"(Lead time: {row.get('lead_time_days')} days). "
-                f"Recommended order: **{row.get('order_qty', 0):.0f} units** by `{row.get('order_by_date')}`."
+                f"Recommended order: {row.get('order_qty', 0):.0f} units by {row.get('order_by_date')}."
             )
-        lines.append("\n*Recommendation*: Approve these purchase orders immediately to avoid shelf stockouts.")
+        lines.append("\nRecommendation: Approve these purchase orders immediately to avoid shelf stockouts.")
         return "\n".join(lines)
 
-    # Case 3: Overstock / Markdown / Promotion query
+    # Case 4: Overstock / Markdown / Promotion query
     if any(k in query_lower for k in ["overstock", "markdown", "discount", "promo", "excess"]):
         overstock_df = df[df["status"] == "OVERSTOCK"]
         if overstock_df.empty:
             return "No overstocked products detected. All current inventory is within optimal holding bounds."
 
         lines = [
-            f"**[DYNAMIC PRICING] Overstock & Markdown Recommendations ({len(overstock_df)} items):**\n"
+            f"DYNAMIC PRICING: Overstock & Markdown Recommendations ({len(overstock_df)} items):\n"
         ]
         for _, row in overstock_df.iterrows():
             lines.append(
-                f"- **{row.get('name', row['product_id'])} ({row['product_id']})**: "
+                f"- {row.get('name', row['product_id'])} ({row['product_id']}): "
                 f"Holding ~{row.get('days_of_stock_left', 0):.0f} days of cover "
                 f"(Excess: {row.get('excess_units', 0):.0f} units). "
-                f"Recommended action: **{row.get('recommended_markdown_pct', 0):.0f}% promotional markdown** "
+                f"Recommended action: {row.get('recommended_markdown_pct', 0):.0f}% promotional markdown "
                 f"to recover working capital."
             )
         return "\n".join(lines)
 
-    # Case 4: General overview
+    # Case 5: General overview
     reorder_df = df[df["order_qty"] > 0]
     total_reorder = reorder_df["order_qty"].sum() if not reorder_df.empty else 0
     return (
-        f"**SmartStock Inventory Overview**:\n\n"
-        f"- **Total Catalog**: {len(df)} products monitored\n"
-        f"- **Products Requiring Reorder**: {len(reorder_df)} products ({total_reorder:,.0f} total units)\n"
-        f"- **Critical Stockout Risks**: {len(df[df['urgency'] == 'CRITICAL'])} products\n"
-        f"- **Overstocked Items**: {len(df[df['status'] == 'OVERSTOCK'])} products\n\n"
+        f"SmartStock Inventory Overview:\n\n"
+        f"- Total Catalog: {len(df)} products monitored\n"
+        f"- Products Requiring Reorder: {len(reorder_df)} products ({total_reorder:,.0f} total units)\n"
+        f"- Critical Stockout Risks: {len(df[df['urgency'] == 'CRITICAL'])} products\n"
+        f"- Overstocked Items: {len(df[df['status'] == 'OVERSTOCK'])} products\n\n"
         f"You can ask me questions like:\n"
-        f"- *'Why should I order P001 now?'*\n"
-        f"- *'Which products are at critical stockout risk?'*\n"
-        f"- *'What markdown promotions should we run for overstocked items?'*"
+        f"- What should I order today?\n"
+        f"- Which items will run out of stock first?\n"
+        f"- Why should I order Milk 1L?\n"
+        f"- What markdown promotions should we run?"
     )
 
 
@@ -312,6 +368,13 @@ def ask_copilot_agent(
     if not referenced_for_cards and any(w in message.lower() for w in ["run out", "first", "soonest", "stockout", "critical", "risk", "deplet"]):
         sorted_df = df.sort_values(by="days_of_stock_left", ascending=True)
         referenced_for_cards = list(sorted_df["product_id"].head(3))
+    elif not referenced_for_cards and (
+        any(k in message.lower() for k in ["order today", "what to order", "what should i order", "reorder today", "what do i order"])
+        or ("order" in message.lower() and any(w in message.lower() for w in ["today", "what", "should", "recommend"]))
+    ):
+        reorder_items = df[df["order_qty"] > 0]
+        if not reorder_items.empty:
+            referenced_for_cards = list(reorder_items["product_id"])
 
     # Extract structured timeline for stockout queries
     timeline_items = []
@@ -378,7 +441,7 @@ def ask_copilot_agent(
             "protects against stockouts or avoids over-ordering.\n"
             "4. For overstocked items, explain the markdown discount recommendation.\n"
             "5. Keep responses concise, professional, and directly actionable for store managers.\n"
-            "6. Use clean Markdown formatting with bullet points and bold highlights.\n"
+            "6. Present your answer cleanly without raw markdown symbols (do NOT output raw asterisks or hashtags like **, ***, ###, or backticks). Use clean bullet points (• or -) and clear titles.\n"
         )
 
         reply_text = ""

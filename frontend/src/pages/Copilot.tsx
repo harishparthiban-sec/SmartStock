@@ -246,6 +246,50 @@ export default function Copilot() {
     );
   };
 
+  const renderCleanMessageText = (rawText: string) => {
+    if (!rawText) return null;
+    const lines = rawText.split('\n');
+    return (
+      <div className="space-y-1">
+        {lines.map((line, lIdx) => {
+          let cleaned = line.replace(/^#{1,6}\s*/, '');
+          if (cleaned.trim().startsWith('- ') || cleaned.trim().startsWith('* ') || cleaned.trim().startsWith('• ')) {
+            cleaned = cleaned.replace(/^\s*[-*•]\s+/, '• ');
+          }
+
+          if (cleaned.trim() === '') {
+            return <div key={lIdx} className="h-2" />;
+          }
+
+          const parts = cleaned.split(/(\*\*[^*]+\*\*|`[^`]+`)/g);
+
+          return (
+            <div key={lIdx} className="min-h-[1.25rem]">
+              {parts.map((part, pIdx) => {
+                if (part.startsWith('**') && part.endsWith('**')) {
+                  return (
+                    <strong key={pIdx} className="font-semibold text-gray-900">
+                      {part.slice(2, -2)}
+                    </strong>
+                  );
+                }
+                if (part.startsWith('`') && part.endsWith('`')) {
+                  return (
+                    <span key={pIdx} className="px-1.5 py-0.5 bg-gray-100 rounded text-xs font-mono font-medium text-gray-800">
+                      {part.slice(1, -1)}
+                    </span>
+                  );
+                }
+                const textContent = part.replace(/\*/g, '');
+                return <span key={pIdx}>{textContent}</span>;
+              })}
+            </div>
+          );
+        })}
+      </div>
+    );
+  };
+
   const suggestions = [
     "Which items will run out of stock first?",
     "What should I order today?",
@@ -277,17 +321,16 @@ export default function Copilot() {
               )}
               <div className={`max-w-[85%] ${msg.role === 'user' ? 'order-1' : 'order-2'}`}>
                 <div 
-                  style={{ whiteSpace: 'pre-line' }}
                   className={`px-4 py-3 rounded-2xl text-sm shadow-sm leading-relaxed
                     ${msg.role === 'user' 
-                      ? 'bg-indigo-600 text-white rounded-tr-sm' 
+                      ? 'bg-indigo-600 text-white rounded-tr-sm whitespace-pre-line' 
                       : msg.isError
                         ? 'bg-rose-50 text-rose-800 border border-rose-200 rounded-tl-sm'
                         : 'bg-white text-gray-800 border border-gray-200 rounded-tl-sm'
                     }
                   `}
                 >
-                  {msg.text}
+                  {msg.role === 'user' ? msg.text : renderCleanMessageText(msg.text)}
                 </div>
                 {msg.timeline && renderTimeline(msg.timeline)}
                 {!msg.timeline && msg.items && renderItems(msg.items, msg.intent || '')}

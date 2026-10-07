@@ -139,7 +139,15 @@ def test_fallback_general_overview(sample_inventory_df):
     """Fallback generator provides overview when query is general."""
     reply = generate_fallback_response("Hello, what should I do?", sample_inventory_df, [])
     assert "SmartStock Inventory Overview" in reply
-    assert "**Total Catalog**: 3" in reply
+    assert "Total Catalog: 3" in reply
+
+
+def test_fallback_order_today(sample_inventory_df):
+    """Fallback generator provides explicit order recommendations for order today queries."""
+    reply = generate_fallback_response("What should I order today?", sample_inventory_df, [])
+    assert "Recommended Purchase Orders for Today" in reply
+    assert "P001" in reply
+    assert "450 units" in reply
 
 
 # ---------------------------------------------------------------------------
