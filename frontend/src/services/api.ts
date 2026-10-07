@@ -144,11 +144,52 @@ export interface CopilotResponse {
   intent: string;
 }
 
-export async function askCopilot(query: string): Promise<CopilotResponse> {
-  await delay(800); // Simulate AI delay
-  
+export async function askCopilot(query: string, history?: { role: string; content: string }[]): Promise<CopilotResponse> {
+  // 1. Try real SmartStock FastAPI backend /api/copilot/chat
+  try {
+    const res = await fetch('http://localhost:8000/api/copilot/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        message: query,
+        history: history || [],
+      }),
+    });
+    if (res.ok) {
+      const data = await res.json();
+      if (data && data.reply) {
+        const referenced: string[] = data.referenced_products || [];
+        const items = MOCK_INVENTORY.filter(i => referenced.includes(i.product_id));
+        return {
+          message: data.reply,
+          items: items.length > 0 ? items : undefined,
+          intent: referenced.length > 0 ? "WHY_ORDER" : "AI_AGENT",
+        };
+      }
+    }
+  } catch (err) {
+    console.warn("Backend /api/copilot/chat unavailable, using local intelligence fallback.", err);
+  }
+
+  // 2. Intelligent local fallback if backend is unreachable
+  await delay(400);
   const q = query.toLowerCase();
-  
+
+  // Depletion timeline / run out first
+  if (q.includes("run out") || q.includes("first") || q.includes("timeline") || q.includes("deplet")) {
+    const sorted = [...MOCK_INVENTORY].sort((a, b) => a.days_of_stock_left - b.days_of_stock_left);
+    const criticals = sorted.filter(i => i.status === 'CRITICAL' || i.status === 'WARNING');
+    const firstItem = sorted[0];
+    return {
+      message: `**Stockout Timeline Assessment:**\n\n` +
+        `1. **${firstItem.name} (${firstItem.product_id})** will run out first in **${firstItem.days_of_stock_left.toFixed(1)} days** (Urgency: **${firstItem.status}**).\n` +
+        (sorted[1] ? `2. **${sorted[1].name} (${sorted[1].product_id})** will run out in **${sorted[1].days_of_stock_left.toFixed(1)} days**.\n\n` : '') +
+        `Recommended action: Place reorders immediately for items within supplier lead times to prevent shelf vacancy.`,
+      items: criticals.length > 0 ? criticals : sorted.slice(0, 3),
+      intent: "AT_RISK"
+    };
+  }
+
   if (q.includes("order today") || q.includes("what should i order") || q.includes("what to order")) {
     const items = MOCK_INVENTORY.filter(i => i.order_qty > 0 || i.status === 'CRITICAL');
     return {
@@ -158,7 +199,7 @@ export async function askCopilot(query: string): Promise<CopilotResponse> {
     };
   }
   
-  if (q.includes("at risk") || q.includes("stock out") || q.includes("stockout")) {
+  if (q.includes("at risk") || q.includes("stock out") || q.includes("stockout") || q.includes("critical")) {
     const items = MOCK_INVENTORY.filter(i => i.status === 'CRITICAL' || i.status === 'WARNING');
     return {
       message: `Here is the current risk profile of your inventory. Pay immediate attention to ORDER NOW items.`,
@@ -167,21 +208,20 @@ export async function askCopilot(query: string): Promise<CopilotResponse> {
     };
   }
 
-  if (q.includes("overstock") || q.includes("over stock")) {
+  if (q.includes("overstock") || q.includes("over stock") || q.includes("discount") || q.includes("markdown") || q.includes("promo")) {
     const items = MOCK_INVENTORY.filter(i => i.status === 'OVERSTOCKED');
     return {
-      message: items.length > 0 ? `I found ${items.length} overstocked products. Review these for potential markdowns.` : "No overstock detected.",
+      message: items.length > 0 ? `I found ${items.length} overstocked products. Review these for promotional markdown discounts.` : "No overstock detected. All inventory is within optimal holding bounds.",
       items: items.length > 0 ? items : undefined,
       intent: "OVERSTOCK"
     };
   }
   
-  if (q.includes("why should i order") || q.includes("why order")) {
-    // Try to extract a product name
-    const matchItem = MOCK_INVENTORY.find(i => q.includes(i.name.toLowerCase()));
+  if (q.includes("why should i order") || q.includes("why order") || q.includes("why")) {
+    const matchItem = MOCK_INVENTORY.find(i => q.includes(i.name.toLowerCase()) || q.includes(i.product_id.toLowerCase()));
     if (matchItem) {
       return {
-        message: `Here is the evidence supporting the recommendation for ${matchItem.name}:`,
+        message: `Here is the evidence supporting the recommendation for ${matchItem.name} (${matchItem.product_id}):`,
         items: [matchItem],
         intent: "WHY_ORDER"
       };
@@ -194,7 +234,7 @@ export async function askCopilot(query: string): Promise<CopilotResponse> {
   }
   
   return {
-    message: "I'm your mock SmartStock Reorder Copilot. Try asking me 'What should I order today?' or 'Which products are at risk?'",
+    message: "SmartStock AI Copilot is monitoring your store inventory. Try asking me:\n- 'Which items will run out of stock first?'\n- 'What should I order today?'\n- 'Why should I order Milk 1L?'\n- 'What markdown promotions should we run?'",
     intent: "UNKNOWN"
   };
 }

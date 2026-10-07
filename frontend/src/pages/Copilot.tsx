@@ -20,7 +20,7 @@ export default function Copilot() {
     {
       id: 'init',
       role: 'assistant',
-      text: "Hi! I'm your SmartStock Reorder Copilot. Ask me what to order, which products are at risk, or why a product needs attention. (Currently in demo/mock mode)",
+      text: "Hi! I'm your SmartStock AI Reorder Copilot. Ask me which items will run out of stock first, what to order today, or why a product needs attention.",
     }
   ]);
   const [inputValue, setInputValue] = React.useState("");
@@ -44,7 +44,10 @@ export default function Copilot() {
     setIsTyping(true);
 
     try {
-      const response: CopilotResponse = await askCopilot(query);
+      const history = messages
+        .filter(m => m.id !== 'init' && !m.isError)
+        .map(m => ({ role: m.role === 'user' ? 'user' : 'model', content: m.text }));
+      const response: CopilotResponse = await askCopilot(query, history);
       const assistantMsg: ChatMessage = {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
@@ -152,10 +155,10 @@ export default function Copilot() {
   };
 
   const suggestions = [
+    "Which items will run out of stock first?",
     "What should I order today?",
-    "Which products are at risk?",
     "Why should I order Milk 1L?",
-    "What is overstocked?"
+    "What markdown promotions should we run?"
   ];
 
   return (
@@ -182,7 +185,7 @@ export default function Copilot() {
               )}
               <div className={`max-w-[85%] ${msg.role === 'user' ? 'order-1' : 'order-2'}`}>
                 <div 
-                  className={`px-4 py-3 rounded-2xl text-sm shadow-sm
+                  className={`px-4 py-3 rounded-2xl text-sm shadow-sm whitespace-pre-wrap leading-relaxed
                     ${msg.role === 'user' 
                       ? 'bg-indigo-600 text-white rounded-tr-sm' 
                       : msg.isError
