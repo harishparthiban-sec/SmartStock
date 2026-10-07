@@ -101,6 +101,12 @@ def _load_backtest() -> Optional[pd.DataFrame]:
     return pd.read_csv(path) if path else None
 
 
+def _load_analog() -> Optional[pd.DataFrame]:
+    """Loads demand_analog_summary.csv (real or stub). Returns None if unavailable."""
+    path = _resolve("demand_analog_summary.csv", "demand_analog_summary_stub.csv")
+    return pd.read_csv(path) if path else None
+
+
 def _df_to_records(df: pd.DataFrame) -> list:
     """Convert a DataFrame to JSON-safe list of dicts, handling NaN and numpy types."""
     records = df.to_dict(orient="records")
@@ -175,6 +181,7 @@ def get_orders(
     f_df = _load_forecast()
     e_df = _load_error()
     s_df = _load_sales()
+    a_df = _load_analog()
 
     if category:
         p_df = p_df[p_df["category"] == category]
@@ -187,6 +194,7 @@ def get_orders(
         service_level=service_level,
         review_period_days=review_period_days,
         include_copilot=False,
+        analog_df=a_df,
     )
     return {"data": _df_to_records(orders), "count": len(orders)}
 
@@ -209,6 +217,7 @@ def get_copilot(
     s_df = _load_sales()
     h_df = _load_holidays()
     fp_df = _load_future_promos()
+    a_df = _load_analog()
 
     if category:
         p_df = p_df[p_df["category"] == category]
@@ -221,6 +230,7 @@ def get_copilot(
         service_level=service_level,
         review_period_days=review_period_days,
         include_copilot=False,
+        analog_df=a_df,
     )
 
     copilot_df = get_copilot_recommendations(

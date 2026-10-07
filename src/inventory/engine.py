@@ -30,6 +30,7 @@ from src.inventory.copilot import (
     evaluate_stockout_warning,
     evaluate_overstock_pricing,
 )
+from src.inventory.analog import load_analog_signals, get_analog_adjustments
 
 
 def compute_reorder(
@@ -43,6 +44,7 @@ def compute_reorder(
     include_copilot: bool = False,
     holidays_df: Optional[pd.DataFrame] = None,
     future_promos_df: Optional[pd.DataFrame] = None,
+    analog_df: Optional[pd.DataFrame] = None,
 ) -> pd.DataFrame:
     """Computes reorder recommendations, safety stock, and status for each product.
 
@@ -54,9 +56,15 @@ def compute_reorder(
         review_period_days: Review period R in days (default 7).
         lead_time_extra_days: Extra supplier delay in days for scenario analysis.
         sales_df: Historical sales dataframe for recent demand benchmarking.
+        analog_df: Optional DataFrame from data/demand_analog_summary.csv (Person 1's
+                   Demand Time Machine output). When provided, analog signals are used
+                   to: (a) increase `need` when analogs agree on growth, and
+                   (b) inflate sigma when analogs conflict with the Prophet forecast.
+                   The forecast CSV (yhat) is NEVER modified.
 
     Returns:
-        DataFrame with columns matching output/orders.csv schema.
+        DataFrame with columns matching output/orders.csv schema (17 columns).
+        Output contract is identical with or without analog_df.
     """
     if products_df.empty or forecast_df.empty:
         return pd.DataFrame(
@@ -107,6 +115,36 @@ def compute_reorder(
     # Standard normal quantile Z
     z_val = get_z_factor(service_level)
 
+    # Load Demand Time Machine analog signals (safe: returns {} if file missing)
+    # analog_df=None  → auto-detect real or stub file from disk
+    # analog_df=pd.DataFrame()  → explicit "no analog" (used in tests for isolation)
+    # analog_df=<real data>  → parse directly
+    _analog_explicitly_passed = analog_df is not None
+    if _analog_explicitly_passed and len(analog_df.columns) > 0 and len(analog_df) > 0:
+        # Parse directly from the passed-in DataFrame
+        from src.inventory.analog import AnalogSignal
+        analog_signals: dict = {}
+        for _, arow in analog_df.iterrows():
+            try:
+                pid_a = str(arow["product_id"])
+                analog_signals[pid_a] = AnalogSignal(
+                    product_id=pid_a,
+                    growth_pct=float(arow.get("top_3_consensus_growth_pct", 0.0) or 0.0),
+                    confidence=float(arow.get("analog_confidence", 0.0) or 0.0),
+                    agreement=float(arow.get("analog_agreement", 0.0) or 0.0),
+                    event_alignment=float(arow.get("event_alignment", 0.0) or 0.0),
+                    forecast_agreement=float(arow.get("forecast_agreement", 1.0) or 1.0),
+                    similarity=float(arow.get("best_similarity_score", 0.0) or 0.0),
+                    historical_evidence=str(arow.get("historical_evidence", "") or ""),
+                )
+            except (ValueError, TypeError):
+                continue
+    elif _analog_explicitly_passed:
+        # Caller passed an empty DataFrame → explicitly disable analog (e.g., tests)
+        analog_signals = {}
+    else:
+        analog_signals = load_analog_signals()  # auto-detects real or stub path
+
     # Pre-group forecast by product_id
     f_grouped = {}
     for pid, group in forecast_df.groupby("product_id"):
@@ -153,6 +191,20 @@ def compute_reorder(
             sigma = error_lookup[pid]
         else:
             sigma = DEFAULT_SIGMA_PCT * d
+
+        # ---- Demand Time Machine analog adjustments (Person 1 integration) ----
+        # get_analog_adjustments is a pure function; returns unmodified values
+        # when no analog signal is available for this product.
+        adj_sigma, adj_need, analog_context, is_analog_conflict = get_analog_adjustments(
+            pid=pid,
+            signals=analog_signals,
+            base_sigma=sigma,
+            base_need=need,
+        )
+        # Only apply analog adjustments; base demand_LT and forecast CSV untouched
+        sigma = adj_sigma   # may be inflated on conflict
+        need = adj_need     # may be increased on strong growth signal
+        # -----------------------------------------------------------------------
 
         # Safety Stock & Reorder Point
         SS = z_val * sigma * math.sqrt(L)
@@ -243,6 +295,9 @@ def compute_reorder(
             arrival_date=expected_arrival_date,
             demand_vs_recent_pct=demand_vs_recent_pct,
         )
+        # Append Demand Time Machine context when available
+        if analog_context:
+            reason = f"{reason} [{analog_context}]"
 
         records.append(
             {
@@ -469,6 +524,19 @@ if __name__ == "__main__":
     e_df = pd.read_csv(error_path) if os.path.exists(error_path) else None
     s_df = pd.read_csv(sales_path) if sales_path and os.path.exists(sales_path) else None
 
+    # Load Demand Time Machine analog summary (Person 1 output)
+    analog_real = os.path.join(data_dir, "demand_analog_summary.csv")
+    analog_stub = os.path.join(fixtures_dir, "demand_analog_summary_stub.csv")
+    if os.path.exists(analog_real):
+        a_df = pd.read_csv(analog_real)
+        print(f"Loading analog signals from: {analog_real}")
+    elif os.path.exists(analog_stub):
+        a_df = pd.read_csv(analog_stub)
+        print(f"Loading analog signals from stub: {analog_stub}")
+    else:
+        a_df = None
+        print("No demand_analog_summary.csv found – running without analog signals.")
+
     # Compute base orders with exact 17 columns
     orders = compute_reorder(
         products_df=p_df,
@@ -476,6 +544,7 @@ if __name__ == "__main__":
         error_df=e_df,
         sales_df=s_df,
         include_copilot=False,
+        analog_df=a_df,
     )
 
     os.makedirs("output", exist_ok=True)
@@ -522,3 +591,21 @@ if __name__ == "__main__":
         )
     else:
         print("No overstocked products currently detected.")
+
+    # Demand Time Machine analog summary
+    if a_df is not None and not a_df.empty:
+        from src.inventory.analog import load_analog_signals as _la
+        import tempfile as _tf, os as _os2
+        with _tf.NamedTemporaryFile(mode='w', suffix='.csv', delete=False) as _t:
+            a_df.to_csv(_t.name, index=False)
+            _sigs = _la(_t.name)
+        _os2.unlink(_t.name)
+        print("\n--- Demand Time Machine Analog Signal Summary ---")
+        for pid, sig in _sigs.items():
+            tag = "CONFLICT" if sig.is_conflict else ("UPLIFT" if sig.has_meaningful_growth and sig.is_high_quality else "AGREE")
+            print(f"  {pid}: [{tag}] growth={sig.growth_pct:.1f}% "
+                  f"confidence={sig.confidence:.2f} "
+                  f"forecast_agreement={sig.forecast_agreement:.2f} "
+                  f"uplift_factor={sig.demand_uplift_factor():.3f} "
+                  f"sigma_factor={sig.sigma_inflate_factor():.2f}")
+

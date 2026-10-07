@@ -1,0 +1,4 @@
+product_id,top_3_consensus_growth_pct,analog_confidence,analog_agreement,event_alignment,forecast_agreement,best_similarity_score,historical_evidence
+P001,8.5,0.82,0.78,0.90,0.85,0.88,"3 of 3 analogs show demand growth ahead of winter season; Prophet agrees."
+P002,5.2,0.75,0.72,0.80,0.80,0.81,"Moderate analog consensus for mild pre-holiday lift; consistent with forecast."
+P003,22.0,0.90,0.88,0.95,0.30,0.91,"Analogs strongly indicate Diwali-linked demand surge; Prophet underestimates."

@@ -8,6 +8,11 @@ import numpy as np
 from src.inventory.engine import compute_reorder, simulate_scenario, run_scenario
 from src.inventory.config import SERVICE_LEVEL, REVIEW_PERIOD_DAYS
 
+# Empty DataFrame sentinel: explicitly disables analog auto-detection in all
+# existing hand-calculation tests so results are deterministic regardless of
+# which stub files exist in tests/fixtures/.
+_NO_ANALOG = pd.DataFrame()
+
 
 @pytest.fixture
 def fixtures_dir():
@@ -50,6 +55,7 @@ def test_hand_calculated_reorder(stub_data):
         service_level=0.95,
         review_period_days=7,
         lead_time_extra_days=0,
+        analog_df=_NO_ANALOG,  # disable analog auto-detection for deterministic math
     )
 
     assert len(orders) == 1
@@ -78,6 +84,7 @@ def test_overstock_status(stub_data):
         products_df=p001_prod,
         forecast_df=forecast[forecast["product_id"] == "P001"],
         error_df=error[error["product_id"] == "P001"],
+        analog_df=_NO_ANALOG,
     )
 
     row = orders.iloc[0]
@@ -98,6 +105,7 @@ def test_order_soon_status(stub_data):
         products_df=p001_prod,
         forecast_df=forecast[forecast["product_id"] == "P001"],
         error_df=error[error["product_id"] == "P001"],
+        analog_df=_NO_ANALOG,
     )
 
     row = orders.iloc[0]
@@ -119,6 +127,7 @@ def test_zero_forecast_demand(stub_data):
         products_df=p001_prod,
         forecast_df=zero_fc,
         error_df=error[error["product_id"] == "P001"],
+        analog_df=_NO_ANALOG,
     )
 
     row = orders.iloc[0]
@@ -143,6 +152,7 @@ def test_lead_time_longer_than_forecast_horizon(stub_data):
         products_df=p001_prod,
         forecast_df=short_fc,
         error_df=error[error["product_id"] == "P001"],
+        analog_df=_NO_ANALOG,
     )
 
     assert len(orders) == 1
@@ -213,6 +223,7 @@ def test_supplier_delay_extra_lead_time(stub_data):
         forecast_df=p001_fc,
         error_df=p001_err,
         lead_time_extra_days=0,
+        analog_df=_NO_ANALOG,
     ).iloc[0]
 
     delayed_order = compute_reorder(
@@ -220,6 +231,7 @@ def test_supplier_delay_extra_lead_time(stub_data):
         forecast_df=p001_fc,
         error_df=p001_err,
         lead_time_extra_days=2,
+        analog_df=_NO_ANALOG,
     ).iloc[0]
 
     assert delayed_order["safety_stock"] > base_order["safety_stock"]
