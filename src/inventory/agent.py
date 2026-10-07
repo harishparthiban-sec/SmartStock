@@ -384,10 +384,6 @@ if __name__ == "__main__":
     import sys
     from src.inventory.engine import compute_reorder, get_copilot_recommendations
 
-    print("=" * 60)
-    print(" SmartStock AI Copilot Agent - Test Runner")
-    print("=" * 60)
-
     # Load data
     prod_path = "data/products.csv" if os.path.exists("data/products.csv") else "tests/fixtures/products_stub.csv"
     fc_path = "data/forecast.csv" if os.path.exists("data/forecast.csv") else "tests/fixtures/forecast_stub.csv"
@@ -401,19 +397,44 @@ if __name__ == "__main__":
     copilot_df = get_copilot_recommendations(orders, f_df)
 
     has_key = bool(get_api_key())
-    print(f"API Key configured: {has_key} (Provider: {'Google Gemini' if has_key else 'Deterministic Engine (Fallback)'})")
-    print(f"Monitored Products: {len(copilot_df)}\n")
+    provider_str = "Google Gemini" if has_key else "Deterministic Engine (Fallback)"
 
-    test_questions = [
-        "Why should I order P001 right now?",
-        "Which products are at critical risk of stockout?",
-        "What promotions or markdown discounts should we run for overstocked items?",
-    ]
-
-    for q in test_questions:
-        print(f"\nUser: {q}")
-        print("-" * 50)
-        res = ask_copilot_agent(q, copilot_df)
-        print(f"[{res['provider']} | {res['model']}]")
+    # Case A: User passed question as command-line arguments:
+    # Example: python -m src.inventory.agent "Why should I order P001?"
+    if len(sys.argv) > 1:
+        query = " ".join(sys.argv[1:])
+        res = ask_copilot_agent(query, copilot_df)
+        print(f"\n[AI Copilot | {res['provider']} | {res['model']}]")
         print(res["reply"])
-        print()
+        sys.exit(0)
+
+    # Case B: Interactive chat mode
+    print("=" * 65)
+    print(" SmartStock AI Copilot Interactive Assistant")
+    print(f" Provider: {provider_str} | Products Monitored: {len(copilot_df)}")
+    print(" Type your question below (or type 'exit' / 'quit' to leave):")
+    print("=" * 65)
+
+    history = []
+    while True:
+        try:
+            user_input = input("\nYou: ").strip()
+        except (KeyboardInterrupt, EOFError):
+            print("\nExiting AI Copilot. Goodbye!")
+            break
+
+        if not user_input:
+            continue
+        if user_input.lower() in ["exit", "quit", "q", "bye"]:
+            print("Exiting AI Copilot. Goodbye!")
+            break
+
+        res = ask_copilot_agent(user_input, copilot_df, conversation_history=history)
+        reply = res["reply"]
+
+        print(f"\nCopilot [{res['provider']}]:")
+        print(reply)
+
+        # Track conversation history for multi-turn context
+        history.append({"role": "user", "content": user_input})
+        history.append({"role": "model", "content": reply})
