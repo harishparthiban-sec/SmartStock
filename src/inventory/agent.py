@@ -35,11 +35,23 @@ except ImportError:
 
 
 def get_api_key() -> Optional[str]:
-    """Retrieves Google Gemini API key from environment variables.
+    """Retrieves Google Gemini API key from environment variables or .env file.
 
     Ignores dummy placeholders like 'your-gemini-api-key'.
     """
     key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+    # If not in environment, check local .env file
+    if not key and os.path.exists(".env"):
+        try:
+            with open(".env", "r", encoding="utf-8") as f:
+                for line in f:
+                    line = line.strip()
+                    if line.startswith("GEMINI_API_KEY=") or line.startswith("GOOGLE_API_KEY="):
+                        key = line.split("=", 1)[1].strip()
+                        break
+        except Exception:
+            pass
+
     if not key:
         return None
     cleaned = key.strip().strip('"\'')
