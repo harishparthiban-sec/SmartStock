@@ -1,0 +1,14 @@
+{
+  "include": [
+    "src"
+  ],
+  "reportMissingImports": false,
+  "reportMissingTypeStubs": false,
+  "reportMissingModuleSource": false,
+  "executionEnvironments": [
+    {
+      "root": ".",
+      "pythonPath": "C:\\Users\\HP VICTUS\\AppData\\Local\\Programs\\Python\\Python313\\python.exe"
+    }
+  ]
+}
