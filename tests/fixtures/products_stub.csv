@@ -1,0 +1,4 @@
+product_id,name,category,lead_time_days,current_stock,on_order,unit_cost
+P001,Milk 1L,Dairy,4,300,0,28
+P002,Bread Loaf,Bakery,1,150,0,25
+P003,Basmati Rice 5kg,Staples,4,130,0,420

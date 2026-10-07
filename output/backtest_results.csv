@@ -1,0 +1,9 @@
+product_id,policy,stockout_days,units_short,fill_rate_pct,avg_on_hand_units
+P001,NAIVE,0,0.0,100.0,567.68
+P001,SMART,0,0.0,100.0,419.04
+P002,NAIVE,0,0.0,100.0,697.14
+P002,SMART,0,0.0,100.0,312.79
+P003,NAIVE,0,0.0,100.0,233.39
+P003,SMART,0,0.0,100.0,192.86
+ALL,NAIVE,0,0.0,100.0,499.4
+ALL,SMART,0,0.0,100.0,308.23
