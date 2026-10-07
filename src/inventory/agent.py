@@ -231,41 +231,13 @@ def generate_fallback_response(
 
         # Specific "which runs out first" inquiry
         if any(w in query_lower for w in ["first", "soonest", "run out", "deplet"]):
-            lines = [
-                "Here is the timeline of items running out of stock soonest, in priority order:\n"
-            ]
-            for idx, (_, row) in enumerate(sorted_df.iterrows(), 1):
-                p_name = row.get("name", row["product_id"])
-                p_id = row["product_id"]
-                days_left = float(row.get("days_of_stock_left", 0))
-                urgency = str(row.get("urgency", "LOW")).upper()
-                lead_time = int(row.get("lead_time_days", 1))
-                order_qty = float(row.get("order_qty", 0))
-                order_date = str(row.get("order_by_date", "ASAP"))
-
-                # Icon based on urgency
-                icon = "[CRITICAL]" if urgency == "CRITICAL" else "[SOON]" if urgency in ["HIGH", "MEDIUM"] else "[OK]"
-
-                # Human-friendly explanation
-                lead_note = "within lead time - order urgently!" if days_left <= lead_time else f"lead time is {lead_time} days"
-
-                entry = (
-                    f"{idx}. {icon} {p_name} ({p_id})\n"
-                    f"   - Stock Left: {days_left:.1f} days ({lead_note})\n"
-                    f"   - Recommended Action: Order {order_qty:,.0f} units by {order_date}\n"
-                )
-                lines.append(entry)
-
-            # Executive summary at bottom
             critical_names = [r.get("name", r["product_id"]) for _, r in sorted_df.iterrows() if float(r.get("days_of_stock_left", 0)) <= int(r.get("lead_time_days", 1))]
-            if critical_names:
-                lines.append(
-                    f"Summary: Prioritize {', '.join(critical_names[:2])} first, as remaining stock is less than supplier lead time."
-                )
-            else:
-                lines.append("Summary: All lead times are currently covered, but place orders as indicated to maintain safety stock.")
-
-            return "\n".join(lines)
+            warning_text = f"Prioritize {', '.join(critical_names[:2])} first because remaining stock is already within supplier lead time." if critical_names else "Review the schedule below to protect service levels."
+            return (
+                f"**[ALERT] Stockout Priority Overview**\n\n"
+                f"Here is your real-time depletion timeline. {warning_text}\n\n"
+                f"Review the prioritized product cards below to take action:"
+            )
 
         if critical_df.empty:
             return (
@@ -341,6 +313,26 @@ def ask_copilot_agent(
         sorted_df = df.sort_values(by="days_of_stock_left", ascending=True)
         referenced_for_cards = list(sorted_df["product_id"].head(3))
 
+    # Extract structured timeline for stockout queries
+    timeline_items = []
+    if any(w in message.lower() for w in ["run out", "first", "soonest", "stockout", "critical", "risk", "deplet", "timeline"]):
+        sorted_df = df.sort_values(by="days_of_stock_left", ascending=True)
+        for idx, (_, row) in enumerate(sorted_df.head(5).iterrows(), 1):
+            days_left = float(row.get("days_of_stock_left", 0))
+            lead_time = int(row.get("lead_time_days", 1))
+            timeline_items.append({
+                "rank": idx,
+                "product_id": str(row["product_id"]),
+                "name": str(row.get("name", row["product_id"])),
+                "days_left": round(days_left, 1),
+                "lead_time_days": lead_time,
+                "urgency": str(row.get("urgency", "LOW")).upper(),
+                "order_qty": round(float(row.get("order_qty", 0))),
+                "order_by_date": str(row.get("order_by_date", "ASAP")),
+                "is_breached": days_left <= lead_time,
+                "action_needed": f"Order {float(row.get('order_qty', 0)):,.0f} units by {row.get('order_by_date', 'ASAP')}",
+            })
+
     # If no key or no SDK installed, use deterministic fallback
     if not api_key or not _GENAI_SDK:
         reply = generate_fallback_response(message, df, referenced)
@@ -348,6 +340,7 @@ def ask_copilot_agent(
             "reply": reply,
             "model": "copilot-deterministic-engine",
             "referenced_products": referenced_for_cards,
+            "timeline": timeline_items,
             "status": "success",
             "provider": "smartstock-fallback",
         }
@@ -432,7 +425,8 @@ def ask_copilot_agent(
         return {
             "reply": reply_text,
             "model": model_name,
-            "referenced_products": referenced,
+            "referenced_products": referenced_for_cards,
+            "timeline": timeline_items,
             "status": "success",
             "provider": "google-gemini",
         }
@@ -443,7 +437,8 @@ def ask_copilot_agent(
         return {
             "reply": fallback_reply,
             "model": "copilot-deterministic-engine",
-            "referenced_products": referenced,
+            "referenced_products": referenced_for_cards,
+            "timeline": timeline_items,
             "status": "fallback",
             "error_detail": str(exc),
             "provider": "smartstock-fallback",

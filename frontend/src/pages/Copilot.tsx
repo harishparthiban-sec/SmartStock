@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { askCopilot } from '../services/api';
-import type { CopilotResponse } from '../services/api';
+import type { CopilotResponse, TimelineItem } from '../services/api';
 import type { InventoryResult } from '../types/contracts';
-import { Bot, Send, User, ExternalLink } from 'lucide-react';
+import { Bot, Send, User, ExternalLink, AlertTriangle } from 'lucide-react';
 import { Card } from '../components/ui/Card';
 
 type ChatMessage = {
@@ -11,6 +11,7 @@ type ChatMessage = {
   role: 'user' | 'assistant';
   text: string;
   items?: InventoryResult[];
+  timeline?: TimelineItem[];
   intent?: string;
   isError?: boolean;
 };
@@ -53,6 +54,7 @@ export default function Copilot() {
         role: 'assistant',
         text: response.message,
         items: response.items,
+        timeline: response.timeline,
         intent: response.intent,
       };
       setMessages(prev => [...prev, assistantMsg]);
@@ -82,6 +84,96 @@ export default function Copilot() {
       case 'HEALTHY': return <span className="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">OK</span>;
       default: return <span className="bg-gray-100 text-gray-800 text-xs font-bold px-2 py-1 rounded">UNKNOWN</span>;
     }
+  };
+
+  const renderTimeline = (timeline: TimelineItem[]) => {
+    if (!timeline || timeline.length === 0) return null;
+    return (
+      <div className="mt-4 space-y-3">
+        <div className="flex items-center justify-between px-1">
+          <span className="text-xs font-bold text-gray-700 uppercase tracking-wider flex items-center gap-1.5">
+            <AlertTriangle className="w-3.5 h-3.5 text-rose-600" />
+            Stockout Depletion Priority Order
+          </span>
+          <span className="text-[11px] font-semibold text-rose-700 bg-rose-50 px-2 py-0.5 rounded-full border border-rose-200">
+            Immediate Action Required
+          </span>
+        </div>
+        <div className="space-y-2.5">
+          {timeline.map((item) => {
+            const isCritical = item.urgency === 'CRITICAL' || item.is_breached;
+            return (
+              <div
+                key={item.product_id}
+                className={`p-3.5 rounded-xl border transition-all ${
+                  isCritical
+                    ? 'bg-rose-50/70 border-rose-200 shadow-sm'
+                    : 'bg-white border-gray-200 shadow-sm'
+                }`}
+              >
+                <div className="flex items-center justify-between gap-2">
+                  <div className="flex items-center gap-2.5 min-w-0">
+                    <span
+                      className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-black shrink-0 ${
+                        isCritical ? 'bg-rose-600 text-white' : 'bg-gray-200 text-gray-800'
+                      }`}
+                    >
+                      #{item.rank}
+                    </span>
+                    <div>
+                      <h4 className="text-sm font-bold text-gray-900">{item.name}</h4>
+                      <span className="text-xs text-gray-500 font-mono">{item.product_id}</span>
+                    </div>
+                  </div>
+                  {isCritical ? (
+                    <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-rose-100 text-rose-800 border border-rose-200 shrink-0">
+                      CRITICAL
+                    </span>
+                  ) : (
+                    <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-800 border border-amber-200 shrink-0">
+                      ORDER SOON
+                    </span>
+                  )}
+                </div>
+
+                <div className="grid grid-cols-3 gap-2 mt-3 pt-2.5 border-t border-gray-100 text-xs">
+                  <div>
+                    <span className="text-gray-500 block text-[10px] uppercase font-semibold">Stock Cover</span>
+                    <span
+                      className={`font-black text-sm ${
+                        item.days_left <= item.lead_time_days ? 'text-rose-600' : 'text-gray-900'
+                      }`}
+                    >
+                      {item.days_left} days
+                    </span>
+                  </div>
+                  <div>
+                    <span className="text-gray-500 block text-[10px] uppercase font-semibold">Supplier Lead Time</span>
+                    <span className="font-semibold text-gray-800 text-sm">{item.lead_time_days} days</span>
+                  </div>
+                  <div>
+                    <span className="text-gray-500 block text-[10px] uppercase font-semibold">Recommended Order</span>
+                    <span className="font-black text-indigo-700 text-sm">
+                      {item.order_qty.toLocaleString()} units
+                    </span>
+                  </div>
+                </div>
+
+                {item.is_breached && (
+                  <div className="mt-2.5 text-xs font-medium text-rose-800 bg-rose-100/70 rounded-md px-2.5 py-1.5 flex items-center gap-1.5 border border-rose-200">
+                    <span>⚠️</span>
+                    <span>
+                      Stock covers {item.days_left}d vs {item.lead_time_days}d supplier lead time! Order by{' '}
+                      <strong className="underline">{item.order_by_date}</strong> to prevent shelf stockout.
+                    </span>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    );
   };
 
   const renderItems = (items: InventoryResult[], intent: string) => {
@@ -185,7 +277,8 @@ export default function Copilot() {
               )}
               <div className={`max-w-[85%] ${msg.role === 'user' ? 'order-1' : 'order-2'}`}>
                 <div 
-                  className={`px-4 py-3 rounded-2xl text-sm shadow-sm whitespace-pre-wrap leading-relaxed
+                  style={{ whiteSpace: 'pre-line' }}
+                  className={`px-4 py-3 rounded-2xl text-sm shadow-sm leading-relaxed
                     ${msg.role === 'user' 
                       ? 'bg-indigo-600 text-white rounded-tr-sm' 
                       : msg.isError
@@ -196,7 +289,8 @@ export default function Copilot() {
                 >
                   {msg.text}
                 </div>
-                {msg.items && renderItems(msg.items, msg.intent || '')}
+                {msg.timeline && renderTimeline(msg.timeline)}
+                {!msg.timeline && msg.items && renderItems(msg.items, msg.intent || '')}
               </div>
               {msg.role === 'user' && (
                 <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center shrink-0 order-2">

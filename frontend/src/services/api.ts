@@ -138,9 +138,23 @@ export async function getInventoryBacktestResults(): Promise<InventoryBacktest[]
   return MOCK_BACKTEST;
 }
 
+export interface TimelineItem {
+  rank: number;
+  product_id: string;
+  name: string;
+  days_left: number;
+  lead_time_days: number;
+  urgency: string;
+  order_qty: number;
+  order_by_date: string;
+  is_breached: boolean;
+  action_needed: string;
+}
+
 export interface CopilotResponse {
   message: string;
   items?: InventoryResult[];
+  timeline?: TimelineItem[];
   intent: string;
 }
 
@@ -160,10 +174,12 @@ export async function askCopilot(query: string, history?: { role: string; conten
       if (data && data.reply) {
         const referenced: string[] = data.referenced_products || [];
         const items = MOCK_INVENTORY.filter(i => referenced.includes(i.product_id));
+        const timeline: TimelineItem[] | undefined = data.timeline && data.timeline.length > 0 ? data.timeline : undefined;
         return {
           message: data.reply,
           items: items.length > 0 ? items : undefined,
-          intent: referenced.length > 0 ? "WHY_ORDER" : "AI_AGENT",
+          timeline: timeline,
+          intent: timeline ? "TIMELINE" : (referenced.length === 1 ? "WHY_ORDER" : "AT_RISK"),
         };
       }
     }
@@ -172,21 +188,29 @@ export async function askCopilot(query: string, history?: { role: string; conten
   }
 
   // 2. Intelligent local fallback if backend is unreachable
-  await delay(400);
+  await delay(300);
   const q = query.toLowerCase();
 
   // Depletion timeline / run out first
   if (q.includes("run out") || q.includes("first") || q.includes("timeline") || q.includes("deplet")) {
     const sorted = [...MOCK_INVENTORY].sort((a, b) => a.days_of_stock_left - b.days_of_stock_left);
-    const criticals = sorted.filter(i => i.status === 'CRITICAL' || i.status === 'WARNING');
-    const firstItem = sorted[0];
+    const timeline: TimelineItem[] = sorted.slice(0, 4).map((item, idx) => ({
+      rank: idx + 1,
+      product_id: item.product_id,
+      name: item.name,
+      days_left: Number(item.days_of_stock_left.toFixed(1)),
+      lead_time_days: item.lead_time_days,
+      urgency: item.status === 'CRITICAL' ? 'CRITICAL' : item.days_of_stock_left <= item.lead_time_days ? 'CRITICAL' : 'ORDER SOON',
+      order_qty: item.order_qty,
+      order_by_date: item.order_by_date || '2026-10-07',
+      is_breached: item.days_of_stock_left <= item.lead_time_days,
+      action_needed: `Order ${item.order_qty} units by ${item.order_by_date || '2026-10-07'}`,
+    }));
     return {
-      message: `**Stockout Timeline Assessment:**\n\n` +
-        `1. **${firstItem.name} (${firstItem.product_id})** will run out first in **${firstItem.days_of_stock_left.toFixed(1)} days** (Urgency: **${firstItem.status}**).\n` +
-        (sorted[1] ? `2. **${sorted[1].name} (${sorted[1].product_id})** will run out in **${sorted[1].days_of_stock_left.toFixed(1)} days**.\n\n` : '') +
-        `Recommended action: Place reorders immediately for items within supplier lead times to prevent shelf vacancy.`,
-      items: criticals.length > 0 ? criticals : sorted.slice(0, 3),
-      intent: "AT_RISK"
+      message: "🚨 Stockout Priority Overview:\nHere is your real-time depletion timeline. Review the prioritized sequence below to protect service levels:",
+      timeline,
+      items: sorted.slice(0, 4),
+      intent: "TIMELINE",
     };
   }
 
