@@ -161,10 +161,13 @@ def test_ask_copilot_agent_with_gemini(sample_inventory_df):
     mock_resp = MagicMock()
     mock_resp.text = "Mocked Gemini: P001 needs urgent reorder of 450 units due to 3-day lead time."
 
-    mock_client = MagicMock()
-    mock_client.models.generate_content.return_value = mock_resp
+    mock_chat = MagicMock()
+    mock_chat.send_message.return_value = mock_resp
 
-    with patch("src.inventory.agent.get_api_key", return_value="fake-api-key"):
+    mock_client = MagicMock()
+    mock_client.chats.create.return_value = mock_chat
+
+    with patch("src.inventory.agent.get_api_key", return_value="real-secret-key-12345"):
         with patch("src.inventory.agent._GENAI_SDK", "google-genai"):
             with patch("src.inventory.agent.genai.Client", return_value=mock_client):
                 res = ask_copilot_agent("Why order P001?", sample_inventory_df)
@@ -176,9 +179,9 @@ def test_ask_copilot_agent_with_gemini(sample_inventory_df):
 def test_ask_copilot_agent_handles_api_exception(sample_inventory_df):
     """If Gemini API raises an exception (e.g. rate limit), falls back cleanly."""
     mock_client = MagicMock()
-    mock_client.models.generate_content.side_effect = RuntimeError("Rate limit exceeded")
+    mock_client.chats.create.side_effect = RuntimeError("Rate limit exceeded")
 
-    with patch("src.inventory.agent.get_api_key", return_value="fake-api-key"):
+    with patch("src.inventory.agent.get_api_key", return_value="real-secret-key-12345"):
         with patch("src.inventory.agent._GENAI_SDK", "google-genai"):
             with patch("src.inventory.agent.genai.Client", return_value=mock_client):
                 res = ask_copilot_agent("Why order P001?", sample_inventory_df)

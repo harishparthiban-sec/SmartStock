@@ -35,8 +35,19 @@ except ImportError:
 
 
 def get_api_key() -> Optional[str]:
-    """Retrieves Google Gemini API key from environment variables."""
-    return os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+    """Retrieves Google Gemini API key from environment variables.
+
+    Ignores dummy placeholders like 'your-gemini-api-key'.
+    """
+    key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+    if not key:
+        return None
+    cleaned = key.strip().strip('"\'')
+    if cleaned.lower() in ["your-gemini-api-key", "your_gemini_api_key", "none", "", "placeholder", "fake"]:
+        return None
+    if cleaned.startswith("your-") or "gemini-api-key" in cleaned.lower():
+        return None
+    return cleaned
 
 
 def build_inventory_context_summary(df: pd.DataFrame) -> Dict[str, Any]:
@@ -195,9 +206,41 @@ def generate_fallback_response(
 
             return "\n".join(lines)
 
-    # Case 2: Stockout / Urgent / Critical query
-    if any(k in query_lower for k in ["critical", "urgent", "stockout", "risk", "warning"]):
+    # Case 2: Stockout / Urgent / Run-out-first query
+    stockout_keywords = [
+        "critical", "urgent", "stockout", "risk", "warning",
+        "out of stock", "run out", "first", "soonest", "empty",
+        "deplete", "exhaust", "shortage", "lead time",
+    ]
+    if any(k in query_lower for k in stockout_keywords):
+        # Sort products by days_of_stock_left ascending
+        sorted_df = df.sort_values(by="days_of_stock_left", ascending=True)
         critical_df = df[df["urgency"].isin(["CRITICAL", "HIGH"])]
+
+        # Specific "which runs out first" inquiry
+        if any(w in query_lower for w in ["first", "soonest", "run out", "deplet"]):
+            lines = [
+                "**Stockout Timeline Assessment (Order of Depletion):**\n"
+            ]
+            for idx, (_, row) in enumerate(sorted_df.iterrows(), 1):
+                p_name = row.get("name", row["product_id"])
+                p_id = row["product_id"]
+                days_left = float(row.get("days_of_stock_left", 0))
+                urgency = row.get("urgency", "LOW")
+                lead_time = row.get("lead_time_days", 1)
+                so_date = row.get("stockout_date", "N/A")
+                order_qty = float(row.get("order_qty", 0))
+
+                rank_label = f"{idx}. **{p_name} ({p_id})**"
+                lines.append(
+                    f"{rank_label}: Projected to run out in **{days_left:.1f} days** "
+                    f"(Urgency: **{urgency}**, Lead time: {lead_time}d). "
+                    f"Recommended order: **{order_qty:,.0f} units** by `{row.get('order_by_date', 'ASAP')}`."
+                )
+
+            lines.append("\n*Action*: Place purchase orders in this priority sequence to prevent shelf vacancy.")
+            return "\n".join(lines)
+
         if critical_df.empty:
             return (
                 "**Stockout Assessment**: All products currently have healthy stock levels above their "
@@ -315,34 +358,29 @@ def ask_copilot_agent(
 
         reply_text = ""
 
-        # Path A: Modern google-genai SDK
+        # Path A: Modern google-genai SDK using recommended chats.create
         if _GENAI_SDK == "google-genai":
             client = genai.Client(api_key=api_key)
-            contents = []
+            chat_history_contents = []
             if conversation_history:
                 for turn in conversation_history[-6:]:
                     role = "user" if turn.get("role") == "user" else "model"
-                    contents.append(
+                    chat_history_contents.append(
                         types.Content(
                             role=role,
                             parts=[types.Part.from_text(text=turn.get("content", ""))],
                         )
                     )
-            contents.append(
-                types.Content(
-                    role="user",
-                    parts=[types.Part.from_text(text=message)],
-                )
-            )
 
-            response = client.models.generate_content(
+            chat = client.chats.create(
                 model=model_name,
-                contents=contents,
                 config=types.GenerateContentConfig(
                     system_instruction=system_instruction,
                     temperature=0.3,
                 ),
+                history=chat_history_contents,
             )
+            response = chat.send_message(message)
             reply_text = response.text or ""
 
         # Path B: Legacy google.generativeai SDK
