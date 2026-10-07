@@ -481,7 +481,9 @@ if __name__ == "__main__":
     os.makedirs("output", exist_ok=True)
     out_file = os.path.join("output", "orders.csv")
     orders.to_csv(out_file, index=False)
-    print(f"\nSuccessfully generated {out_file} ({len(orders)} rows).")
+    out_json = os.path.join("output", "orders.json")
+    orders.to_json(out_json, orient="records", indent=2)
+    print(f"\nSuccessfully generated {out_file} and {out_json} ({len(orders)} rows).")
 
     # Generate enriched AI Reorder Copilot & Early Warning recommendations
     copilot_df = get_copilot_recommendations(
@@ -492,7 +494,9 @@ if __name__ == "__main__":
     )
     copilot_file = os.path.join("output", "copilot_recommendations.csv")
     copilot_df.to_csv(copilot_file, index=False)
-    print(f"Successfully generated {copilot_file} ({len(copilot_df)} rows).")
+    copilot_json = os.path.join("output", "copilot_recommendations.json")
+    copilot_df.to_json(copilot_json, orient="records", indent=2)
+    print(f"Successfully generated {copilot_file} and {copilot_json} ({len(copilot_df)} rows).")
 
     print("\n--- Status Counts ---")
     print(orders["status"].value_counts())

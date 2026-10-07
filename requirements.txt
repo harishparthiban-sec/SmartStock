@@ -1,8 +1,19 @@
+# Core data science and inventory engine
 pandas>=2.2.0
 numpy>=1.26.0
 scipy>=1.11.0
-pytest>=8.0.0
+
+# Machine learning (forecast model)
+scikit-learn>=1.4.0
+
+# Plotting (used by Person 1 for offline chart generation)
 matplotlib>=3.8.0
 plotly>=5.18.0
-streamlit>=1.32.0
-scikit-learn>=1.4.0
+
+# Testing
+pytest>=8.0.0
+
+# REST API backend for React/Vite dashboard
+fastapi>=0.111.0
+uvicorn[standard]>=0.29.0
+pydantic>=2.7.0

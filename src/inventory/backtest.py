@@ -293,7 +293,9 @@ if __name__ == "__main__":
     os.makedirs("output", exist_ok=True)
     out_csv = os.path.join("output", "backtest_results.csv")
     results.to_csv(out_csv, index=False)
-    print(f"\nSaved {out_csv} ({len(results)} rows).")
+    out_json = os.path.join("output", "backtest_results.json")
+    results.to_json(out_json, orient="records", indent=2)
+    print(f"\nSaved {out_csv} and {out_json} ({len(results)} rows).")
 
     # Print summary comparison for ALL
     naive_all = results[(results["product_id"] == "ALL") & (results["policy"] == "NAIVE")].iloc[0]

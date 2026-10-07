@@ -115,19 +115,51 @@ copilot_df = compute_reorder(products_df, forecast_df, include_copilot=True)
 copilot_df = get_copilot_recommendations(orders_df, forecast_df=forecast_df)
 ```
 
-### B. CSV Consumption
-SmartStock produces two synchronized CSV outputs in `output/`:
-1. `output/orders.csv`: Contains the exact 17 columns defined in Table A4 (100% backward compatible with existing spec).
-2. `output/copilot_recommendations.csv`: Contains the 17 base columns plus the following extended Copilot fields:
+### B. REST API Consumption (React / Vite / TailwindCSS Dashboard)
+The FastAPI backend exposes all engine data as JSON endpoints. Run the backend server:
+```bash
+uvicorn src.api.server:app --reload --port 8000
+```
 
-| Field Name | Type | Description & UI Usage |
+React components call these endpoints:
+
+| Endpoint | Data returned | React page |
 | :--- | :--- | :--- |
-| `urgency` | string | `CRITICAL`, `HIGH`, `MEDIUM`, `LOW` (Use for badge colors / sorting). |
-| `stockout_in_7_days` | bool | `True` if stockout date is within 7 days (Use for Overview KPI card). |
-| `early_warning_message` | string | Actionable warning banner string. |
-| `copilot_action` | string | `ORDER NOW`, `PREPARE ORDER`, `MARKDOWN / PROMOTE`, `MONITOR`. |
-| `copilot_reason` | string | Short executive summary (e.g. *"Low inventory + upcoming demand rush"*). |
-| `excess_units` | int | Quantity of surplus stock above normal cycle requirement. |
-| `pricing_recommendation` | string | E.g., *"Consider 10% promotional discount"* (Use in Overstock tab/callout). |
-| `pricing_reason` | string | Detailed explanation of the markdown recommendation. |
+| `GET /api/copilot?service_level=0.95` | Full copilot enriched dataset | Overview, Product Detail |
+| `GET /api/orders` | Base 17-column orders | All pages |
+| `POST /api/scenario` | Before/after comparison | What-If page |
+| `GET /api/backtest` | SMART vs NAIVE results | Model & Impact page |
+| `GET /api/forecast?product_id=P001` | Filtered 45-day forecast | Product Detail chart |
+| `GET /api/alerts` | Spike alerts | Overview alert strip |
+
+**Example React fetch (using the copilot endpoint):**
+```js
+const res = await fetch('http://localhost:8000/api/copilot?service_level=0.95');
+const { data } = await res.json();
+// Each item has: urgency, copilot_action, copilot_reason, stockout_in_7_days,
+//                pricing_recommendation, excess_units, early_warning_message
+```
+
+### C. JSON / CSV Output Files
+All outputs are written in both `.csv` and `.json` format in `output/`:
+
+| File | Format | Description |
+| :--- | :--- | :--- |
+| `output/orders.csv` / `.json` | 17 cols (exact Table A4 spec) | Base reorder recommendations |
+| `output/copilot_recommendations.csv` / `.json` | 17 + 8 copilot cols | AI Copilot enriched data |
+| `output/backtest_results.csv` / `.json` | 6 cols, 32 rows | SMART vs NAIVE holdout results |
+
+### D. Copilot Field Reference
+
+| Field Name | Type | Example | Description |
+| :--- | :--- | :--- | :--- |
+| `urgency` | string | `CRITICAL` | Use for badge colors and sort priority in tables. |
+| `stockout_in_7_days` | bool | `true` | Feeds the 7-day risk KPI card on the Overview page. |
+| `early_warning_message` | string | `"CRITICAL: Stockout in 1.3 days..."` | Alert banner text. |
+| `copilot_action` | string | `ORDER NOW` | Action button label for the Copilot panel. |
+| `copilot_reason` | string | `"Low inventory + Diwali rush..."` | One-line executive summary for the Copilot chat bubble. |
+| `excess_units` | int | `250` | Surplus stock above 2× cycle demand threshold. |
+| `pricing_recommendation` | string | `"Consider 10% promotional discount"` | Advisory markdown signal for the Overstock view. |
+| `pricing_reason` | string | `"Overstock (2.3x cycle need)..."` | Detailed explanation for tooltip or detail row. |
+
 
