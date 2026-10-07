@@ -25,6 +25,7 @@ from src.inventory.engine import (
     run_scenario,
     get_copilot_recommendations,
 )
+from src.inventory.agent import ask_copilot_agent
 from src.inventory.config import SERVICE_LEVEL, REVIEW_PERIOD_DAYS
 
 # ---------------------------------------------------------------------------
@@ -54,11 +55,12 @@ OUTPUT_DIR = "output"
 
 def _resolve(real_name: str, stub_name: str) -> Optional[str]:
     real = os.path.join(DATA_DIR, real_name)
-    stub = os.path.join(FIXTURES_DIR, stub_name)
-    if os.path.exists(real):
+    if os.path.isfile(real):
         return real
-    if os.path.exists(stub):
-        return stub
+    if stub_name:
+        stub = os.path.join(FIXTURES_DIR, stub_name)
+        if os.path.isfile(stub):
+            return stub
     return None
 
 
@@ -139,6 +141,17 @@ class ScenarioRequest(BaseModel):
     lead_time_extra_days: int = 0
     service_level: float = SERVICE_LEVEL
     review_period_days: int = REVIEW_PERIOD_DAYS
+
+
+class CopilotChatMessage(BaseModel):
+    role: str = "user"
+    content: str
+
+
+class CopilotChatRequest(BaseModel):
+    message: str
+    history: Optional[List[CopilotChatMessage]] = None
+    model: Optional[str] = "gemini-2.5-flash"
 
 
 # ---------------------------------------------------------------------------
@@ -240,6 +253,55 @@ def get_copilot(
         future_promos_df=fp_df,
     )
     return {"data": _df_to_records(copilot_df), "count": len(copilot_df)}
+
+
+@app.post("/api/copilot/chat", tags=["AI Copilot Agent"])
+def chat_copilot(body: CopilotChatRequest):
+    """Conversational AI Copilot agent powered by Google Gemini API.
+
+    Answers manager questions about stockout risks, ROP, Demand Time Machine
+    signals, and promotional markdowns. Falls back deterministically if no API key
+    is set or network is unreachable.
+    """
+    p_df = _load_products()
+    f_df = _load_forecast()
+    e_df = _load_error()
+    s_df = _load_sales()
+    h_df = _load_holidays()
+    fp_df = _load_future_promos()
+    a_df = _load_analog()
+
+    orders = compute_reorder(
+        products_df=p_df,
+        forecast_df=f_df,
+        error_df=e_df,
+        sales_df=s_df,
+        service_level=SERVICE_LEVEL,
+        review_period_days=REVIEW_PERIOD_DAYS,
+        include_copilot=False,
+        analog_df=a_df,
+    )
+
+    copilot_df = get_copilot_recommendations(
+        orders_df=orders,
+        forecast_df=f_df,
+        holidays_df=h_df,
+        future_promos_df=fp_df,
+    )
+
+    history_dicts = (
+        [{"role": m.role, "content": m.content} for m in body.history]
+        if body.history
+        else None
+    )
+
+    result = ask_copilot_agent(
+        message=body.message,
+        df=copilot_df,
+        conversation_history=history_dicts,
+        model_name=body.model or "gemini-2.5-flash",
+    )
+    return result
 
 
 @app.post("/api/scenario", tags=["What-If Scenarios"])

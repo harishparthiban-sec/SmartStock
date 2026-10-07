@@ -153,7 +153,7 @@ The Vite dev server starts at `http://localhost:5173` and calls the FastAPI back
 ```bash
 python -m pytest tests/ -v
 ```
-Expected: **14/14 passed**.
+Expected: **51/51 passed**.
 
 ---
 
@@ -165,11 +165,36 @@ Expected: **14/14 passed**.
 | `GET` | `/api/forecast?product_id=P001` | 45-day demand forecast (filter by product) |
 | `GET` | `/api/orders?service_level=0.95&review_period_days=7&category=Dairy` | Computed replenishment orders |
 | `GET` | `/api/copilot?service_level=0.95` | AI Copilot enriched data (urgency, early warnings, pricing) |
+| `POST` | `/api/copilot/chat` | **Interactive AI Agent (Gemini API / Fallback)** for conversational reorder decisions |
 | `POST` | `/api/scenario` | What-if demand surge / supplier delay simulation |
 | `GET` | `/api/backtest` | 28-day holdout SMART vs NAIVE results |
 | `GET` | `/api/alerts` | Unexpected demand spike alerts |
 | `GET` | `/api/accuracy` | Model vs baseline accuracy metrics |
 | `GET` | `/api/categories` | Distinct product categories for filter dropdowns |
+
+**Interactive Copilot Chat POST body example:**
+```json
+{
+  "message": "Why should I order P001 right now instead of waiting?",
+  "history": [
+    {"role": "user", "content": "Hello"},
+    {"role": "model", "content": "Hi! How can I assist with your inventory today?"}
+  ],
+  "model": "gemini-2.5-flash"
+}
+```
+
+**Response:**
+```json
+{
+  "reply": "P001 (Organic Milk) is at CRITICAL urgency. You only have 2.2 days of stock left, while your supplier lead time is 3 days...",
+  "model": "gemini-2.5-flash",
+  "status": "success",
+  "referenced_products": ["P001"],
+  "provider": "google-gemini"
+}
+```
+*(Note: If `GEMINI_API_KEY` is not set in `.env`, the endpoint falls back gracefully to deterministic rule-based insights without crashing).*
 
 **Scenario POST body example:**
 ```json
