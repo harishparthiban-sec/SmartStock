@@ -1,0 +1,4727 @@
+[
+  {
+    "date": "2026-10-07",
+    "product_id": "P001",
+    "yhat": 124.8,
+    "yhat_lower": 103.6,
+    "yhat_upper": 145.6
+  },
+  {
+    "date": "2026-10-07",
+    "product_id": "P002",
+    "yhat": 92.4,
+    "yhat_lower": 76.8,
+    "yhat_upper": 106.8
+  },
+  {
+    "date": "2026-10-07",
+    "product_id": "P003",
+    "yhat": 42.4,
+    "yhat_lower": 32.1,
+    "yhat_upper": 52.6
+  },
+  {
+    "date": "2026-10-07",
+    "product_id": "P004",
+    "yhat": 54.2,
+    "yhat_lower": 41.7,
+    "yhat_upper": 65.9
+  },
+  {
+    "date": "2026-10-07",
+    "product_id": "P005",
+    "yhat": 60.1,
+    "yhat_lower": 48.4,
+    "yhat_upper": 72.2
+  },
+  {
+    "date": "2026-10-07",
+    "product_id": "P006",
+    "yhat": 32.8,
+    "yhat_lower": 23.4,
+    "yhat_upper": 42.6
+  },
+  {
+    "date": "2026-10-07",
+    "product_id": "P007",
+    "yhat": 48.9,
+    "yhat_lower": 33.8,
+    "yhat_upper": 64.2
+  },
+  {
+    "date": "2026-10-07",
+    "product_id": "P008",
+    "yhat": 108.3,
+    "yhat_lower": 84.6,
+    "yhat_upper": 130.7
+  },
+  {
+    "date": "2026-10-07",
+    "product_id": "P009",
+    "yhat": 101.5,
+    "yhat_lower": 84.9,
+    "yhat_upper": 117.3
+  },
+  {
+    "date": "2026-10-07",
+    "product_id": "P010",
+    "yhat": 28.1,
+    "yhat_lower": 18.3,
+    "yhat_upper": 37.6
+  },
+  {
+    "date": "2026-10-07",
+    "product_id": "P011",
+    "yhat": 19.4,
+    "yhat_lower": 12.2,
+    "yhat_upper": 26.6
+  },
+  {
+    "date": "2026-10-07",
+    "product_id": "P012",
+    "yhat": 88.3,
+    "yhat_lower": 71.7,
+    "yhat_upper": 104.6
+  },
+  {
+    "date": "2026-10-07",
+    "product_id": "P013",
+    "yhat": 25.3,
+    "yhat_lower": 16.5,
+    "yhat_upper": 34
+  },
+  {
+    "date": "2026-10-07",
+    "product_id": "P014",
+    "yhat": 21,
+    "yhat_lower": 12.2,
+    "yhat_upper": 30.2
+  },
+  {
+    "date": "2026-10-07",
+    "product_id": "P015",
+    "yhat": 87,
+    "yhat_lower": 72.4,
+    "yhat_upper": 101.6
+  },
+  {
+    "date": "2026-10-08",
+    "product_id": "P001",
+    "yhat": 123.6,
+    "yhat_lower": 103.7,
+    "yhat_upper": 143.6
+  },
+  {
+    "date": "2026-10-08",
+    "product_id": "P002",
+    "yhat": 94.8,
+    "yhat_lower": 79.4,
+    "yhat_upper": 109.6
+  },
+  {
+    "date": "2026-10-08",
+    "product_id": "P003",
+    "yhat": 43.8,
+    "yhat_lower": 32.8,
+    "yhat_upper": 53.6
+  },
+  {
+    "date": "2026-10-08",
+    "product_id": "P004",
+    "yhat": 55,
+    "yhat_lower": 43.3,
+    "yhat_upper": 66.4
+  },
+  {
+    "date": "2026-10-08",
+    "product_id": "P005",
+    "yhat": 61.2,
+    "yhat_lower": 49.4,
+    "yhat_upper": 73.4
+  },
+  {
+    "date": "2026-10-08",
+    "product_id": "P006",
+    "yhat": 34.9,
+    "yhat_lower": 25.3,
+    "yhat_upper": 44.4
+  },
+  {
+    "date": "2026-10-08",
+    "product_id": "P007",
+    "yhat": 52.2,
+    "yhat_lower": 37.1,
+    "yhat_upper": 68.5
+  },
+  {
+    "date": "2026-10-08",
+    "product_id": "P008",
+    "yhat": 111.5,
+    "yhat_lower": 87.5,
+    "yhat_upper": 133.7
+  },
+  {
+    "date": "2026-10-08",
+    "product_id": "P009",
+    "yhat": 106.1,
+    "yhat_lower": 90.1,
+    "yhat_upper": 123.3
+  },
+  {
+    "date": "2026-10-08",
+    "product_id": "P010",
+    "yhat": 31.3,
+    "yhat_lower": 22,
+    "yhat_upper": 39.8
+  },
+  {
+    "date": "2026-10-08",
+    "product_id": "P011",
+    "yhat": 21.2,
+    "yhat_lower": 13.3,
+    "yhat_upper": 28.9
+  },
+  {
+    "date": "2026-10-08",
+    "product_id": "P012",
+    "yhat": 87.7,
+    "yhat_lower": 70.7,
+    "yhat_upper": 103.1
+  },
+  {
+    "date": "2026-10-08",
+    "product_id": "P013",
+    "yhat": 26.6,
+    "yhat_lower": 18.3,
+    "yhat_upper": 35.4
+  },
+  {
+    "date": "2026-10-08",
+    "product_id": "P014",
+    "yhat": 21.2,
+    "yhat_lower": 11.4,
+    "yhat_upper": 30.8
+  },
+  {
+    "date": "2026-10-08",
+    "product_id": "P015",
+    "yhat": 89.9,
+    "yhat_lower": 75.8,
+    "yhat_upper": 104.4
+  },
+  {
+    "date": "2026-10-09",
+    "product_id": "P001",
+    "yhat": 146.6,
+    "yhat_lower": 125.7,
+    "yhat_upper": 167.6
+  },
+  {
+    "date": "2026-10-09",
+    "product_id": "P002",
+    "yhat": 111.3,
+    "yhat_lower": 95.8,
+    "yhat_upper": 126.6
+  },
+  {
+    "date": "2026-10-09",
+    "product_id": "P003",
+    "yhat": 50.2,
+    "yhat_lower": 39.5,
+    "yhat_upper": 60.6
+  },
+  {
+    "date": "2026-10-09",
+    "product_id": "P004",
+    "yhat": 64.5,
+    "yhat_lower": 53.3,
+    "yhat_upper": 76.8
+  },
+  {
+    "date": "2026-10-09",
+    "product_id": "P005",
+    "yhat": 73.5,
+    "yhat_lower": 61.6,
+    "yhat_upper": 84.8
+  },
+  {
+    "date": "2026-10-09",
+    "product_id": "P006",
+    "yhat": 41,
+    "yhat_lower": 31.4,
+    "yhat_upper": 49.9
+  },
+  {
+    "date": "2026-10-09",
+    "product_id": "P007",
+    "yhat": 61.2,
+    "yhat_lower": 45.1,
+    "yhat_upper": 76.7
+  },
+  {
+    "date": "2026-10-09",
+    "product_id": "P008",
+    "yhat": 139.2,
+    "yhat_lower": 116.3,
+    "yhat_upper": 164.2
+  },
+  {
+    "date": "2026-10-09",
+    "product_id": "P009",
+    "yhat": 124,
+    "yhat_lower": 107.2,
+    "yhat_upper": 140.8
+  },
+  {
+    "date": "2026-10-09",
+    "product_id": "P010",
+    "yhat": 36.3,
+    "yhat_lower": 26.7,
+    "yhat_upper": 46.1
+  },
+  {
+    "date": "2026-10-09",
+    "product_id": "P011",
+    "yhat": 24.3,
+    "yhat_lower": 16.4,
+    "yhat_upper": 31.7
+  },
+  {
+    "date": "2026-10-09",
+    "product_id": "P012",
+    "yhat": 103.7,
+    "yhat_lower": 86.4,
+    "yhat_upper": 121.5
+  },
+  {
+    "date": "2026-10-09",
+    "product_id": "P013",
+    "yhat": 30.2,
+    "yhat_lower": 22.4,
+    "yhat_upper": 39
+  },
+  {
+    "date": "2026-10-09",
+    "product_id": "P014",
+    "yhat": 27,
+    "yhat_lower": 17.4,
+    "yhat_upper": 36.1
+  },
+  {
+    "date": "2026-10-09",
+    "product_id": "P015",
+    "yhat": 104,
+    "yhat_lower": 88.4,
+    "yhat_upper": 118.4
+  },
+  {
+    "date": "2026-10-10",
+    "product_id": "P001",
+    "yhat": 166.2,
+    "yhat_lower": 145.4,
+    "yhat_upper": 185.9
+  },
+  {
+    "date": "2026-10-10",
+    "product_id": "P002",
+    "yhat": 125.4,
+    "yhat_lower": 110.4,
+    "yhat_upper": 140.6
+  },
+  {
+    "date": "2026-10-10",
+    "product_id": "P003",
+    "yhat": 56,
+    "yhat_lower": 45.6,
+    "yhat_upper": 66.1
+  },
+  {
+    "date": "2026-10-10",
+    "product_id": "P004",
+    "yhat": 75.1,
+    "yhat_lower": 63.7,
+    "yhat_upper": 86.8
+  },
+  {
+    "date": "2026-10-10",
+    "product_id": "P005",
+    "yhat": 84.5,
+    "yhat_lower": 72.3,
+    "yhat_upper": 96.4
+  },
+  {
+    "date": "2026-10-10",
+    "product_id": "P006",
+    "yhat": 47.3,
+    "yhat_lower": 37.8,
+    "yhat_upper": 56.2
+  },
+  {
+    "date": "2026-10-10",
+    "product_id": "P007",
+    "yhat": 77.1,
+    "yhat_lower": 61.4,
+    "yhat_upper": 92.9
+  },
+  {
+    "date": "2026-10-10",
+    "product_id": "P008",
+    "yhat": 162.9,
+    "yhat_lower": 141,
+    "yhat_upper": 186
+  },
+  {
+    "date": "2026-10-10",
+    "product_id": "P009",
+    "yhat": 140.4,
+    "yhat_lower": 124.4,
+    "yhat_upper": 156.1
+  },
+  {
+    "date": "2026-10-10",
+    "product_id": "P010",
+    "yhat": 41.9,
+    "yhat_lower": 32.5,
+    "yhat_upper": 51.9
+  },
+  {
+    "date": "2026-10-10",
+    "product_id": "P011",
+    "yhat": 29.3,
+    "yhat_lower": 21.7,
+    "yhat_upper": 36.7
+  },
+  {
+    "date": "2026-10-10",
+    "product_id": "P012",
+    "yhat": 116.1,
+    "yhat_lower": 98.8,
+    "yhat_upper": 131.9
+  },
+  {
+    "date": "2026-10-10",
+    "product_id": "P013",
+    "yhat": 34.3,
+    "yhat_lower": 25.7,
+    "yhat_upper": 42.9
+  },
+  {
+    "date": "2026-10-10",
+    "product_id": "P014",
+    "yhat": 32,
+    "yhat_lower": 21.8,
+    "yhat_upper": 42.1
+  },
+  {
+    "date": "2026-10-10",
+    "product_id": "P015",
+    "yhat": 119.3,
+    "yhat_lower": 104.2,
+    "yhat_upper": 134.6
+  },
+  {
+    "date": "2026-10-11",
+    "product_id": "P001",
+    "yhat": 152,
+    "yhat_lower": 131.4,
+    "yhat_upper": 172.6
+  },
+  {
+    "date": "2026-10-11",
+    "product_id": "P002",
+    "yhat": 116.7,
+    "yhat_lower": 100.6,
+    "yhat_upper": 132.4
+  },
+  {
+    "date": "2026-10-11",
+    "product_id": "P003",
+    "yhat": 54.1,
+    "yhat_lower": 43.4,
+    "yhat_upper": 64.5
+  },
+  {
+    "date": "2026-10-11",
+    "product_id": "P004",
+    "yhat": 67.4,
+    "yhat_lower": 54.8,
+    "yhat_upper": 79.1
+  },
+  {
+    "date": "2026-10-11",
+    "product_id": "P005",
+    "yhat": 76.9,
+    "yhat_lower": 63.6,
+    "yhat_upper": 88
+  },
+  {
+    "date": "2026-10-11",
+    "product_id": "P006",
+    "yhat": 42.5,
+    "yhat_lower": 33.1,
+    "yhat_upper": 51.5
+  },
+  {
+    "date": "2026-10-11",
+    "product_id": "P007",
+    "yhat": 67.5,
+    "yhat_lower": 51.6,
+    "yhat_upper": 82.6
+  },
+  {
+    "date": "2026-10-11",
+    "product_id": "P008",
+    "yhat": 145.9,
+    "yhat_lower": 122.9,
+    "yhat_upper": 168.5
+  },
+  {
+    "date": "2026-10-11",
+    "product_id": "P009",
+    "yhat": 130.4,
+    "yhat_lower": 114.7,
+    "yhat_upper": 147.1
+  },
+  {
+    "date": "2026-10-11",
+    "product_id": "P010",
+    "yhat": 39.6,
+    "yhat_lower": 29.8,
+    "yhat_upper": 49.5
+  },
+  {
+    "date": "2026-10-11",
+    "product_id": "P011",
+    "yhat": 27.4,
+    "yhat_lower": 19.4,
+    "yhat_upper": 35.1
+  },
+  {
+    "date": "2026-10-11",
+    "product_id": "P012",
+    "yhat": 106.6,
+    "yhat_lower": 90.1,
+    "yhat_upper": 123.5
+  },
+  {
+    "date": "2026-10-11",
+    "product_id": "P013",
+    "yhat": 31.6,
+    "yhat_lower": 23.5,
+    "yhat_upper": 39.8
+  },
+  {
+    "date": "2026-10-11",
+    "product_id": "P014",
+    "yhat": 28,
+    "yhat_lower": 18.9,
+    "yhat_upper": 37.3
+  },
+  {
+    "date": "2026-10-11",
+    "product_id": "P015",
+    "yhat": 110.9,
+    "yhat_lower": 95.5,
+    "yhat_upper": 125.1
+  },
+  {
+    "date": "2026-10-12",
+    "product_id": "P001",
+    "yhat": 119.7,
+    "yhat_lower": 99.6,
+    "yhat_upper": 138.4
+  },
+  {
+    "date": "2026-10-12",
+    "product_id": "P002",
+    "yhat": 90.3,
+    "yhat_lower": 76,
+    "yhat_upper": 105.1
+  },
+  {
+    "date": "2026-10-12",
+    "product_id": "P003",
+    "yhat": 40.6,
+    "yhat_lower": 29.7,
+    "yhat_upper": 51
+  },
+  {
+    "date": "2026-10-12",
+    "product_id": "P004",
+    "yhat": 52.2,
+    "yhat_lower": 41.1,
+    "yhat_upper": 63.8
+  },
+  {
+    "date": "2026-10-12",
+    "product_id": "P005",
+    "yhat": 61.1,
+    "yhat_lower": 49,
+    "yhat_upper": 74
+  },
+  {
+    "date": "2026-10-12",
+    "product_id": "P006",
+    "yhat": 34.1,
+    "yhat_lower": 23.7,
+    "yhat_upper": 43.1
+  },
+  {
+    "date": "2026-10-12",
+    "product_id": "P007",
+    "yhat": 45.7,
+    "yhat_lower": 29.4,
+    "yhat_upper": 62.3
+  },
+  {
+    "date": "2026-10-12",
+    "product_id": "P008",
+    "yhat": 100.9,
+    "yhat_lower": 76.5,
+    "yhat_upper": 125.7
+  },
+  {
+    "date": "2026-10-12",
+    "product_id": "P009",
+    "yhat": 100.8,
+    "yhat_lower": 84.7,
+    "yhat_upper": 117.2
+  },
+  {
+    "date": "2026-10-12",
+    "product_id": "P010",
+    "yhat": 29.8,
+    "yhat_lower": 20.3,
+    "yhat_upper": 38.8
+  },
+  {
+    "date": "2026-10-12",
+    "product_id": "P011",
+    "yhat": 21.7,
+    "yhat_lower": 14.3,
+    "yhat_upper": 29.8
+  },
+  {
+    "date": "2026-10-12",
+    "product_id": "P012",
+    "yhat": 85.7,
+    "yhat_lower": 68,
+    "yhat_upper": 101.6
+  },
+  {
+    "date": "2026-10-12",
+    "product_id": "P013",
+    "yhat": 25.3,
+    "yhat_lower": 16.6,
+    "yhat_upper": 34.1
+  },
+  {
+    "date": "2026-10-12",
+    "product_id": "P014",
+    "yhat": 20.5,
+    "yhat_lower": 10.6,
+    "yhat_upper": 30.2
+  },
+  {
+    "date": "2026-10-12",
+    "product_id": "P015",
+    "yhat": 87.7,
+    "yhat_lower": 72.9,
+    "yhat_upper": 101.8
+  },
+  {
+    "date": "2026-10-13",
+    "product_id": "P001",
+    "yhat": 119.1,
+    "yhat_lower": 98.6,
+    "yhat_upper": 138.6
+  },
+  {
+    "date": "2026-10-13",
+    "product_id": "P002",
+    "yhat": 90.6,
+    "yhat_lower": 75.4,
+    "yhat_upper": 106.3
+  },
+  {
+    "date": "2026-10-13",
+    "product_id": "P003",
+    "yhat": 41.2,
+    "yhat_lower": 30.3,
+    "yhat_upper": 52.3
+  },
+  {
+    "date": "2026-10-13",
+    "product_id": "P004",
+    "yhat": 51.6,
+    "yhat_lower": 40.3,
+    "yhat_upper": 64.2
+  },
+  {
+    "date": "2026-10-13",
+    "product_id": "P005",
+    "yhat": 59.5,
+    "yhat_lower": 47.3,
+    "yhat_upper": 71.7
+  },
+  {
+    "date": "2026-10-13",
+    "product_id": "P006",
+    "yhat": 34.7,
+    "yhat_lower": 24.7,
+    "yhat_upper": 44.2
+  },
+  {
+    "date": "2026-10-13",
+    "product_id": "P007",
+    "yhat": 46.6,
+    "yhat_lower": 30.1,
+    "yhat_upper": 61.6
+  },
+  {
+    "date": "2026-10-13",
+    "product_id": "P008",
+    "yhat": 99.9,
+    "yhat_lower": 76.4,
+    "yhat_upper": 123.1
+  },
+  {
+    "date": "2026-10-13",
+    "product_id": "P009",
+    "yhat": 103.4,
+    "yhat_lower": 88.3,
+    "yhat_upper": 119.7
+  },
+  {
+    "date": "2026-10-13",
+    "product_id": "P010",
+    "yhat": 30.6,
+    "yhat_lower": 21.5,
+    "yhat_upper": 38.9
+  },
+  {
+    "date": "2026-10-13",
+    "product_id": "P011",
+    "yhat": 20.6,
+    "yhat_lower": 12.8,
+    "yhat_upper": 28.2
+  },
+  {
+    "date": "2026-10-13",
+    "product_id": "P012",
+    "yhat": 84.1,
+    "yhat_lower": 68.7,
+    "yhat_upper": 100.3
+  },
+  {
+    "date": "2026-10-13",
+    "product_id": "P013",
+    "yhat": 24.1,
+    "yhat_lower": 15.3,
+    "yhat_upper": 33.3
+  },
+  {
+    "date": "2026-10-13",
+    "product_id": "P014",
+    "yhat": 20.2,
+    "yhat_lower": 10.2,
+    "yhat_upper": 29.4
+  },
+  {
+    "date": "2026-10-13",
+    "product_id": "P015",
+    "yhat": 87.4,
+    "yhat_lower": 73.4,
+    "yhat_upper": 102
+  },
+  {
+    "date": "2026-10-14",
+    "product_id": "P001",
+    "yhat": 125.3,
+    "yhat_lower": 104.4,
+    "yhat_upper": 145.5
+  },
+  {
+    "date": "2026-10-14",
+    "product_id": "P002",
+    "yhat": 94.6,
+    "yhat_lower": 78.7,
+    "yhat_upper": 109.8
+  },
+  {
+    "date": "2026-10-14",
+    "product_id": "P003",
+    "yhat": 41.3,
+    "yhat_lower": 31.2,
+    "yhat_upper": 52.5
+  },
+  {
+    "date": "2026-10-14",
+    "product_id": "P004",
+    "yhat": 53,
+    "yhat_lower": 41.5,
+    "yhat_upper": 64.7
+  },
+  {
+    "date": "2026-10-14",
+    "product_id": "P005",
+    "yhat": 62.1,
+    "yhat_lower": 49.2,
+    "yhat_upper": 73.6
+  },
+  {
+    "date": "2026-10-14",
+    "product_id": "P006",
+    "yhat": 34.6,
+    "yhat_lower": 25.6,
+    "yhat_upper": 43.6
+  },
+  {
+    "date": "2026-10-14",
+    "product_id": "P007",
+    "yhat": 99.8,
+    "yhat_lower": 85.6,
+    "yhat_upper": 115.3
+  },
+  {
+    "date": "2026-10-14",
+    "product_id": "P008",
+    "yhat": 103.8,
+    "yhat_lower": 79.5,
+    "yhat_upper": 127.6
+  },
+  {
+    "date": "2026-10-14",
+    "product_id": "P009",
+    "yhat": 102.5,
+    "yhat_lower": 85.9,
+    "yhat_upper": 118.7
+  },
+  {
+    "date": "2026-10-14",
+    "product_id": "P010",
+    "yhat": 29.3,
+    "yhat_lower": 19.8,
+    "yhat_upper": 38.6
+  },
+  {
+    "date": "2026-10-14",
+    "product_id": "P011",
+    "yhat": 20.6,
+    "yhat_lower": 12.6,
+    "yhat_upper": 28.5
+  },
+  {
+    "date": "2026-10-14",
+    "product_id": "P012",
+    "yhat": 86.7,
+    "yhat_lower": 70,
+    "yhat_upper": 104.9
+  },
+  {
+    "date": "2026-10-14",
+    "product_id": "P013",
+    "yhat": 24.5,
+    "yhat_lower": 16,
+    "yhat_upper": 33.5
+  },
+  {
+    "date": "2026-10-14",
+    "product_id": "P014",
+    "yhat": 20.2,
+    "yhat_lower": 10.2,
+    "yhat_upper": 29.7
+  },
+  {
+    "date": "2026-10-14",
+    "product_id": "P015",
+    "yhat": 89.7,
+    "yhat_lower": 76.2,
+    "yhat_upper": 103.6
+  },
+  {
+    "date": "2026-10-15",
+    "product_id": "P001",
+    "yhat": 126.5,
+    "yhat_lower": 104.6,
+    "yhat_upper": 146.3
+  },
+  {
+    "date": "2026-10-15",
+    "product_id": "P002",
+    "yhat": 111.3,
+    "yhat_lower": 95.4,
+    "yhat_upper": 126
+  },
+  {
+    "date": "2026-10-15",
+    "product_id": "P003",
+    "yhat": 48.2,
+    "yhat_lower": 37.7,
+    "yhat_upper": 58.5
+  },
+  {
+    "date": "2026-10-15",
+    "product_id": "P004",
+    "yhat": 69.8,
+    "yhat_lower": 57.4,
+    "yhat_upper": 81.1
+  },
+  {
+    "date": "2026-10-15",
+    "product_id": "P005",
+    "yhat": 78.8,
+    "yhat_lower": 66.6,
+    "yhat_upper": 91.2
+  },
+  {
+    "date": "2026-10-15",
+    "product_id": "P006",
+    "yhat": 29.2,
+    "yhat_lower": 19.4,
+    "yhat_upper": 38.5
+  },
+  {
+    "date": "2026-10-15",
+    "product_id": "P007",
+    "yhat": 87.6,
+    "yhat_lower": 71.1,
+    "yhat_upper": 102.3
+  },
+  {
+    "date": "2026-10-15",
+    "product_id": "P008",
+    "yhat": 83.7,
+    "yhat_lower": 58.9,
+    "yhat_upper": 108.1
+  },
+  {
+    "date": "2026-10-15",
+    "product_id": "P009",
+    "yhat": 107.4,
+    "yhat_lower": 91.7,
+    "yhat_upper": 123.5
+  },
+  {
+    "date": "2026-10-15",
+    "product_id": "P010",
+    "yhat": 33.9,
+    "yhat_lower": 24.5,
+    "yhat_upper": 42.9
+  },
+  {
+    "date": "2026-10-15",
+    "product_id": "P011",
+    "yhat": 27.2,
+    "yhat_lower": 19.8,
+    "yhat_upper": 35.3
+  },
+  {
+    "date": "2026-10-15",
+    "product_id": "P012",
+    "yhat": 80.5,
+    "yhat_lower": 65.2,
+    "yhat_upper": 97.2
+  },
+  {
+    "date": "2026-10-15",
+    "product_id": "P013",
+    "yhat": 30.2,
+    "yhat_lower": 21.7,
+    "yhat_upper": 38.2
+  },
+  {
+    "date": "2026-10-15",
+    "product_id": "P014",
+    "yhat": 21.3,
+    "yhat_lower": 12.3,
+    "yhat_upper": 31.1
+  },
+  {
+    "date": "2026-10-15",
+    "product_id": "P015",
+    "yhat": 93,
+    "yhat_lower": 78.8,
+    "yhat_upper": 108.4
+  },
+  {
+    "date": "2026-10-16",
+    "product_id": "P001",
+    "yhat": 155.5,
+    "yhat_lower": 134.9,
+    "yhat_upper": 176.9
+  },
+  {
+    "date": "2026-10-16",
+    "product_id": "P002",
+    "yhat": 124.3,
+    "yhat_lower": 108.6,
+    "yhat_upper": 139.7
+  },
+  {
+    "date": "2026-10-16",
+    "product_id": "P003",
+    "yhat": 48.4,
+    "yhat_lower": 37.1,
+    "yhat_upper": 59.1
+  },
+  {
+    "date": "2026-10-16",
+    "product_id": "P004",
+    "yhat": 74.6,
+    "yhat_lower": 63.3,
+    "yhat_upper": 85.7
+  },
+  {
+    "date": "2026-10-16",
+    "product_id": "P005",
+    "yhat": 84.8,
+    "yhat_lower": 72.8,
+    "yhat_upper": 97.7
+  },
+  {
+    "date": "2026-10-16",
+    "product_id": "P006",
+    "yhat": 40.4,
+    "yhat_lower": 31.1,
+    "yhat_upper": 49.6
+  },
+  {
+    "date": "2026-10-16",
+    "product_id": "P007",
+    "yhat": 123.3,
+    "yhat_lower": 106.8,
+    "yhat_upper": 138.8
+  },
+  {
+    "date": "2026-10-16",
+    "product_id": "P008",
+    "yhat": 141.3,
+    "yhat_lower": 116.2,
+    "yhat_upper": 164.4
+  },
+  {
+    "date": "2026-10-16",
+    "product_id": "P009",
+    "yhat": 139.9,
+    "yhat_lower": 123.1,
+    "yhat_upper": 156.4
+  },
+  {
+    "date": "2026-10-16",
+    "product_id": "P010",
+    "yhat": 42.9,
+    "yhat_lower": 33.5,
+    "yhat_upper": 51.8
+  },
+  {
+    "date": "2026-10-16",
+    "product_id": "P011",
+    "yhat": 31.1,
+    "yhat_lower": 23.4,
+    "yhat_upper": 38.6
+  },
+  {
+    "date": "2026-10-16",
+    "product_id": "P012",
+    "yhat": 96.8,
+    "yhat_lower": 80.3,
+    "yhat_upper": 112.8
+  },
+  {
+    "date": "2026-10-16",
+    "product_id": "P013",
+    "yhat": 34.1,
+    "yhat_lower": 25.5,
+    "yhat_upper": 42.2
+  },
+  {
+    "date": "2026-10-16",
+    "product_id": "P014",
+    "yhat": 29.7,
+    "yhat_lower": 20.1,
+    "yhat_upper": 39.5
+  },
+  {
+    "date": "2026-10-16",
+    "product_id": "P015",
+    "yhat": 91.2,
+    "yhat_lower": 75.3,
+    "yhat_upper": 106.3
+  },
+  {
+    "date": "2026-10-17",
+    "product_id": "P001",
+    "yhat": 182.6,
+    "yhat_lower": 161.7,
+    "yhat_upper": 201.7
+  },
+  {
+    "date": "2026-10-17",
+    "product_id": "P002",
+    "yhat": 128.7,
+    "yhat_lower": 113,
+    "yhat_upper": 144
+  },
+  {
+    "date": "2026-10-17",
+    "product_id": "P003",
+    "yhat": 63.4,
+    "yhat_lower": 53,
+    "yhat_upper": 74.3
+  },
+  {
+    "date": "2026-10-17",
+    "product_id": "P004",
+    "yhat": 78.9,
+    "yhat_lower": 66.3,
+    "yhat_upper": 89.3
+  },
+  {
+    "date": "2026-10-17",
+    "product_id": "P005",
+    "yhat": 94.2,
+    "yhat_lower": 82.2,
+    "yhat_upper": 107.4
+  },
+  {
+    "date": "2026-10-17",
+    "product_id": "P006",
+    "yhat": 41.4,
+    "yhat_lower": 31.5,
+    "yhat_upper": 50.8
+  },
+  {
+    "date": "2026-10-17",
+    "product_id": "P007",
+    "yhat": 130.3,
+    "yhat_lower": 114.8,
+    "yhat_upper": 145.7
+  },
+  {
+    "date": "2026-10-17",
+    "product_id": "P008",
+    "yhat": 153.6,
+    "yhat_lower": 130.4,
+    "yhat_upper": 178.7
+  },
+  {
+    "date": "2026-10-17",
+    "product_id": "P009",
+    "yhat": 162.9,
+    "yhat_lower": 146.9,
+    "yhat_upper": 178.5
+  },
+  {
+    "date": "2026-10-17",
+    "product_id": "P010",
+    "yhat": 56.7,
+    "yhat_lower": 48.1,
+    "yhat_upper": 65.9
+  },
+  {
+    "date": "2026-10-17",
+    "product_id": "P011",
+    "yhat": 40.3,
+    "yhat_lower": 32.5,
+    "yhat_upper": 47.8
+  },
+  {
+    "date": "2026-10-17",
+    "product_id": "P012",
+    "yhat": 108,
+    "yhat_lower": 90.4,
+    "yhat_upper": 124.9
+  },
+  {
+    "date": "2026-10-17",
+    "product_id": "P013",
+    "yhat": 36.9,
+    "yhat_lower": 28.4,
+    "yhat_upper": 45.6
+  },
+  {
+    "date": "2026-10-17",
+    "product_id": "P014",
+    "yhat": 31,
+    "yhat_lower": 20.9,
+    "yhat_upper": 40.4
+  },
+  {
+    "date": "2026-10-17",
+    "product_id": "P015",
+    "yhat": 125.1,
+    "yhat_lower": 110.8,
+    "yhat_upper": 138.6
+  },
+  {
+    "date": "2026-10-18",
+    "product_id": "P001",
+    "yhat": 154.3,
+    "yhat_lower": 133.1,
+    "yhat_upper": 174.9
+  },
+  {
+    "date": "2026-10-18",
+    "product_id": "P002",
+    "yhat": 128.2,
+    "yhat_lower": 113.5,
+    "yhat_upper": 143.2
+  },
+  {
+    "date": "2026-10-18",
+    "product_id": "P003",
+    "yhat": 54.5,
+    "yhat_lower": 44,
+    "yhat_upper": 65.3
+  },
+  {
+    "date": "2026-10-18",
+    "product_id": "P004",
+    "yhat": 79.5,
+    "yhat_lower": 67.8,
+    "yhat_upper": 91.2
+  },
+  {
+    "date": "2026-10-18",
+    "product_id": "P005",
+    "yhat": 94.9,
+    "yhat_lower": 82.6,
+    "yhat_upper": 107.7
+  },
+  {
+    "date": "2026-10-18",
+    "product_id": "P006",
+    "yhat": 43.4,
+    "yhat_lower": 34,
+    "yhat_upper": 53.3
+  },
+  {
+    "date": "2026-10-18",
+    "product_id": "P007",
+    "yhat": 130.3,
+    "yhat_lower": 114.1,
+    "yhat_upper": 146.8
+  },
+  {
+    "date": "2026-10-18",
+    "product_id": "P008",
+    "yhat": 152.3,
+    "yhat_lower": 129.7,
+    "yhat_upper": 175.2
+  },
+  {
+    "date": "2026-10-18",
+    "product_id": "P009",
+    "yhat": 144,
+    "yhat_lower": 128.6,
+    "yhat_upper": 160.4
+  },
+  {
+    "date": "2026-10-18",
+    "product_id": "P010",
+    "yhat": 55.3,
+    "yhat_lower": 45.9,
+    "yhat_upper": 63.2
+  },
+  {
+    "date": "2026-10-18",
+    "product_id": "P011",
+    "yhat": 42.5,
+    "yhat_lower": 34.7,
+    "yhat_upper": 50.1
+  },
+  {
+    "date": "2026-10-18",
+    "product_id": "P012",
+    "yhat": 109.9,
+    "yhat_lower": 93.3,
+    "yhat_upper": 127
+  },
+  {
+    "date": "2026-10-18",
+    "product_id": "P013",
+    "yhat": 30.2,
+    "yhat_lower": 21.9,
+    "yhat_upper": 38.6
+  },
+  {
+    "date": "2026-10-18",
+    "product_id": "P014",
+    "yhat": 32.6,
+    "yhat_lower": 22.9,
+    "yhat_upper": 41.4
+  },
+  {
+    "date": "2026-10-18",
+    "product_id": "P015",
+    "yhat": 102.6,
+    "yhat_lower": 88,
+    "yhat_upper": 117.3
+  },
+  {
+    "date": "2026-10-19",
+    "product_id": "P001",
+    "yhat": 135,
+    "yhat_lower": 114,
+    "yhat_upper": 156.1
+  },
+  {
+    "date": "2026-10-19",
+    "product_id": "P002",
+    "yhat": 97,
+    "yhat_lower": 82.7,
+    "yhat_upper": 112.7
+  },
+  {
+    "date": "2026-10-19",
+    "product_id": "P003",
+    "yhat": 49.3,
+    "yhat_lower": 38.3,
+    "yhat_upper": 59.5
+  },
+  {
+    "date": "2026-10-19",
+    "product_id": "P004",
+    "yhat": 61.3,
+    "yhat_lower": 48.8,
+    "yhat_upper": 73.4
+  },
+  {
+    "date": "2026-10-19",
+    "product_id": "P005",
+    "yhat": 78.2,
+    "yhat_lower": 65.6,
+    "yhat_upper": 90.2
+  },
+  {
+    "date": "2026-10-19",
+    "product_id": "P006",
+    "yhat": 38.1,
+    "yhat_lower": 29.4,
+    "yhat_upper": 47.8
+  },
+  {
+    "date": "2026-10-19",
+    "product_id": "P007",
+    "yhat": 68.4,
+    "yhat_lower": 52,
+    "yhat_upper": 83.2
+  },
+  {
+    "date": "2026-10-19",
+    "product_id": "P008",
+    "yhat": 89.7,
+    "yhat_lower": 67.1,
+    "yhat_upper": 111.8
+  },
+  {
+    "date": "2026-10-19",
+    "product_id": "P009",
+    "yhat": 108.6,
+    "yhat_lower": 92,
+    "yhat_upper": 123.5
+  },
+  {
+    "date": "2026-10-19",
+    "product_id": "P010",
+    "yhat": 47.4,
+    "yhat_lower": 37.9,
+    "yhat_upper": 56.9
+  },
+  {
+    "date": "2026-10-19",
+    "product_id": "P011",
+    "yhat": 45.7,
+    "yhat_lower": 38.2,
+    "yhat_upper": 53.9
+  },
+  {
+    "date": "2026-10-19",
+    "product_id": "P012",
+    "yhat": 90.3,
+    "yhat_lower": 73.5,
+    "yhat_upper": 108.2
+  },
+  {
+    "date": "2026-10-19",
+    "product_id": "P013",
+    "yhat": 25,
+    "yhat_lower": 16,
+    "yhat_upper": 33.4
+  },
+  {
+    "date": "2026-10-19",
+    "product_id": "P014",
+    "yhat": 19,
+    "yhat_lower": 10.2,
+    "yhat_upper": 28
+  },
+  {
+    "date": "2026-10-19",
+    "product_id": "P015",
+    "yhat": 105.1,
+    "yhat_lower": 90.4,
+    "yhat_upper": 118.9
+  },
+  {
+    "date": "2026-10-20",
+    "product_id": "P001",
+    "yhat": 145.4,
+    "yhat_lower": 123.9,
+    "yhat_upper": 165.3
+  },
+  {
+    "date": "2026-10-20",
+    "product_id": "P002",
+    "yhat": 96.7,
+    "yhat_lower": 81,
+    "yhat_upper": 112.1
+  },
+  {
+    "date": "2026-10-20",
+    "product_id": "P003",
+    "yhat": 55.4,
+    "yhat_lower": 44.6,
+    "yhat_upper": 65.8
+  },
+  {
+    "date": "2026-10-20",
+    "product_id": "P004",
+    "yhat": 69,
+    "yhat_lower": 57.4,
+    "yhat_upper": 81.6
+  },
+  {
+    "date": "2026-10-20",
+    "product_id": "P005",
+    "yhat": 85.5,
+    "yhat_lower": 72.7,
+    "yhat_upper": 98.8
+  },
+  {
+    "date": "2026-10-20",
+    "product_id": "P006",
+    "yhat": 39.6,
+    "yhat_lower": 29.9,
+    "yhat_upper": 48.9
+  },
+  {
+    "date": "2026-10-20",
+    "product_id": "P007",
+    "yhat": 52.8,
+    "yhat_lower": 37.2,
+    "yhat_upper": 67.9
+  },
+  {
+    "date": "2026-10-20",
+    "product_id": "P008",
+    "yhat": 85.2,
+    "yhat_lower": 59.6,
+    "yhat_upper": 107.7
+  },
+  {
+    "date": "2026-10-20",
+    "product_id": "P009",
+    "yhat": 121.1,
+    "yhat_lower": 104.3,
+    "yhat_upper": 137.2
+  },
+  {
+    "date": "2026-10-20",
+    "product_id": "P010",
+    "yhat": 48.5,
+    "yhat_lower": 38.7,
+    "yhat_upper": 57.5
+  },
+  {
+    "date": "2026-10-20",
+    "product_id": "P011",
+    "yhat": 39.2,
+    "yhat_lower": 31.6,
+    "yhat_upper": 46.4
+  },
+  {
+    "date": "2026-10-20",
+    "product_id": "P012",
+    "yhat": 83,
+    "yhat_lower": 67.2,
+    "yhat_upper": 100
+  },
+  {
+    "date": "2026-10-20",
+    "product_id": "P013",
+    "yhat": 22.1,
+    "yhat_lower": 13.3,
+    "yhat_upper": 29.9
+  },
+  {
+    "date": "2026-10-20",
+    "product_id": "P014",
+    "yhat": 15.1,
+    "yhat_lower": 4.7,
+    "yhat_upper": 24.3
+  },
+  {
+    "date": "2026-10-20",
+    "product_id": "P015",
+    "yhat": 100,
+    "yhat_lower": 85.9,
+    "yhat_upper": 114.6
+  },
+  {
+    "date": "2026-10-21",
+    "product_id": "P001",
+    "yhat": 126.5,
+    "yhat_lower": 106.4,
+    "yhat_upper": 147
+  },
+  {
+    "date": "2026-10-21",
+    "product_id": "P002",
+    "yhat": 98.3,
+    "yhat_lower": 82.8,
+    "yhat_upper": 112.5
+  },
+  {
+    "date": "2026-10-21",
+    "product_id": "P003",
+    "yhat": 43.6,
+    "yhat_lower": 33.2,
+    "yhat_upper": 54.2
+  },
+  {
+    "date": "2026-10-21",
+    "product_id": "P004",
+    "yhat": 59.6,
+    "yhat_lower": 48,
+    "yhat_upper": 71.1
+  },
+  {
+    "date": "2026-10-21",
+    "product_id": "P005",
+    "yhat": 71.3,
+    "yhat_lower": 59,
+    "yhat_upper": 84.1
+  },
+  {
+    "date": "2026-10-21",
+    "product_id": "P006",
+    "yhat": 35.8,
+    "yhat_lower": 25.7,
+    "yhat_upper": 45.1
+  },
+  {
+    "date": "2026-10-21",
+    "product_id": "P007",
+    "yhat": 56,
+    "yhat_lower": 41.3,
+    "yhat_upper": 72.1
+  },
+  {
+    "date": "2026-10-21",
+    "product_id": "P008",
+    "yhat": 93.5,
+    "yhat_lower": 68.3,
+    "yhat_upper": 116.9
+  },
+  {
+    "date": "2026-10-21",
+    "product_id": "P009",
+    "yhat": 105.7,
+    "yhat_lower": 89.5,
+    "yhat_upper": 120.9
+  },
+  {
+    "date": "2026-10-21",
+    "product_id": "P010",
+    "yhat": 42.8,
+    "yhat_lower": 34,
+    "yhat_upper": 52.5
+  },
+  {
+    "date": "2026-10-21",
+    "product_id": "P011",
+    "yhat": 37.9,
+    "yhat_lower": 29.8,
+    "yhat_upper": 45.8
+  },
+  {
+    "date": "2026-10-21",
+    "product_id": "P012",
+    "yhat": 79.2,
+    "yhat_lower": 63,
+    "yhat_upper": 95.3
+  },
+  {
+    "date": "2026-10-21",
+    "product_id": "P013",
+    "yhat": 23.9,
+    "yhat_lower": 15.1,
+    "yhat_upper": 32.1
+  },
+  {
+    "date": "2026-10-21",
+    "product_id": "P014",
+    "yhat": 20.7,
+    "yhat_lower": 12.1,
+    "yhat_upper": 29.8
+  },
+  {
+    "date": "2026-10-21",
+    "product_id": "P015",
+    "yhat": 99.2,
+    "yhat_lower": 83.6,
+    "yhat_upper": 114.5
+  },
+  {
+    "date": "2026-10-22",
+    "product_id": "P001",
+    "yhat": 127.8,
+    "yhat_lower": 108.5,
+    "yhat_upper": 146.1
+  },
+  {
+    "date": "2026-10-22",
+    "product_id": "P002",
+    "yhat": 97.8,
+    "yhat_lower": 81.9,
+    "yhat_upper": 113.2
+  },
+  {
+    "date": "2026-10-22",
+    "product_id": "P003",
+    "yhat": 41.4,
+    "yhat_lower": 31.2,
+    "yhat_upper": 51.8
+  },
+  {
+    "date": "2026-10-22",
+    "product_id": "P004",
+    "yhat": 52.8,
+    "yhat_lower": 41.3,
+    "yhat_upper": 64.1
+  },
+  {
+    "date": "2026-10-22",
+    "product_id": "P005",
+    "yhat": 63.7,
+    "yhat_lower": 51.1,
+    "yhat_upper": 75.5
+  },
+  {
+    "date": "2026-10-22",
+    "product_id": "P006",
+    "yhat": 37.9,
+    "yhat_lower": 28.3,
+    "yhat_upper": 47.3
+  },
+  {
+    "date": "2026-10-22",
+    "product_id": "P007",
+    "yhat": 51.1,
+    "yhat_lower": 34.4,
+    "yhat_upper": 66.9
+  },
+  {
+    "date": "2026-10-22",
+    "product_id": "P008",
+    "yhat": 101.1,
+    "yhat_lower": 77.2,
+    "yhat_upper": 125.3
+  },
+  {
+    "date": "2026-10-22",
+    "product_id": "P009",
+    "yhat": 105.4,
+    "yhat_lower": 89.3,
+    "yhat_upper": 122.5
+  },
+  {
+    "date": "2026-10-22",
+    "product_id": "P010",
+    "yhat": 33.4,
+    "yhat_lower": 24.3,
+    "yhat_upper": 42.7
+  },
+  {
+    "date": "2026-10-22",
+    "product_id": "P011",
+    "yhat": 21.9,
+    "yhat_lower": 13.7,
+    "yhat_upper": 28.8
+  },
+  {
+    "date": "2026-10-22",
+    "product_id": "P012",
+    "yhat": 85.9,
+    "yhat_lower": 69.9,
+    "yhat_upper": 103
+  },
+  {
+    "date": "2026-10-22",
+    "product_id": "P013",
+    "yhat": 25.4,
+    "yhat_lower": 17.1,
+    "yhat_upper": 34.2
+  },
+  {
+    "date": "2026-10-22",
+    "product_id": "P014",
+    "yhat": 19.8,
+    "yhat_lower": 10.6,
+    "yhat_upper": 29.3
+  },
+  {
+    "date": "2026-10-22",
+    "product_id": "P015",
+    "yhat": 95.5,
+    "yhat_lower": 80,
+    "yhat_upper": 110.7
+  },
+  {
+    "date": "2026-10-23",
+    "product_id": "P001",
+    "yhat": 151.4,
+    "yhat_lower": 131.2,
+    "yhat_upper": 171.9
+  },
+  {
+    "date": "2026-10-23",
+    "product_id": "P002",
+    "yhat": 114.1,
+    "yhat_lower": 97.8,
+    "yhat_upper": 128.2
+  },
+  {
+    "date": "2026-10-23",
+    "product_id": "P003",
+    "yhat": 47.8,
+    "yhat_lower": 37.5,
+    "yhat_upper": 58.7
+  },
+  {
+    "date": "2026-10-23",
+    "product_id": "P004",
+    "yhat": 62.5,
+    "yhat_lower": 49.7,
+    "yhat_upper": 75
+  },
+  {
+    "date": "2026-10-23",
+    "product_id": "P005",
+    "yhat": 75.6,
+    "yhat_lower": 63.6,
+    "yhat_upper": 86.4
+  },
+  {
+    "date": "2026-10-23",
+    "product_id": "P006",
+    "yhat": 43.8,
+    "yhat_lower": 34.6,
+    "yhat_upper": 53.2
+  },
+  {
+    "date": "2026-10-23",
+    "product_id": "P007",
+    "yhat": 60.4,
+    "yhat_lower": 44.4,
+    "yhat_upper": 77.7
+  },
+  {
+    "date": "2026-10-23",
+    "product_id": "P008",
+    "yhat": 128.6,
+    "yhat_lower": 105.4,
+    "yhat_upper": 151.2
+  },
+  {
+    "date": "2026-10-23",
+    "product_id": "P009",
+    "yhat": 122.8,
+    "yhat_lower": 106.4,
+    "yhat_upper": 138.5
+  },
+  {
+    "date": "2026-10-23",
+    "product_id": "P010",
+    "yhat": 38.2,
+    "yhat_lower": 28.7,
+    "yhat_upper": 48.2
+  },
+  {
+    "date": "2026-10-23",
+    "product_id": "P011",
+    "yhat": 24.6,
+    "yhat_lower": 16.7,
+    "yhat_upper": 32.8
+  },
+  {
+    "date": "2026-10-23",
+    "product_id": "P012",
+    "yhat": 102.3,
+    "yhat_lower": 84.9,
+    "yhat_upper": 118.7
+  },
+  {
+    "date": "2026-10-23",
+    "product_id": "P013",
+    "yhat": 29.1,
+    "yhat_lower": 20.8,
+    "yhat_upper": 37.2
+  },
+  {
+    "date": "2026-10-23",
+    "product_id": "P014",
+    "yhat": 25.8,
+    "yhat_lower": 15.5,
+    "yhat_upper": 35.1
+  },
+  {
+    "date": "2026-10-23",
+    "product_id": "P015",
+    "yhat": 109.5,
+    "yhat_lower": 95.1,
+    "yhat_upper": 124
+  },
+  {
+    "date": "2026-10-24",
+    "product_id": "P001",
+    "yhat": 171.7,
+    "yhat_lower": 152.1,
+    "yhat_upper": 191.5
+  },
+  {
+    "date": "2026-10-24",
+    "product_id": "P002",
+    "yhat": 127.9,
+    "yhat_lower": 112,
+    "yhat_upper": 143.2
+  },
+  {
+    "date": "2026-10-24",
+    "product_id": "P003",
+    "yhat": 53.7,
+    "yhat_lower": 42.8,
+    "yhat_upper": 64.4
+  },
+  {
+    "date": "2026-10-24",
+    "product_id": "P004",
+    "yhat": 73.4,
+    "yhat_lower": 61.8,
+    "yhat_upper": 85
+  },
+  {
+    "date": "2026-10-24",
+    "product_id": "P005",
+    "yhat": 86.3,
+    "yhat_lower": 74.3,
+    "yhat_upper": 97.6
+  },
+  {
+    "date": "2026-10-24",
+    "product_id": "P006",
+    "yhat": 49.9,
+    "yhat_lower": 40.8,
+    "yhat_upper": 58.4
+  },
+  {
+    "date": "2026-10-24",
+    "product_id": "P007",
+    "yhat": 76.4,
+    "yhat_lower": 60.6,
+    "yhat_upper": 92.7
+  },
+  {
+    "date": "2026-10-24",
+    "product_id": "P008",
+    "yhat": 152.3,
+    "yhat_lower": 127.8,
+    "yhat_upper": 174.9
+  },
+  {
+    "date": "2026-10-24",
+    "product_id": "P009",
+    "yhat": 138.8,
+    "yhat_lower": 122.3,
+    "yhat_upper": 155.2
+  },
+  {
+    "date": "2026-10-24",
+    "product_id": "P010",
+    "yhat": 43.6,
+    "yhat_lower": 33.9,
+    "yhat_upper": 53
+  },
+  {
+    "date": "2026-10-24",
+    "product_id": "P011",
+    "yhat": 29.3,
+    "yhat_lower": 21,
+    "yhat_upper": 37.3
+  },
+  {
+    "date": "2026-10-24",
+    "product_id": "P012",
+    "yhat": 115.2,
+    "yhat_lower": 98.8,
+    "yhat_upper": 131.3
+  },
+  {
+    "date": "2026-10-24",
+    "product_id": "P013",
+    "yhat": 33.4,
+    "yhat_lower": 24.8,
+    "yhat_upper": 41.5
+  },
+  {
+    "date": "2026-10-24",
+    "product_id": "P014",
+    "yhat": 30.8,
+    "yhat_lower": 21.3,
+    "yhat_upper": 40
+  },
+  {
+    "date": "2026-10-24",
+    "product_id": "P015",
+    "yhat": 124.7,
+    "yhat_lower": 110.6,
+    "yhat_upper": 138.5
+  },
+  {
+    "date": "2026-10-25",
+    "product_id": "P001",
+    "yhat": 158.1,
+    "yhat_lower": 136.2,
+    "yhat_upper": 178.7
+  },
+  {
+    "date": "2026-10-25",
+    "product_id": "P002",
+    "yhat": 118.8,
+    "yhat_lower": 103,
+    "yhat_upper": 134.3
+  },
+  {
+    "date": "2026-10-25",
+    "product_id": "P003",
+    "yhat": 52,
+    "yhat_lower": 41.5,
+    "yhat_upper": 63.6
+  },
+  {
+    "date": "2026-10-25",
+    "product_id": "P004",
+    "yhat": 66,
+    "yhat_lower": 55.2,
+    "yhat_upper": 77.8
+  },
+  {
+    "date": "2026-10-25",
+    "product_id": "P005",
+    "yhat": 78.3,
+    "yhat_lower": 66,
+    "yhat_upper": 90.9
+  },
+  {
+    "date": "2026-10-25",
+    "product_id": "P006",
+    "yhat": 44.9,
+    "yhat_lower": 35.6,
+    "yhat_upper": 54.5
+  },
+  {
+    "date": "2026-10-25",
+    "product_id": "P007",
+    "yhat": 66.9,
+    "yhat_lower": 51.3,
+    "yhat_upper": 82.4
+  },
+  {
+    "date": "2026-10-25",
+    "product_id": "P008",
+    "yhat": 135.1,
+    "yhat_lower": 111.1,
+    "yhat_upper": 158.3
+  },
+  {
+    "date": "2026-10-25",
+    "product_id": "P009",
+    "yhat": 128.4,
+    "yhat_lower": 111,
+    "yhat_upper": 145
+  },
+  {
+    "date": "2026-10-25",
+    "product_id": "P010",
+    "yhat": 41.1,
+    "yhat_lower": 32,
+    "yhat_upper": 51
+  },
+  {
+    "date": "2026-10-25",
+    "product_id": "P011",
+    "yhat": 27.1,
+    "yhat_lower": 19.6,
+    "yhat_upper": 33.9
+  },
+  {
+    "date": "2026-10-25",
+    "product_id": "P012",
+    "yhat": 106.1,
+    "yhat_lower": 88.5,
+    "yhat_upper": 123.5
+  },
+  {
+    "date": "2026-10-25",
+    "product_id": "P013",
+    "yhat": 30.8,
+    "yhat_lower": 21.9,
+    "yhat_upper": 39.1
+  },
+  {
+    "date": "2026-10-25",
+    "product_id": "P014",
+    "yhat": 26.9,
+    "yhat_lower": 18.1,
+    "yhat_upper": 36.1
+  },
+  {
+    "date": "2026-10-25",
+    "product_id": "P015",
+    "yhat": 116.1,
+    "yhat_lower": 101.3,
+    "yhat_upper": 130.7
+  },
+  {
+    "date": "2026-10-26",
+    "product_id": "P001",
+    "yhat": 126.2,
+    "yhat_lower": 104.8,
+    "yhat_upper": 145.7
+  },
+  {
+    "date": "2026-10-26",
+    "product_id": "P002",
+    "yhat": 92.1,
+    "yhat_lower": 76.6,
+    "yhat_upper": 106.9
+  },
+  {
+    "date": "2026-10-26",
+    "product_id": "P003",
+    "yhat": 38.8,
+    "yhat_lower": 28.2,
+    "yhat_upper": 50.6
+  },
+  {
+    "date": "2026-10-26",
+    "product_id": "P004",
+    "yhat": 51.1,
+    "yhat_lower": 39.9,
+    "yhat_upper": 62.7
+  },
+  {
+    "date": "2026-10-26",
+    "product_id": "P005",
+    "yhat": 62.2,
+    "yhat_lower": 49.8,
+    "yhat_upper": 74.5
+  },
+  {
+    "date": "2026-10-26",
+    "product_id": "P006",
+    "yhat": 36.4,
+    "yhat_lower": 27.1,
+    "yhat_upper": 46
+  },
+  {
+    "date": "2026-10-26",
+    "product_id": "P007",
+    "yhat": 45.2,
+    "yhat_lower": 29.6,
+    "yhat_upper": 61
+  },
+  {
+    "date": "2026-10-26",
+    "product_id": "P008",
+    "yhat": 90,
+    "yhat_lower": 67,
+    "yhat_upper": 113
+  },
+  {
+    "date": "2026-10-26",
+    "product_id": "P009",
+    "yhat": 98.6,
+    "yhat_lower": 83,
+    "yhat_upper": 114.4
+  },
+  {
+    "date": "2026-10-26",
+    "product_id": "P010",
+    "yhat": 31,
+    "yhat_lower": 21.4,
+    "yhat_upper": 40.4
+  },
+  {
+    "date": "2026-10-26",
+    "product_id": "P011",
+    "yhat": 21.1,
+    "yhat_lower": 13.1,
+    "yhat_upper": 28.8
+  },
+  {
+    "date": "2026-10-26",
+    "product_id": "P012",
+    "yhat": 85.6,
+    "yhat_lower": 69.3,
+    "yhat_upper": 101.8
+  },
+  {
+    "date": "2026-10-26",
+    "product_id": "P013",
+    "yhat": 24.7,
+    "yhat_lower": 16.5,
+    "yhat_upper": 33.3
+  },
+  {
+    "date": "2026-10-26",
+    "product_id": "P014",
+    "yhat": 19.5,
+    "yhat_lower": 10.6,
+    "yhat_upper": 29.1
+  },
+  {
+    "date": "2026-10-26",
+    "product_id": "P015",
+    "yhat": 92.8,
+    "yhat_lower": 77.1,
+    "yhat_upper": 106.9
+  },
+  {
+    "date": "2026-10-27",
+    "product_id": "P001",
+    "yhat": 125.9,
+    "yhat_lower": 105,
+    "yhat_upper": 146.9
+  },
+  {
+    "date": "2026-10-27",
+    "product_id": "P002",
+    "yhat": 92.2,
+    "yhat_lower": 76.9,
+    "yhat_upper": 108.2
+  },
+  {
+    "date": "2026-10-27",
+    "product_id": "P003",
+    "yhat": 39.7,
+    "yhat_lower": 29.6,
+    "yhat_upper": 50.8
+  },
+  {
+    "date": "2026-10-27",
+    "product_id": "P004",
+    "yhat": 50.9,
+    "yhat_lower": 39.1,
+    "yhat_upper": 62.5
+  },
+  {
+    "date": "2026-10-27",
+    "product_id": "P005",
+    "yhat": 60.2,
+    "yhat_lower": 47.3,
+    "yhat_upper": 72.3
+  },
+  {
+    "date": "2026-10-27",
+    "product_id": "P006",
+    "yhat": 36.7,
+    "yhat_lower": 27.2,
+    "yhat_upper": 46.8
+  },
+  {
+    "date": "2026-10-27",
+    "product_id": "P007",
+    "yhat": 46.2,
+    "yhat_lower": 31.8,
+    "yhat_upper": 62.2
+  },
+  {
+    "date": "2026-10-27",
+    "product_id": "P008",
+    "yhat": 89,
+    "yhat_lower": 66,
+    "yhat_upper": 112.2
+  },
+  {
+    "date": "2026-10-27",
+    "product_id": "P009",
+    "yhat": 100.9,
+    "yhat_lower": 84.1,
+    "yhat_upper": 117.4
+  },
+  {
+    "date": "2026-10-27",
+    "product_id": "P010",
+    "yhat": 31.5,
+    "yhat_lower": 22.5,
+    "yhat_upper": 41
+  },
+  {
+    "date": "2026-10-27",
+    "product_id": "P011",
+    "yhat": 19.7,
+    "yhat_lower": 12.1,
+    "yhat_upper": 27.4
+  },
+  {
+    "date": "2026-10-27",
+    "product_id": "P012",
+    "yhat": 84.5,
+    "yhat_lower": 67.8,
+    "yhat_upper": 101.6
+  },
+  {
+    "date": "2026-10-27",
+    "product_id": "P013",
+    "yhat": 23.7,
+    "yhat_lower": 15.3,
+    "yhat_upper": 32.5
+  },
+  {
+    "date": "2026-10-27",
+    "product_id": "P014",
+    "yhat": 19.4,
+    "yhat_lower": 10.1,
+    "yhat_upper": 29.4
+  },
+  {
+    "date": "2026-10-27",
+    "product_id": "P015",
+    "yhat": 92.2,
+    "yhat_lower": 77.7,
+    "yhat_upper": 106.8
+  },
+  {
+    "date": "2026-10-28",
+    "product_id": "P001",
+    "yhat": 132.4,
+    "yhat_lower": 112.8,
+    "yhat_upper": 152.2
+  },
+  {
+    "date": "2026-10-28",
+    "product_id": "P002",
+    "yhat": 95.9,
+    "yhat_lower": 79.8,
+    "yhat_upper": 110.6
+  },
+  {
+    "date": "2026-10-28",
+    "product_id": "P003",
+    "yhat": 40.1,
+    "yhat_lower": 28.8,
+    "yhat_upper": 51.1
+  },
+  {
+    "date": "2026-10-28",
+    "product_id": "P004",
+    "yhat": 52.7,
+    "yhat_lower": 40.5,
+    "yhat_upper": 63.5
+  },
+  {
+    "date": "2026-10-28",
+    "product_id": "P005",
+    "yhat": 62.6,
+    "yhat_lower": 49.4,
+    "yhat_upper": 74.6
+  },
+  {
+    "date": "2026-10-28",
+    "product_id": "P006",
+    "yhat": 36.5,
+    "yhat_lower": 26.7,
+    "yhat_upper": 46
+  },
+  {
+    "date": "2026-10-28",
+    "product_id": "P007",
+    "yhat": 47.8,
+    "yhat_lower": 32.3,
+    "yhat_upper": 63.4
+  },
+  {
+    "date": "2026-10-28",
+    "product_id": "P008",
+    "yhat": 93,
+    "yhat_lower": 69.2,
+    "yhat_upper": 116.6
+  },
+  {
+    "date": "2026-10-28",
+    "product_id": "P009",
+    "yhat": 100,
+    "yhat_lower": 84.1,
+    "yhat_upper": 117.4
+  },
+  {
+    "date": "2026-10-28",
+    "product_id": "P010",
+    "yhat": 30,
+    "yhat_lower": 20.8,
+    "yhat_upper": 39.8
+  },
+  {
+    "date": "2026-10-28",
+    "product_id": "P011",
+    "yhat": 19.5,
+    "yhat_lower": 11.3,
+    "yhat_upper": 26.6
+  },
+  {
+    "date": "2026-10-28",
+    "product_id": "P012",
+    "yhat": 87.6,
+    "yhat_lower": 70,
+    "yhat_upper": 104.7
+  },
+  {
+    "date": "2026-10-28",
+    "product_id": "P013",
+    "yhat": 24.4,
+    "yhat_lower": 16.2,
+    "yhat_upper": 32.2
+  },
+  {
+    "date": "2026-10-28",
+    "product_id": "P014",
+    "yhat": 19.5,
+    "yhat_lower": 10.1,
+    "yhat_upper": 28.9
+  },
+  {
+    "date": "2026-10-28",
+    "product_id": "P015",
+    "yhat": 94.2,
+    "yhat_lower": 79.6,
+    "yhat_upper": 108.7
+  },
+  {
+    "date": "2026-10-29",
+    "product_id": "P001",
+    "yhat": 131.8,
+    "yhat_lower": 110.6,
+    "yhat_upper": 152.3
+  },
+  {
+    "date": "2026-10-29",
+    "product_id": "P002",
+    "yhat": 98.1,
+    "yhat_lower": 82.2,
+    "yhat_upper": 113.8
+  },
+  {
+    "date": "2026-10-29",
+    "product_id": "P003",
+    "yhat": 41.7,
+    "yhat_lower": 31.8,
+    "yhat_upper": 52.9
+  },
+  {
+    "date": "2026-10-29",
+    "product_id": "P004",
+    "yhat": 53.9,
+    "yhat_lower": 42.8,
+    "yhat_upper": 65.1
+  },
+  {
+    "date": "2026-10-29",
+    "product_id": "P005",
+    "yhat": 63.4,
+    "yhat_lower": 51.4,
+    "yhat_upper": 76.6
+  },
+  {
+    "date": "2026-10-29",
+    "product_id": "P006",
+    "yhat": 38.3,
+    "yhat_lower": 28.9,
+    "yhat_upper": 48
+  },
+  {
+    "date": "2026-10-29",
+    "product_id": "P007",
+    "yhat": 51.2,
+    "yhat_lower": 35.2,
+    "yhat_upper": 66.9
+  },
+  {
+    "date": "2026-10-29",
+    "product_id": "P008",
+    "yhat": 96.2,
+    "yhat_lower": 73.4,
+    "yhat_upper": 119.8
+  },
+  {
+    "date": "2026-10-29",
+    "product_id": "P009",
+    "yhat": 104.3,
+    "yhat_lower": 88,
+    "yhat_upper": 120.1
+  },
+  {
+    "date": "2026-10-29",
+    "product_id": "P010",
+    "yhat": 33,
+    "yhat_lower": 24.1,
+    "yhat_upper": 42.4
+  },
+  {
+    "date": "2026-10-29",
+    "product_id": "P011",
+    "yhat": 20.8,
+    "yhat_lower": 13.8,
+    "yhat_upper": 28.7
+  },
+  {
+    "date": "2026-10-29",
+    "product_id": "P012",
+    "yhat": 87.5,
+    "yhat_lower": 71.5,
+    "yhat_upper": 104.3
+  },
+  {
+    "date": "2026-10-29",
+    "product_id": "P013",
+    "yhat": 26,
+    "yhat_lower": 17.3,
+    "yhat_upper": 34.1
+  },
+  {
+    "date": "2026-10-29",
+    "product_id": "P014",
+    "yhat": 19.8,
+    "yhat_lower": 10,
+    "yhat_upper": 29.7
+  },
+  {
+    "date": "2026-10-29",
+    "product_id": "P015",
+    "yhat": 96.9,
+    "yhat_lower": 82.8,
+    "yhat_upper": 111.8
+  },
+  {
+    "date": "2026-10-30",
+    "product_id": "P001",
+    "yhat": 155.3,
+    "yhat_lower": 136.1,
+    "yhat_upper": 176.5
+  },
+  {
+    "date": "2026-10-30",
+    "product_id": "P002",
+    "yhat": 114.4,
+    "yhat_lower": 98.6,
+    "yhat_upper": 129.1
+  },
+  {
+    "date": "2026-10-30",
+    "product_id": "P003",
+    "yhat": 48.4,
+    "yhat_lower": 38.4,
+    "yhat_upper": 59.6
+  },
+  {
+    "date": "2026-10-30",
+    "product_id": "P004",
+    "yhat": 63.9,
+    "yhat_lower": 52.7,
+    "yhat_upper": 75.5
+  },
+  {
+    "date": "2026-10-30",
+    "product_id": "P005",
+    "yhat": 75.3,
+    "yhat_lower": 61.8,
+    "yhat_upper": 87.6
+  },
+  {
+    "date": "2026-10-30",
+    "product_id": "P006",
+    "yhat": 44.2,
+    "yhat_lower": 34.3,
+    "yhat_upper": 53
+  },
+  {
+    "date": "2026-10-30",
+    "product_id": "P007",
+    "yhat": 60.4,
+    "yhat_lower": 45.2,
+    "yhat_upper": 76.5
+  },
+  {
+    "date": "2026-10-30",
+    "product_id": "P008",
+    "yhat": 124,
+    "yhat_lower": 101.8,
+    "yhat_upper": 145.8
+  },
+  {
+    "date": "2026-10-30",
+    "product_id": "P009",
+    "yhat": 122.1,
+    "yhat_lower": 107,
+    "yhat_upper": 138.1
+  },
+  {
+    "date": "2026-10-30",
+    "product_id": "P010",
+    "yhat": 37.7,
+    "yhat_lower": 28,
+    "yhat_upper": 46.8
+  },
+  {
+    "date": "2026-10-30",
+    "product_id": "P011",
+    "yhat": 23.6,
+    "yhat_lower": 15.9,
+    "yhat_upper": 31.4
+  },
+  {
+    "date": "2026-10-30",
+    "product_id": "P012",
+    "yhat": 104.1,
+    "yhat_lower": 88.6,
+    "yhat_upper": 121.3
+  },
+  {
+    "date": "2026-10-30",
+    "product_id": "P013",
+    "yhat": 29.8,
+    "yhat_lower": 21.3,
+    "yhat_upper": 38.3
+  },
+  {
+    "date": "2026-10-30",
+    "product_id": "P014",
+    "yhat": 25.8,
+    "yhat_lower": 16.4,
+    "yhat_upper": 35.3
+  },
+  {
+    "date": "2026-10-30",
+    "product_id": "P015",
+    "yhat": 110.7,
+    "yhat_lower": 95.9,
+    "yhat_upper": 125
+  },
+  {
+    "date": "2026-10-31",
+    "product_id": "P001",
+    "yhat": 175.4,
+    "yhat_lower": 154.4,
+    "yhat_upper": 194.8
+  },
+  {
+    "date": "2026-10-31",
+    "product_id": "P002",
+    "yhat": 128.2,
+    "yhat_lower": 113.7,
+    "yhat_upper": 143
+  },
+  {
+    "date": "2026-10-31",
+    "product_id": "P003",
+    "yhat": 54.6,
+    "yhat_lower": 44.5,
+    "yhat_upper": 65
+  },
+  {
+    "date": "2026-10-31",
+    "product_id": "P004",
+    "yhat": 75.2,
+    "yhat_lower": 63.1,
+    "yhat_upper": 86.4
+  },
+  {
+    "date": "2026-10-31",
+    "product_id": "P005",
+    "yhat": 86.1,
+    "yhat_lower": 74.4,
+    "yhat_upper": 98.2
+  },
+  {
+    "date": "2026-10-31",
+    "product_id": "P006",
+    "yhat": 50.3,
+    "yhat_lower": 40.3,
+    "yhat_upper": 59.7
+  },
+  {
+    "date": "2026-10-31",
+    "product_id": "P007",
+    "yhat": 76.4,
+    "yhat_lower": 60.7,
+    "yhat_upper": 93.2
+  },
+  {
+    "date": "2026-10-31",
+    "product_id": "P008",
+    "yhat": 148,
+    "yhat_lower": 125.3,
+    "yhat_upper": 170.3
+  },
+  {
+    "date": "2026-10-31",
+    "product_id": "P009",
+    "yhat": 138.5,
+    "yhat_lower": 122.1,
+    "yhat_upper": 154.8
+  },
+  {
+    "date": "2026-10-31",
+    "product_id": "P010",
+    "yhat": 43,
+    "yhat_lower": 33,
+    "yhat_upper": 52.3
+  },
+  {
+    "date": "2026-10-31",
+    "product_id": "P011",
+    "yhat": 28.3,
+    "yhat_lower": 21,
+    "yhat_upper": 35.7
+  },
+  {
+    "date": "2026-10-31",
+    "product_id": "P012",
+    "yhat": 117.2,
+    "yhat_lower": 100.8,
+    "yhat_upper": 133.9
+  },
+  {
+    "date": "2026-10-31",
+    "product_id": "P013",
+    "yhat": 34.2,
+    "yhat_lower": 26.4,
+    "yhat_upper": 42.6
+  },
+  {
+    "date": "2026-10-31",
+    "product_id": "P014",
+    "yhat": 30.9,
+    "yhat_lower": 21.7,
+    "yhat_upper": 40.3
+  },
+  {
+    "date": "2026-10-31",
+    "product_id": "P015",
+    "yhat": 125.7,
+    "yhat_lower": 111.1,
+    "yhat_upper": 140.5
+  },
+  {
+    "date": "2026-11-01",
+    "product_id": "P001",
+    "yhat": 161.5,
+    "yhat_lower": 140.8,
+    "yhat_upper": 184
+  },
+  {
+    "date": "2026-11-01",
+    "product_id": "P002",
+    "yhat": 119.2,
+    "yhat_lower": 103.5,
+    "yhat_upper": 134.6
+  },
+  {
+    "date": "2026-11-01",
+    "product_id": "P003",
+    "yhat": 53,
+    "yhat_lower": 42.3,
+    "yhat_upper": 63.8
+  },
+  {
+    "date": "2026-11-01",
+    "product_id": "P004",
+    "yhat": 68,
+    "yhat_lower": 55.5,
+    "yhat_upper": 80
+  },
+  {
+    "date": "2026-11-01",
+    "product_id": "P005",
+    "yhat": 78.1,
+    "yhat_lower": 65.4,
+    "yhat_upper": 91
+  },
+  {
+    "date": "2026-11-01",
+    "product_id": "P006",
+    "yhat": 45.3,
+    "yhat_lower": 35.5,
+    "yhat_upper": 54.8
+  },
+  {
+    "date": "2026-11-01",
+    "product_id": "P007",
+    "yhat": 66.8,
+    "yhat_lower": 51.1,
+    "yhat_upper": 83.4
+  },
+  {
+    "date": "2026-11-01",
+    "product_id": "P008",
+    "yhat": 131.1,
+    "yhat_lower": 107.4,
+    "yhat_upper": 153.6
+  },
+  {
+    "date": "2026-11-01",
+    "product_id": "P009",
+    "yhat": 185.9,
+    "yhat_lower": 170.6,
+    "yhat_upper": 201.5
+  },
+  {
+    "date": "2026-11-01",
+    "product_id": "P010",
+    "yhat": 40.4,
+    "yhat_lower": 31.7,
+    "yhat_upper": 49.6
+  },
+  {
+    "date": "2026-11-01",
+    "product_id": "P011",
+    "yhat": 26.1,
+    "yhat_lower": 18.2,
+    "yhat_upper": 33.8
+  },
+  {
+    "date": "2026-11-01",
+    "product_id": "P012",
+    "yhat": 108.3,
+    "yhat_lower": 91.3,
+    "yhat_upper": 124
+  },
+  {
+    "date": "2026-11-01",
+    "product_id": "P013",
+    "yhat": 31.8,
+    "yhat_lower": 23.9,
+    "yhat_upper": 40.1
+  },
+  {
+    "date": "2026-11-01",
+    "product_id": "P014",
+    "yhat": 27.1,
+    "yhat_lower": 17.3,
+    "yhat_upper": 36.7
+  },
+  {
+    "date": "2026-11-01",
+    "product_id": "P015",
+    "yhat": 116.9,
+    "yhat_lower": 102.8,
+    "yhat_upper": 131.8
+  },
+  {
+    "date": "2026-11-02",
+    "product_id": "P001",
+    "yhat": 129.3,
+    "yhat_lower": 109.8,
+    "yhat_upper": 150.1
+  },
+  {
+    "date": "2026-11-02",
+    "product_id": "P002",
+    "yhat": 92.6,
+    "yhat_lower": 77.6,
+    "yhat_upper": 107.9
+  },
+  {
+    "date": "2026-11-02",
+    "product_id": "P003",
+    "yhat": 39.9,
+    "yhat_lower": 29.4,
+    "yhat_upper": 50.1
+  },
+  {
+    "date": "2026-11-02",
+    "product_id": "P004",
+    "yhat": 53.4,
+    "yhat_lower": 41.1,
+    "yhat_upper": 65.2
+  },
+  {
+    "date": "2026-11-02",
+    "product_id": "P005",
+    "yhat": 62,
+    "yhat_lower": 49.4,
+    "yhat_upper": 74.7
+  },
+  {
+    "date": "2026-11-02",
+    "product_id": "P006",
+    "yhat": 36.7,
+    "yhat_lower": 27.1,
+    "yhat_upper": 46.1
+  },
+  {
+    "date": "2026-11-02",
+    "product_id": "P007",
+    "yhat": 44.9,
+    "yhat_lower": 27.8,
+    "yhat_upper": 61.2
+  },
+  {
+    "date": "2026-11-02",
+    "product_id": "P008",
+    "yhat": 86.3,
+    "yhat_lower": 63.7,
+    "yhat_upper": 110.6
+  },
+  {
+    "date": "2026-11-02",
+    "product_id": "P009",
+    "yhat": 156.4,
+    "yhat_lower": 140.5,
+    "yhat_upper": 171.8
+  },
+  {
+    "date": "2026-11-02",
+    "product_id": "P010",
+    "yhat": 30.3,
+    "yhat_lower": 20.4,
+    "yhat_upper": 39.3
+  },
+  {
+    "date": "2026-11-02",
+    "product_id": "P011",
+    "yhat": 20.2,
+    "yhat_lower": 12.1,
+    "yhat_upper": 28.1
+  },
+  {
+    "date": "2026-11-02",
+    "product_id": "P012",
+    "yhat": 87.8,
+    "yhat_lower": 70.8,
+    "yhat_upper": 104.5
+  },
+  {
+    "date": "2026-11-02",
+    "product_id": "P013",
+    "yhat": 25.8,
+    "yhat_lower": 17.6,
+    "yhat_upper": 34.9
+  },
+  {
+    "date": "2026-11-02",
+    "product_id": "P014",
+    "yhat": 19.7,
+    "yhat_lower": 10.7,
+    "yhat_upper": 29.5
+  },
+  {
+    "date": "2026-11-02",
+    "product_id": "P015",
+    "yhat": 93.3,
+    "yhat_lower": 78.6,
+    "yhat_upper": 106.9
+  },
+  {
+    "date": "2026-11-03",
+    "product_id": "P001",
+    "yhat": 127.1,
+    "yhat_lower": 107.6,
+    "yhat_upper": 148.9
+  },
+  {
+    "date": "2026-11-03",
+    "product_id": "P002",
+    "yhat": 97.9,
+    "yhat_lower": 83,
+    "yhat_upper": 114.3
+  },
+  {
+    "date": "2026-11-03",
+    "product_id": "P003",
+    "yhat": 45.5,
+    "yhat_lower": 34.9,
+    "yhat_upper": 56
+  },
+  {
+    "date": "2026-11-03",
+    "product_id": "P004",
+    "yhat": 75,
+    "yhat_lower": 63.3,
+    "yhat_upper": 86.8
+  },
+  {
+    "date": "2026-11-03",
+    "product_id": "P005",
+    "yhat": 64,
+    "yhat_lower": 50.8,
+    "yhat_upper": 76.6
+  },
+  {
+    "date": "2026-11-03",
+    "product_id": "P006",
+    "yhat": 38.9,
+    "yhat_lower": 30.2,
+    "yhat_upper": 48.9
+  },
+  {
+    "date": "2026-11-03",
+    "product_id": "P007",
+    "yhat": 49.6,
+    "yhat_lower": 33.8,
+    "yhat_upper": 65.1
+  },
+  {
+    "date": "2026-11-03",
+    "product_id": "P008",
+    "yhat": 87.4,
+    "yhat_lower": 63.7,
+    "yhat_upper": 109.8
+  },
+  {
+    "date": "2026-11-03",
+    "product_id": "P009",
+    "yhat": 174.7,
+    "yhat_lower": 158,
+    "yhat_upper": 190.8
+  },
+  {
+    "date": "2026-11-03",
+    "product_id": "P010",
+    "yhat": 35.2,
+    "yhat_lower": 26.3,
+    "yhat_upper": 45.3
+  },
+  {
+    "date": "2026-11-03",
+    "product_id": "P011",
+    "yhat": 27,
+    "yhat_lower": 19.3,
+    "yhat_upper": 35.2
+  },
+  {
+    "date": "2026-11-03",
+    "product_id": "P012",
+    "yhat": 82.7,
+    "yhat_lower": 65.9,
+    "yhat_upper": 99
+  },
+  {
+    "date": "2026-11-03",
+    "product_id": "P013",
+    "yhat": 30.2,
+    "yhat_lower": 21.6,
+    "yhat_upper": 39.1
+  },
+  {
+    "date": "2026-11-03",
+    "product_id": "P014",
+    "yhat": 19.5,
+    "yhat_lower": 10.3,
+    "yhat_upper": 29.2
+  },
+  {
+    "date": "2026-11-03",
+    "product_id": "P015",
+    "yhat": 83.2,
+    "yhat_lower": 69.2,
+    "yhat_upper": 97.8
+  },
+  {
+    "date": "2026-11-04",
+    "product_id": "P001",
+    "yhat": 141.1,
+    "yhat_lower": 120.1,
+    "yhat_upper": 161
+  },
+  {
+    "date": "2026-11-04",
+    "product_id": "P002",
+    "yhat": 93.4,
+    "yhat_lower": 78.3,
+    "yhat_upper": 108.3
+  },
+  {
+    "date": "2026-11-04",
+    "product_id": "P003",
+    "yhat": 41.8,
+    "yhat_lower": 31.9,
+    "yhat_upper": 52.2
+  },
+  {
+    "date": "2026-11-04",
+    "product_id": "P004",
+    "yhat": 69,
+    "yhat_lower": 58.1,
+    "yhat_upper": 81.3
+  },
+  {
+    "date": "2026-11-04",
+    "product_id": "P005",
+    "yhat": 77.3,
+    "yhat_lower": 65.1,
+    "yhat_upper": 89.1
+  },
+  {
+    "date": "2026-11-04",
+    "product_id": "P006",
+    "yhat": 36.6,
+    "yhat_lower": 27.1,
+    "yhat_upper": 46
+  },
+  {
+    "date": "2026-11-04",
+    "product_id": "P007",
+    "yhat": 57.7,
+    "yhat_lower": 42,
+    "yhat_upper": 74.3
+  },
+  {
+    "date": "2026-11-04",
+    "product_id": "P008",
+    "yhat": 109.3,
+    "yhat_lower": 85.8,
+    "yhat_upper": 131.1
+  },
+  {
+    "date": "2026-11-04",
+    "product_id": "P009",
+    "yhat": 173.1,
+    "yhat_lower": 157.6,
+    "yhat_upper": 190.6
+  },
+  {
+    "date": "2026-11-04",
+    "product_id": "P010",
+    "yhat": 35.9,
+    "yhat_lower": 26.6,
+    "yhat_upper": 44.8
+  },
+  {
+    "date": "2026-11-04",
+    "product_id": "P011",
+    "yhat": 31.6,
+    "yhat_lower": 24.1,
+    "yhat_upper": 39.8
+  },
+  {
+    "date": "2026-11-04",
+    "product_id": "P012",
+    "yhat": 97.8,
+    "yhat_lower": 81.3,
+    "yhat_upper": 114
+  },
+  {
+    "date": "2026-11-04",
+    "product_id": "P013",
+    "yhat": 28.7,
+    "yhat_lower": 20.1,
+    "yhat_upper": 37.2
+  },
+  {
+    "date": "2026-11-04",
+    "product_id": "P014",
+    "yhat": 21.3,
+    "yhat_lower": 11.3,
+    "yhat_upper": 30.8
+  },
+  {
+    "date": "2026-11-04",
+    "product_id": "P015",
+    "yhat": 95,
+    "yhat_lower": 80.7,
+    "yhat_upper": 110
+  },
+  {
+    "date": "2026-11-05",
+    "product_id": "P001",
+    "yhat": 130.3,
+    "yhat_lower": 109.2,
+    "yhat_upper": 151
+  },
+  {
+    "date": "2026-11-05",
+    "product_id": "P002",
+    "yhat": 88.3,
+    "yhat_lower": 72.7,
+    "yhat_upper": 103.6
+  },
+  {
+    "date": "2026-11-05",
+    "product_id": "P003",
+    "yhat": 46.6,
+    "yhat_lower": 36.4,
+    "yhat_upper": 56.8
+  },
+  {
+    "date": "2026-11-05",
+    "product_id": "P004",
+    "yhat": 75.1,
+    "yhat_lower": 62.3,
+    "yhat_upper": 86.4
+  },
+  {
+    "date": "2026-11-05",
+    "product_id": "P005",
+    "yhat": 80.5,
+    "yhat_lower": 68.2,
+    "yhat_upper": 94
+  },
+  {
+    "date": "2026-11-05",
+    "product_id": "P006",
+    "yhat": 45.1,
+    "yhat_lower": 35.7,
+    "yhat_upper": 54.8
+  },
+  {
+    "date": "2026-11-05",
+    "product_id": "P007",
+    "yhat": 62.7,
+    "yhat_lower": 46.4,
+    "yhat_upper": 78.2
+  },
+  {
+    "date": "2026-11-05",
+    "product_id": "P008",
+    "yhat": 97.4,
+    "yhat_lower": 73.6,
+    "yhat_upper": 121.3
+  },
+  {
+    "date": "2026-11-05",
+    "product_id": "P009",
+    "yhat": 174.3,
+    "yhat_lower": 157.6,
+    "yhat_upper": 189.5
+  },
+  {
+    "date": "2026-11-05",
+    "product_id": "P010",
+    "yhat": 47.8,
+    "yhat_lower": 38.6,
+    "yhat_upper": 56.9
+  },
+  {
+    "date": "2026-11-05",
+    "product_id": "P011",
+    "yhat": 39.9,
+    "yhat_lower": 32.4,
+    "yhat_upper": 47
+  },
+  {
+    "date": "2026-11-05",
+    "product_id": "P012",
+    "yhat": 83.6,
+    "yhat_lower": 66.5,
+    "yhat_upper": 100.6
+  },
+  {
+    "date": "2026-11-05",
+    "product_id": "P013",
+    "yhat": 22.9,
+    "yhat_lower": 14.6,
+    "yhat_upper": 31.7
+  },
+  {
+    "date": "2026-11-05",
+    "product_id": "P014",
+    "yhat": 12.4,
+    "yhat_lower": 3.2,
+    "yhat_upper": 22
+  },
+  {
+    "date": "2026-11-05",
+    "product_id": "P015",
+    "yhat": 104.1,
+    "yhat_lower": 89.5,
+    "yhat_upper": 118.6
+  },
+  {
+    "date": "2026-11-06",
+    "product_id": "P001",
+    "yhat": 174.1,
+    "yhat_lower": 154.6,
+    "yhat_upper": 194.5
+  },
+  {
+    "date": "2026-11-06",
+    "product_id": "P002",
+    "yhat": 127.7,
+    "yhat_lower": 112.5,
+    "yhat_upper": 143.7
+  },
+  {
+    "date": "2026-11-06",
+    "product_id": "P003",
+    "yhat": 57.7,
+    "yhat_lower": 47.3,
+    "yhat_upper": 68.9
+  },
+  {
+    "date": "2026-11-06",
+    "product_id": "P004",
+    "yhat": 73.6,
+    "yhat_lower": 61.7,
+    "yhat_upper": 85.3
+  },
+  {
+    "date": "2026-11-06",
+    "product_id": "P005",
+    "yhat": 109.9,
+    "yhat_lower": 96.9,
+    "yhat_upper": 121.8
+  },
+  {
+    "date": "2026-11-06",
+    "product_id": "P006",
+    "yhat": 43.9,
+    "yhat_lower": 34.5,
+    "yhat_upper": 53.4
+  },
+  {
+    "date": "2026-11-06",
+    "product_id": "P007",
+    "yhat": 73.8,
+    "yhat_lower": 57.8,
+    "yhat_upper": 90.8
+  },
+  {
+    "date": "2026-11-06",
+    "product_id": "P008",
+    "yhat": 117.8,
+    "yhat_lower": 94.2,
+    "yhat_upper": 143.3
+  },
+  {
+    "date": "2026-11-06",
+    "product_id": "P009",
+    "yhat": 155.8,
+    "yhat_lower": 140.6,
+    "yhat_upper": 171.6
+  },
+  {
+    "date": "2026-11-06",
+    "product_id": "P010",
+    "yhat": 53.8,
+    "yhat_lower": 44.9,
+    "yhat_upper": 62.8
+  },
+  {
+    "date": "2026-11-06",
+    "product_id": "P011",
+    "yhat": 45.6,
+    "yhat_lower": 38,
+    "yhat_upper": 53.7
+  },
+  {
+    "date": "2026-11-06",
+    "product_id": "P012",
+    "yhat": 118.8,
+    "yhat_lower": 102.5,
+    "yhat_upper": 135.5
+  },
+  {
+    "date": "2026-11-06",
+    "product_id": "P013",
+    "yhat": 35.9,
+    "yhat_lower": 27.3,
+    "yhat_upper": 44.8
+  },
+  {
+    "date": "2026-11-06",
+    "product_id": "P014",
+    "yhat": 30.7,
+    "yhat_lower": 21.6,
+    "yhat_upper": 39.8
+  },
+  {
+    "date": "2026-11-06",
+    "product_id": "P015",
+    "yhat": 107.8,
+    "yhat_lower": 92,
+    "yhat_upper": 123.5
+  },
+  {
+    "date": "2026-11-07",
+    "product_id": "P001",
+    "yhat": 179.8,
+    "yhat_lower": 159.4,
+    "yhat_upper": 200
+  },
+  {
+    "date": "2026-11-07",
+    "product_id": "P002",
+    "yhat": 134.9,
+    "yhat_lower": 119.4,
+    "yhat_upper": 150.3
+  },
+  {
+    "date": "2026-11-07",
+    "product_id": "P003",
+    "yhat": 78.3,
+    "yhat_lower": 68.3,
+    "yhat_upper": 88.3
+  },
+  {
+    "date": "2026-11-07",
+    "product_id": "P004",
+    "yhat": 96.7,
+    "yhat_lower": 84.6,
+    "yhat_upper": 109
+  },
+  {
+    "date": "2026-11-07",
+    "product_id": "P005",
+    "yhat": 123.9,
+    "yhat_lower": 111.4,
+    "yhat_upper": 136
+  },
+  {
+    "date": "2026-11-07",
+    "product_id": "P006",
+    "yhat": 58,
+    "yhat_lower": 48.2,
+    "yhat_upper": 66.9
+  },
+  {
+    "date": "2026-11-07",
+    "product_id": "P007",
+    "yhat": 89.7,
+    "yhat_lower": 73.8,
+    "yhat_upper": 105.1
+  },
+  {
+    "date": "2026-11-07",
+    "product_id": "P008",
+    "yhat": 145.6,
+    "yhat_lower": 123.4,
+    "yhat_upper": 170.3
+  },
+  {
+    "date": "2026-11-07",
+    "product_id": "P009",
+    "yhat": 187,
+    "yhat_lower": 170.9,
+    "yhat_upper": 202.6
+  },
+  {
+    "date": "2026-11-07",
+    "product_id": "P010",
+    "yhat": 77.8,
+    "yhat_lower": 69.3,
+    "yhat_upper": 86.8
+  },
+  {
+    "date": "2026-11-07",
+    "product_id": "P011",
+    "yhat": 67.5,
+    "yhat_lower": 59.7,
+    "yhat_upper": 74.9
+  },
+  {
+    "date": "2026-11-07",
+    "product_id": "P012",
+    "yhat": 127.1,
+    "yhat_lower": 111.1,
+    "yhat_upper": 144.7
+  },
+  {
+    "date": "2026-11-07",
+    "product_id": "P013",
+    "yhat": 35.1,
+    "yhat_lower": 26.7,
+    "yhat_upper": 43.3
+  },
+  {
+    "date": "2026-11-07",
+    "product_id": "P014",
+    "yhat": 34.4,
+    "yhat_lower": 25.1,
+    "yhat_upper": 44.6
+  },
+  {
+    "date": "2026-11-07",
+    "product_id": "P015",
+    "yhat": 141.2,
+    "yhat_lower": 126.5,
+    "yhat_upper": 155.7
+  },
+  {
+    "date": "2026-11-08",
+    "product_id": "P001",
+    "yhat": 175.1,
+    "yhat_lower": 154.6,
+    "yhat_upper": 194
+  },
+  {
+    "date": "2026-11-08",
+    "product_id": "P002",
+    "yhat": 125.6,
+    "yhat_lower": 109.9,
+    "yhat_upper": 140.6
+  },
+  {
+    "date": "2026-11-08",
+    "product_id": "P003",
+    "yhat": 66.7,
+    "yhat_lower": 55.9,
+    "yhat_upper": 77.5
+  },
+  {
+    "date": "2026-11-08",
+    "product_id": "P004",
+    "yhat": 95.9,
+    "yhat_lower": 83.9,
+    "yhat_upper": 107.8
+  },
+  {
+    "date": "2026-11-08",
+    "product_id": "P005",
+    "yhat": 104.5,
+    "yhat_lower": 92.8,
+    "yhat_upper": 116.3
+  },
+  {
+    "date": "2026-11-08",
+    "product_id": "P006",
+    "yhat": 43.6,
+    "yhat_lower": 34.2,
+    "yhat_upper": 52.5
+  },
+  {
+    "date": "2026-11-08",
+    "product_id": "P007",
+    "yhat": 79.1,
+    "yhat_lower": 63.2,
+    "yhat_upper": 95.7
+  },
+  {
+    "date": "2026-11-08",
+    "product_id": "P008",
+    "yhat": 140,
+    "yhat_lower": 116.1,
+    "yhat_upper": 163.2
+  },
+  {
+    "date": "2026-11-08",
+    "product_id": "P009",
+    "yhat": 152.6,
+    "yhat_lower": 135.8,
+    "yhat_upper": 169.8
+  },
+  {
+    "date": "2026-11-08",
+    "product_id": "P010",
+    "yhat": 75.2,
+    "yhat_lower": 66.9,
+    "yhat_upper": 84.9
+  },
+  {
+    "date": "2026-11-08",
+    "product_id": "P011",
+    "yhat": 58.5,
+    "yhat_lower": 51,
+    "yhat_upper": 66.1
+  },
+  {
+    "date": "2026-11-08",
+    "product_id": "P012",
+    "yhat": 121.6,
+    "yhat_lower": 104.3,
+    "yhat_upper": 137.6
+  },
+  {
+    "date": "2026-11-08",
+    "product_id": "P013",
+    "yhat": 37.4,
+    "yhat_lower": 28.8,
+    "yhat_upper": 46.4
+  },
+  {
+    "date": "2026-11-08",
+    "product_id": "P014",
+    "yhat": 25.5,
+    "yhat_lower": 15.3,
+    "yhat_upper": 34.6
+  },
+  {
+    "date": "2026-11-08",
+    "product_id": "P015",
+    "yhat": 141.5,
+    "yhat_lower": 125.5,
+    "yhat_upper": 156.2
+  },
+  {
+    "date": "2026-11-09",
+    "product_id": "P001",
+    "yhat": 124.3,
+    "yhat_lower": 105,
+    "yhat_upper": 143.8
+  },
+  {
+    "date": "2026-11-09",
+    "product_id": "P002",
+    "yhat": 110.8,
+    "yhat_lower": 96,
+    "yhat_upper": 126.2
+  },
+  {
+    "date": "2026-11-09",
+    "product_id": "P003",
+    "yhat": 47.6,
+    "yhat_lower": 36.9,
+    "yhat_upper": 59.2
+  },
+  {
+    "date": "2026-11-09",
+    "product_id": "P004",
+    "yhat": 65,
+    "yhat_lower": 54.1,
+    "yhat_upper": 77.5
+  },
+  {
+    "date": "2026-11-09",
+    "product_id": "P005",
+    "yhat": 85.7,
+    "yhat_lower": 73.5,
+    "yhat_upper": 98.8
+  },
+  {
+    "date": "2026-11-09",
+    "product_id": "P006",
+    "yhat": 38.6,
+    "yhat_lower": 29.3,
+    "yhat_upper": 48
+  },
+  {
+    "date": "2026-11-09",
+    "product_id": "P007",
+    "yhat": 51.6,
+    "yhat_lower": 35.2,
+    "yhat_upper": 67.3
+  },
+  {
+    "date": "2026-11-09",
+    "product_id": "P008",
+    "yhat": 98.3,
+    "yhat_lower": 75.1,
+    "yhat_upper": 122.8
+  },
+  {
+    "date": "2026-11-09",
+    "product_id": "P009",
+    "yhat": 106.4,
+    "yhat_lower": 89.3,
+    "yhat_upper": 122.6
+  },
+  {
+    "date": "2026-11-09",
+    "product_id": "P010",
+    "yhat": 43.9,
+    "yhat_lower": 34,
+    "yhat_upper": 53
+  },
+  {
+    "date": "2026-11-09",
+    "product_id": "P011",
+    "yhat": 43.3,
+    "yhat_lower": 36.1,
+    "yhat_upper": 50.8
+  },
+  {
+    "date": "2026-11-09",
+    "product_id": "P012",
+    "yhat": 90.2,
+    "yhat_lower": 73.6,
+    "yhat_upper": 107.2
+  },
+  {
+    "date": "2026-11-09",
+    "product_id": "P013",
+    "yhat": 31.2,
+    "yhat_lower": 22.7,
+    "yhat_upper": 39.9
+  },
+  {
+    "date": "2026-11-09",
+    "product_id": "P014",
+    "yhat": 18,
+    "yhat_lower": 8.7,
+    "yhat_upper": 28.3
+  },
+  {
+    "date": "2026-11-09",
+    "product_id": "P015",
+    "yhat": 86.7,
+    "yhat_lower": 72,
+    "yhat_upper": 100.8
+  },
+  {
+    "date": "2026-11-10",
+    "product_id": "P001",
+    "yhat": 128.9,
+    "yhat_lower": 109.1,
+    "yhat_upper": 150
+  },
+  {
+    "date": "2026-11-10",
+    "product_id": "P002",
+    "yhat": 94,
+    "yhat_lower": 77.5,
+    "yhat_upper": 109.2
+  },
+  {
+    "date": "2026-11-10",
+    "product_id": "P003",
+    "yhat": 42.3,
+    "yhat_lower": 32.2,
+    "yhat_upper": 52.7
+  },
+  {
+    "date": "2026-11-10",
+    "product_id": "P004",
+    "yhat": 56.8,
+    "yhat_lower": 45.3,
+    "yhat_upper": 68.7
+  },
+  {
+    "date": "2026-11-10",
+    "product_id": "P005",
+    "yhat": 61.3,
+    "yhat_lower": 48.7,
+    "yhat_upper": 73.8
+  },
+  {
+    "date": "2026-11-10",
+    "product_id": "P006",
+    "yhat": 38,
+    "yhat_lower": 28.5,
+    "yhat_upper": 47.4
+  },
+  {
+    "date": "2026-11-10",
+    "product_id": "P007",
+    "yhat": 43.7,
+    "yhat_lower": 27.9,
+    "yhat_upper": 59.9
+  },
+  {
+    "date": "2026-11-10",
+    "product_id": "P008",
+    "yhat": 84.7,
+    "yhat_lower": 60.5,
+    "yhat_upper": 109.4
+  },
+  {
+    "date": "2026-11-10",
+    "product_id": "P009",
+    "yhat": 105.5,
+    "yhat_lower": 88.5,
+    "yhat_upper": 120.7
+  },
+  {
+    "date": "2026-11-10",
+    "product_id": "P010",
+    "yhat": 30.3,
+    "yhat_lower": 20.8,
+    "yhat_upper": 39.2
+  },
+  {
+    "date": "2026-11-10",
+    "product_id": "P011",
+    "yhat": 19,
+    "yhat_lower": 11.1,
+    "yhat_upper": 26.7
+  },
+  {
+    "date": "2026-11-10",
+    "product_id": "P012",
+    "yhat": 88.4,
+    "yhat_lower": 71.9,
+    "yhat_upper": 105.7
+  },
+  {
+    "date": "2026-11-10",
+    "product_id": "P013",
+    "yhat": 26.2,
+    "yhat_lower": 17.4,
+    "yhat_upper": 34.9
+  },
+  {
+    "date": "2026-11-10",
+    "product_id": "P014",
+    "yhat": 19.6,
+    "yhat_lower": 9.7,
+    "yhat_upper": 30
+  },
+  {
+    "date": "2026-11-10",
+    "product_id": "P015",
+    "yhat": 91.5,
+    "yhat_lower": 77.1,
+    "yhat_upper": 106.3
+  },
+  {
+    "date": "2026-11-11",
+    "product_id": "P001",
+    "yhat": 134.8,
+    "yhat_lower": 114.1,
+    "yhat_upper": 155.3
+  },
+  {
+    "date": "2026-11-11",
+    "product_id": "P002",
+    "yhat": 97.9,
+    "yhat_lower": 82.6,
+    "yhat_upper": 112.9
+  },
+  {
+    "date": "2026-11-11",
+    "product_id": "P003",
+    "yhat": 42.7,
+    "yhat_lower": 32,
+    "yhat_upper": 52.8
+  },
+  {
+    "date": "2026-11-11",
+    "product_id": "P004",
+    "yhat": 58.8,
+    "yhat_lower": 47,
+    "yhat_upper": 70.6
+  },
+  {
+    "date": "2026-11-11",
+    "product_id": "P005",
+    "yhat": 63.9,
+    "yhat_lower": 51.1,
+    "yhat_upper": 76.6
+  },
+  {
+    "date": "2026-11-11",
+    "product_id": "P006",
+    "yhat": 37.9,
+    "yhat_lower": 28.6,
+    "yhat_upper": 48.4
+  },
+  {
+    "date": "2026-11-11",
+    "product_id": "P007",
+    "yhat": 44.9,
+    "yhat_lower": 28.4,
+    "yhat_upper": 62
+  },
+  {
+    "date": "2026-11-11",
+    "product_id": "P008",
+    "yhat": 89.3,
+    "yhat_lower": 65,
+    "yhat_upper": 111.5
+  },
+  {
+    "date": "2026-11-11",
+    "product_id": "P009",
+    "yhat": 105.2,
+    "yhat_lower": 88.9,
+    "yhat_upper": 121.5
+  },
+  {
+    "date": "2026-11-11",
+    "product_id": "P010",
+    "yhat": 28.9,
+    "yhat_lower": 20.1,
+    "yhat_upper": 38.7
+  },
+  {
+    "date": "2026-11-11",
+    "product_id": "P011",
+    "yhat": 19,
+    "yhat_lower": 11.7,
+    "yhat_upper": 26.6
+  },
+  {
+    "date": "2026-11-11",
+    "product_id": "P012",
+    "yhat": 91.2,
+    "yhat_lower": 75.3,
+    "yhat_upper": 108
+  },
+  {
+    "date": "2026-11-11",
+    "product_id": "P013",
+    "yhat": 26.8,
+    "yhat_lower": 18.6,
+    "yhat_upper": 35.6
+  },
+  {
+    "date": "2026-11-11",
+    "product_id": "P014",
+    "yhat": 19.7,
+    "yhat_lower": 10.7,
+    "yhat_upper": 29.3
+  },
+  {
+    "date": "2026-11-11",
+    "product_id": "P015",
+    "yhat": 93.2,
+    "yhat_lower": 80.5,
+    "yhat_upper": 107.8
+  },
+  {
+    "date": "2026-11-12",
+    "product_id": "P001",
+    "yhat": 133.5,
+    "yhat_lower": 113.1,
+    "yhat_upper": 154
+  },
+  {
+    "date": "2026-11-12",
+    "product_id": "P002",
+    "yhat": 100.2,
+    "yhat_lower": 83.8,
+    "yhat_upper": 114
+  },
+  {
+    "date": "2026-11-12",
+    "product_id": "P003",
+    "yhat": 44.2,
+    "yhat_lower": 33.8,
+    "yhat_upper": 55.1
+  },
+  {
+    "date": "2026-11-12",
+    "product_id": "P004",
+    "yhat": 60.1,
+    "yhat_lower": 47.8,
+    "yhat_upper": 72.4
+  },
+  {
+    "date": "2026-11-12",
+    "product_id": "P005",
+    "yhat": 65,
+    "yhat_lower": 52.5,
+    "yhat_upper": 77.2
+  },
+  {
+    "date": "2026-11-12",
+    "product_id": "P006",
+    "yhat": 40,
+    "yhat_lower": 30.7,
+    "yhat_upper": 49.1
+  },
+  {
+    "date": "2026-11-12",
+    "product_id": "P007",
+    "yhat": 47.8,
+    "yhat_lower": 31.5,
+    "yhat_upper": 63
+  },
+  {
+    "date": "2026-11-12",
+    "product_id": "P008",
+    "yhat": 93.2,
+    "yhat_lower": 68.9,
+    "yhat_upper": 117.6
+  },
+  {
+    "date": "2026-11-12",
+    "product_id": "P009",
+    "yhat": 110.3,
+    "yhat_lower": 94.1,
+    "yhat_upper": 127.1
+  },
+  {
+    "date": "2026-11-12",
+    "product_id": "P010",
+    "yhat": 32.1,
+    "yhat_lower": 22.7,
+    "yhat_upper": 41.6
+  },
+  {
+    "date": "2026-11-12",
+    "product_id": "P011",
+    "yhat": 20.6,
+    "yhat_lower": 12.7,
+    "yhat_upper": 28
+  },
+  {
+    "date": "2026-11-12",
+    "product_id": "P012",
+    "yhat": 90.9,
+    "yhat_lower": 72.5,
+    "yhat_upper": 108.5
+  },
+  {
+    "date": "2026-11-12",
+    "product_id": "P013",
+    "yhat": 28.3,
+    "yhat_lower": 20.5,
+    "yhat_upper": 36.9
+  },
+  {
+    "date": "2026-11-12",
+    "product_id": "P014",
+    "yhat": 19.9,
+    "yhat_lower": 10.8,
+    "yhat_upper": 29.5
+  },
+  {
+    "date": "2026-11-12",
+    "product_id": "P015",
+    "yhat": 95.6,
+    "yhat_lower": 82.1,
+    "yhat_upper": 110.2
+  },
+  {
+    "date": "2026-11-13",
+    "product_id": "P001",
+    "yhat": 156.5,
+    "yhat_lower": 136.2,
+    "yhat_upper": 176
+  },
+  {
+    "date": "2026-11-13",
+    "product_id": "P002",
+    "yhat": 116.6,
+    "yhat_lower": 101.5,
+    "yhat_upper": 132.3
+  },
+  {
+    "date": "2026-11-13",
+    "product_id": "P003",
+    "yhat": 50.8,
+    "yhat_lower": 39.9,
+    "yhat_upper": 61.2
+  },
+  {
+    "date": "2026-11-13",
+    "product_id": "P004",
+    "yhat": 70.2,
+    "yhat_lower": 57.8,
+    "yhat_upper": 81.7
+  },
+  {
+    "date": "2026-11-13",
+    "product_id": "P005",
+    "yhat": 77.2,
+    "yhat_lower": 64,
+    "yhat_upper": 89.5
+  },
+  {
+    "date": "2026-11-13",
+    "product_id": "P006",
+    "yhat": 46.1,
+    "yhat_lower": 36.5,
+    "yhat_upper": 55.5
+  },
+  {
+    "date": "2026-11-13",
+    "product_id": "P007",
+    "yhat": 56.6,
+    "yhat_lower": 41.1,
+    "yhat_upper": 73.7
+  },
+  {
+    "date": "2026-11-13",
+    "product_id": "P008",
+    "yhat": 121.7,
+    "yhat_lower": 97.5,
+    "yhat_upper": 145
+  },
+  {
+    "date": "2026-11-13",
+    "product_id": "P009",
+    "yhat": 128.6,
+    "yhat_lower": 113.5,
+    "yhat_upper": 144.8
+  },
+  {
+    "date": "2026-11-13",
+    "product_id": "P010",
+    "yhat": 37,
+    "yhat_lower": 27.8,
+    "yhat_upper": 46.6
+  },
+  {
+    "date": "2026-11-13",
+    "product_id": "P011",
+    "yhat": 23.6,
+    "yhat_lower": 15.9,
+    "yhat_upper": 31.2
+  },
+  {
+    "date": "2026-11-13",
+    "product_id": "P012",
+    "yhat": 107.3,
+    "yhat_lower": 89.9,
+    "yhat_upper": 124.4
+  },
+  {
+    "date": "2026-11-13",
+    "product_id": "P013",
+    "yhat": 32.1,
+    "yhat_lower": 23.9,
+    "yhat_upper": 40.6
+  },
+  {
+    "date": "2026-11-13",
+    "product_id": "P014",
+    "yhat": 25.8,
+    "yhat_lower": 16.6,
+    "yhat_upper": 35
+  },
+  {
+    "date": "2026-11-13",
+    "product_id": "P015",
+    "yhat": 109.1,
+    "yhat_lower": 94.5,
+    "yhat_upper": 123.7
+  },
+  {
+    "date": "2026-11-14",
+    "product_id": "P001",
+    "yhat": 176,
+    "yhat_lower": 155.7,
+    "yhat_upper": 196.2
+  },
+  {
+    "date": "2026-11-14",
+    "product_id": "P002",
+    "yhat": 130.5,
+    "yhat_lower": 114.8,
+    "yhat_upper": 146.1
+  },
+  {
+    "date": "2026-11-14",
+    "product_id": "P003",
+    "yhat": 56.8,
+    "yhat_lower": 46.4,
+    "yhat_upper": 67.4
+  },
+  {
+    "date": "2026-11-14",
+    "product_id": "P004",
+    "yhat": 81.4,
+    "yhat_lower": 69.5,
+    "yhat_upper": 93.5
+  },
+  {
+    "date": "2026-11-14",
+    "product_id": "P005",
+    "yhat": 88.2,
+    "yhat_lower": 75.4,
+    "yhat_upper": 100.3
+  },
+  {
+    "date": "2026-11-14",
+    "product_id": "P006",
+    "yhat": 52.4,
+    "yhat_lower": 43.2,
+    "yhat_upper": 61.7
+  },
+  {
+    "date": "2026-11-14",
+    "product_id": "P007",
+    "yhat": 72.2,
+    "yhat_lower": 56.1,
+    "yhat_upper": 88.3
+  },
+  {
+    "date": "2026-11-14",
+    "product_id": "P008",
+    "yhat": 146.3,
+    "yhat_lower": 121.5,
+    "yhat_upper": 170.4
+  },
+  {
+    "date": "2026-11-14",
+    "product_id": "P009",
+    "yhat": 145.5,
+    "yhat_lower": 128.4,
+    "yhat_upper": 161.8
+  },
+  {
+    "date": "2026-11-14",
+    "product_id": "P010",
+    "yhat": 42.5,
+    "yhat_lower": 33.5,
+    "yhat_upper": 51
+  },
+  {
+    "date": "2026-11-14",
+    "product_id": "P011",
+    "yhat": 28.6,
+    "yhat_lower": 20.8,
+    "yhat_upper": 36.3
+  },
+  {
+    "date": "2026-11-14",
+    "product_id": "P012",
+    "yhat": 120.1,
+    "yhat_lower": 102.7,
+    "yhat_upper": 137.2
+  },
+  {
+    "date": "2026-11-14",
+    "product_id": "P013",
+    "yhat": 36.3,
+    "yhat_lower": 28.2,
+    "yhat_upper": 44.8
+  },
+  {
+    "date": "2026-11-14",
+    "product_id": "P014",
+    "yhat": 30.8,
+    "yhat_lower": 21.5,
+    "yhat_upper": 39.5
+  },
+  {
+    "date": "2026-11-14",
+    "product_id": "P015",
+    "yhat": 123.9,
+    "yhat_lower": 108.7,
+    "yhat_upper": 138.5
+  },
+  {
+    "date": "2026-11-15",
+    "product_id": "P001",
+    "yhat": 161.6,
+    "yhat_lower": 140,
+    "yhat_upper": 182.7
+  },
+  {
+    "date": "2026-11-15",
+    "product_id": "P002",
+    "yhat": 121.5,
+    "yhat_lower": 106.9,
+    "yhat_upper": 138.1
+  },
+  {
+    "date": "2026-11-15",
+    "product_id": "P003",
+    "yhat": 55.1,
+    "yhat_lower": 44.4,
+    "yhat_upper": 65.7
+  },
+  {
+    "date": "2026-11-15",
+    "product_id": "P004",
+    "yhat": 74,
+    "yhat_lower": 62.5,
+    "yhat_upper": 86.3
+  },
+  {
+    "date": "2026-11-15",
+    "product_id": "P005",
+    "yhat": 80.5,
+    "yhat_lower": 68.1,
+    "yhat_upper": 92.7
+  },
+  {
+    "date": "2026-11-15",
+    "product_id": "P006",
+    "yhat": 47.6,
+    "yhat_lower": 37.8,
+    "yhat_upper": 57
+  },
+  {
+    "date": "2026-11-15",
+    "product_id": "P007",
+    "yhat": 62.2,
+    "yhat_lower": 45.8,
+    "yhat_upper": 77.6
+  },
+  {
+    "date": "2026-11-15",
+    "product_id": "P008",
+    "yhat": 130,
+    "yhat_lower": 106.3,
+    "yhat_upper": 153.9
+  },
+  {
+    "date": "2026-11-15",
+    "product_id": "P009",
+    "yhat": 135.9,
+    "yhat_lower": 119.6,
+    "yhat_upper": 152.5
+  },
+  {
+    "date": "2026-11-15",
+    "product_id": "P010",
+    "yhat": 40.2,
+    "yhat_lower": 31.2,
+    "yhat_upper": 50.3
+  },
+  {
+    "date": "2026-11-15",
+    "product_id": "P011",
+    "yhat": 26.6,
+    "yhat_lower": 19,
+    "yhat_upper": 34.7
+  },
+  {
+    "date": "2026-11-15",
+    "product_id": "P012",
+    "yhat": 110.8,
+    "yhat_lower": 92.6,
+    "yhat_upper": 127.2
+  },
+  {
+    "date": "2026-11-15",
+    "product_id": "P013",
+    "yhat": 33.7,
+    "yhat_lower": 25.2,
+    "yhat_upper": 42.1
+  },
+  {
+    "date": "2026-11-15",
+    "product_id": "P014",
+    "yhat": 26.8,
+    "yhat_lower": 16.2,
+    "yhat_upper": 36.2
+  },
+  {
+    "date": "2026-11-15",
+    "product_id": "P015",
+    "yhat": 114.8,
+    "yhat_lower": 99.3,
+    "yhat_upper": 130
+  },
+  {
+    "date": "2026-11-16",
+    "product_id": "P001",
+    "yhat": 128.8,
+    "yhat_lower": 108.2,
+    "yhat_upper": 149.7
+  },
+  {
+    "date": "2026-11-16",
+    "product_id": "P002",
+    "yhat": 94.8,
+    "yhat_lower": 78.5,
+    "yhat_upper": 110.7
+  },
+  {
+    "date": "2026-11-16",
+    "product_id": "P003",
+    "yhat": 41.7,
+    "yhat_lower": 31.2,
+    "yhat_upper": 53.3
+  },
+  {
+    "date": "2026-11-16",
+    "product_id": "P004",
+    "yhat": 59.2,
+    "yhat_lower": 47.8,
+    "yhat_upper": 71.7
+  },
+  {
+    "date": "2026-11-16",
+    "product_id": "P005",
+    "yhat": 64.6,
+    "yhat_lower": 51,
+    "yhat_upper": 76.8
+  },
+  {
+    "date": "2026-11-16",
+    "product_id": "P006",
+    "yhat": 39.2,
+    "yhat_lower": 30.3,
+    "yhat_upper": 49.2
+  },
+  {
+    "date": "2026-11-16",
+    "product_id": "P007",
+    "yhat": 39.9,
+    "yhat_lower": 24.2,
+    "yhat_upper": 55.4
+  },
+  {
+    "date": "2026-11-16",
+    "product_id": "P008",
+    "yhat": 85.7,
+    "yhat_lower": 61.6,
+    "yhat_upper": 107.6
+  },
+  {
+    "date": "2026-11-16",
+    "product_id": "P009",
+    "yhat": 106.7,
+    "yhat_lower": 90.5,
+    "yhat_upper": 121.7
+  },
+  {
+    "date": "2026-11-16",
+    "product_id": "P010",
+    "yhat": 30.3,
+    "yhat_lower": 20.7,
+    "yhat_upper": 39.5
+  },
+  {
+    "date": "2026-11-16",
+    "product_id": "P011",
+    "yhat": 20.9,
+    "yhat_lower": 13.5,
+    "yhat_upper": 28.7
+  },
+  {
+    "date": "2026-11-16",
+    "product_id": "P012",
+    "yhat": 89.8,
+    "yhat_lower": 72.5,
+    "yhat_upper": 106.1
+  },
+  {
+    "date": "2026-11-16",
+    "product_id": "P013",
+    "yhat": 27.5,
+    "yhat_lower": 18.6,
+    "yhat_upper": 35.8
+  },
+  {
+    "date": "2026-11-16",
+    "product_id": "P014",
+    "yhat": 19.2,
+    "yhat_lower": 10.2,
+    "yhat_upper": 28.9
+  },
+  {
+    "date": "2026-11-16",
+    "product_id": "P015",
+    "yhat": 91,
+    "yhat_lower": 76.3,
+    "yhat_upper": 106.4
+  },
+  {
+    "date": "2026-11-17",
+    "product_id": "P001",
+    "yhat": 127.9,
+    "yhat_lower": 107.5,
+    "yhat_upper": 147.1
+  },
+  {
+    "date": "2026-11-17",
+    "product_id": "P002",
+    "yhat": 94.8,
+    "yhat_lower": 79.2,
+    "yhat_upper": 109.4
+  },
+  {
+    "date": "2026-11-17",
+    "product_id": "P003",
+    "yhat": 42.5,
+    "yhat_lower": 31.3,
+    "yhat_upper": 52.7
+  },
+  {
+    "date": "2026-11-17",
+    "product_id": "P004",
+    "yhat": 58.9,
+    "yhat_lower": 47.7,
+    "yhat_upper": 70.5
+  },
+  {
+    "date": "2026-11-17",
+    "product_id": "P005",
+    "yhat": 62.9,
+    "yhat_lower": 50.8,
+    "yhat_upper": 75.7
+  },
+  {
+    "date": "2026-11-17",
+    "product_id": "P006",
+    "yhat": 39.8,
+    "yhat_lower": 30.1,
+    "yhat_upper": 49.1
+  },
+  {
+    "date": "2026-11-17",
+    "product_id": "P007",
+    "yhat": 40.4,
+    "yhat_lower": 24.9,
+    "yhat_upper": 56.3
+  },
+  {
+    "date": "2026-11-17",
+    "product_id": "P008",
+    "yhat": 85.6,
+    "yhat_lower": 62.5,
+    "yhat_upper": 108.5
+  },
+  {
+    "date": "2026-11-17",
+    "product_id": "P009",
+    "yhat": 109.7,
+    "yhat_lower": 93.4,
+    "yhat_upper": 127.7
+  },
+  {
+    "date": "2026-11-17",
+    "product_id": "P010",
+    "yhat": 31,
+    "yhat_lower": 21.4,
+    "yhat_upper": 40.2
+  },
+  {
+    "date": "2026-11-17",
+    "product_id": "P011",
+    "yhat": 19.8,
+    "yhat_lower": 12.3,
+    "yhat_upper": 27.2
+  },
+  {
+    "date": "2026-11-17",
+    "product_id": "P012",
+    "yhat": 88.4,
+    "yhat_lower": 71.2,
+    "yhat_upper": 104.7
+  },
+  {
+    "date": "2026-11-17",
+    "product_id": "P013",
+    "yhat": 26.4,
+    "yhat_lower": 17.4,
+    "yhat_upper": 35.1
+  },
+  {
+    "date": "2026-11-17",
+    "product_id": "P014",
+    "yhat": 19,
+    "yhat_lower": 9.8,
+    "yhat_upper": 28.6
+  },
+  {
+    "date": "2026-11-17",
+    "product_id": "P015",
+    "yhat": 90,
+    "yhat_lower": 75.2,
+    "yhat_upper": 105.5
+  },
+  {
+    "date": "2026-11-18",
+    "product_id": "P001",
+    "yhat": 133.7,
+    "yhat_lower": 114.1,
+    "yhat_upper": 153
+  },
+  {
+    "date": "2026-11-18",
+    "product_id": "P002",
+    "yhat": 98.5,
+    "yhat_lower": 84.3,
+    "yhat_upper": 114.5
+  },
+  {
+    "date": "2026-11-18",
+    "product_id": "P003",
+    "yhat": 42.7,
+    "yhat_lower": 32,
+    "yhat_upper": 53.2
+  },
+  {
+    "date": "2026-11-18",
+    "product_id": "P004",
+    "yhat": 60.6,
+    "yhat_lower": 49,
+    "yhat_upper": 72.8
+  },
+  {
+    "date": "2026-11-18",
+    "product_id": "P005",
+    "yhat": 65.5,
+    "yhat_lower": 53.6,
+    "yhat_upper": 77.5
+  },
+  {
+    "date": "2026-11-18",
+    "product_id": "P006",
+    "yhat": 39.8,
+    "yhat_lower": 30.3,
+    "yhat_upper": 48.9
+  },
+  {
+    "date": "2026-11-18",
+    "product_id": "P007",
+    "yhat": 41.6,
+    "yhat_lower": 25.2,
+    "yhat_upper": 57.5
+  },
+  {
+    "date": "2026-11-18",
+    "product_id": "P008",
+    "yhat": 90.4,
+    "yhat_lower": 66.4,
+    "yhat_upper": 114.8
+  },
+  {
+    "date": "2026-11-18",
+    "product_id": "P009",
+    "yhat": 109.2,
+    "yhat_lower": 92.9,
+    "yhat_upper": 125.2
+  },
+  {
+    "date": "2026-11-18",
+    "product_id": "P010",
+    "yhat": 29.7,
+    "yhat_lower": 20.6,
+    "yhat_upper": 39.4
+  },
+  {
+    "date": "2026-11-18",
+    "product_id": "P011",
+    "yhat": 19.8,
+    "yhat_lower": 12,
+    "yhat_upper": 27.4
+  },
+  {
+    "date": "2026-11-18",
+    "product_id": "P012",
+    "yhat": 91.1,
+    "yhat_lower": 74.8,
+    "yhat_upper": 108.6
+  },
+  {
+    "date": "2026-11-18",
+    "product_id": "P013",
+    "yhat": 26.8,
+    "yhat_lower": 18.4,
+    "yhat_upper": 35.4
+  },
+  {
+    "date": "2026-11-18",
+    "product_id": "P014",
+    "yhat": 19,
+    "yhat_lower": 9.7,
+    "yhat_upper": 28.6
+  },
+  {
+    "date": "2026-11-18",
+    "product_id": "P015",
+    "yhat": 91.6,
+    "yhat_lower": 76.2,
+    "yhat_upper": 105.3
+  },
+  {
+    "date": "2026-11-19",
+    "product_id": "P001",
+    "yhat": 132.5,
+    "yhat_lower": 112.2,
+    "yhat_upper": 152.7
+  },
+  {
+    "date": "2026-11-19",
+    "product_id": "P002",
+    "yhat": 100.6,
+    "yhat_lower": 85.6,
+    "yhat_upper": 116.1
+  },
+  {
+    "date": "2026-11-19",
+    "product_id": "P003",
+    "yhat": 44.2,
+    "yhat_lower": 33.1,
+    "yhat_upper": 54.8
+  },
+  {
+    "date": "2026-11-19",
+    "product_id": "P004",
+    "yhat": 61.6,
+    "yhat_lower": 49.5,
+    "yhat_upper": 72.8
+  },
+  {
+    "date": "2026-11-19",
+    "product_id": "P005",
+    "yhat": 66.6,
+    "yhat_lower": 55.3,
+    "yhat_upper": 79.1
+  },
+  {
+    "date": "2026-11-19",
+    "product_id": "P006",
+    "yhat": 41.9,
+    "yhat_lower": 32.3,
+    "yhat_upper": 51.8
+  },
+  {
+    "date": "2026-11-19",
+    "product_id": "P007",
+    "yhat": 44.6,
+    "yhat_lower": 29.2,
+    "yhat_upper": 60
+  },
+  {
+    "date": "2026-11-19",
+    "product_id": "P008",
+    "yhat": 94.4,
+    "yhat_lower": 70.3,
+    "yhat_upper": 118.5
+  },
+  {
+    "date": "2026-11-19",
+    "product_id": "P009",
+    "yhat": 114,
+    "yhat_lower": 98.3,
+    "yhat_upper": 129.9
+  },
+  {
+    "date": "2026-11-19",
+    "product_id": "P010",
+    "yhat": 33,
+    "yhat_lower": 23.7,
+    "yhat_upper": 42.1
+  },
+  {
+    "date": "2026-11-19",
+    "product_id": "P011",
+    "yhat": 21.4,
+    "yhat_lower": 13.8,
+    "yhat_upper": 29.5
+  },
+  {
+    "date": "2026-11-19",
+    "product_id": "P012",
+    "yhat": 90.6,
+    "yhat_lower": 73,
+    "yhat_upper": 107.2
+  },
+  {
+    "date": "2026-11-19",
+    "product_id": "P013",
+    "yhat": 28.2,
+    "yhat_lower": 19.7,
+    "yhat_upper": 36.6
+  },
+  {
+    "date": "2026-11-19",
+    "product_id": "P014",
+    "yhat": 19.1,
+    "yhat_lower": 8.8,
+    "yhat_upper": 27.9
+  },
+  {
+    "date": "2026-11-19",
+    "product_id": "P015",
+    "yhat": 94,
+    "yhat_lower": 79,
+    "yhat_upper": 107.5
+  },
+  {
+    "date": "2026-11-20",
+    "product_id": "P001",
+    "yhat": 155.6,
+    "yhat_lower": 136.3,
+    "yhat_upper": 174.8
+  },
+  {
+    "date": "2026-11-20",
+    "product_id": "P002",
+    "yhat": 116.8,
+    "yhat_lower": 102.1,
+    "yhat_upper": 132.2
+  },
+  {
+    "date": "2026-11-20",
+    "product_id": "P003",
+    "yhat": 50.6,
+    "yhat_lower": 39.8,
+    "yhat_upper": 61.6
+  },
+  {
+    "date": "2026-11-20",
+    "product_id": "P004",
+    "yhat": 71.4,
+    "yhat_lower": 60.1,
+    "yhat_upper": 83.6
+  },
+  {
+    "date": "2026-11-20",
+    "product_id": "P005",
+    "yhat": 78.7,
+    "yhat_lower": 67.3,
+    "yhat_upper": 90.7
+  },
+  {
+    "date": "2026-11-20",
+    "product_id": "P006",
+    "yhat": 48.1,
+    "yhat_lower": 38.6,
+    "yhat_upper": 57.6
+  },
+  {
+    "date": "2026-11-20",
+    "product_id": "P007",
+    "yhat": 53.5,
+    "yhat_lower": 37.4,
+    "yhat_upper": 69.1
+  },
+  {
+    "date": "2026-11-20",
+    "product_id": "P008",
+    "yhat": 123.1,
+    "yhat_lower": 99.2,
+    "yhat_upper": 146.6
+  },
+  {
+    "date": "2026-11-20",
+    "product_id": "P009",
+    "yhat": 132.1,
+    "yhat_lower": 115.5,
+    "yhat_upper": 148.1
+  },
+  {
+    "date": "2026-11-20",
+    "product_id": "P010",
+    "yhat": 38.1,
+    "yhat_lower": 28.9,
+    "yhat_upper": 47.1
+  },
+  {
+    "date": "2026-11-20",
+    "product_id": "P011",
+    "yhat": 24.4,
+    "yhat_lower": 16.8,
+    "yhat_upper": 31.9
+  },
+  {
+    "date": "2026-11-20",
+    "product_id": "P012",
+    "yhat": 106.8,
+    "yhat_lower": 89.1,
+    "yhat_upper": 123.4
+  },
+  {
+    "date": "2026-11-20",
+    "product_id": "P013",
+    "yhat": 31.8,
+    "yhat_lower": 23,
+    "yhat_upper": 40.2
+  },
+  {
+    "date": "2026-11-20",
+    "product_id": "P014",
+    "yhat": 25,
+    "yhat_lower": 15.4,
+    "yhat_upper": 34.3
+  },
+  {
+    "date": "2026-11-20",
+    "product_id": "P015",
+    "yhat": 107.5,
+    "yhat_lower": 93.3,
+    "yhat_upper": 122
+  }
+]

@@ -1,0 +1,137 @@
+[
+  {
+    "product_id": "P001",
+    "name": "Milk 1L",
+    "category": "Dairy",
+    "lead_time_days": 2,
+    "current_stock": 260,
+    "on_order": 0,
+    "unit_cost": 28
+  },
+  {
+    "product_id": "P002",
+    "name": "Bread Loaf",
+    "category": "Bakery",
+    "lead_time_days": 1,
+    "current_stock": 150,
+    "on_order": 0,
+    "unit_cost": 25
+  },
+  {
+    "product_id": "P003",
+    "name": "Basmati Rice 5kg",
+    "category": "Staples",
+    "lead_time_days": 4,
+    "current_stock": 130,
+    "on_order": 0,
+    "unit_cost": 420
+  },
+  {
+    "product_id": "P004",
+    "name": "Cooking Oil 1L",
+    "category": "Staples",
+    "lead_time_days": 4,
+    "current_stock": 400,
+    "on_order": 0,
+    "unit_cost": 140
+  },
+  {
+    "product_id": "P005",
+    "name": "Sugar 1kg",
+    "category": "Staples",
+    "lead_time_days": 4,
+    "current_stock": 200,
+    "on_order": 100,
+    "unit_cost": 42
+  },
+  {
+    "product_id": "P006",
+    "name": "Tea 250g",
+    "category": "Beverages",
+    "lead_time_days": 5,
+    "current_stock": 300,
+    "on_order": 0,
+    "unit_cost": 110
+  },
+  {
+    "product_id": "P007",
+    "name": "Soft Drink 2L",
+    "category": "Beverages",
+    "lead_time_days": 3,
+    "current_stock": 250,
+    "on_order": 0,
+    "unit_cost": 75
+  },
+  {
+    "product_id": "P008",
+    "name": "Bottled Water 1L",
+    "category": "Beverages",
+    "lead_time_days": 2,
+    "current_stock": 1500,
+    "on_order": 0,
+    "unit_cost": 12
+  },
+  {
+    "product_id": "P009",
+    "name": "Biscuits Pack",
+    "category": "Snacks",
+    "lead_time_days": 3,
+    "current_stock": 420,
+    "on_order": 0,
+    "unit_cost": 20
+  },
+  {
+    "product_id": "P010",
+    "name": "Chocolate Box",
+    "category": "Snacks",
+    "lead_time_days": 5,
+    "current_stock": 120,
+    "on_order": 0,
+    "unit_cost": 180
+  },
+  {
+    "product_id": "P011",
+    "name": "Sweets Box (Mithai)",
+    "category": "Festive",
+    "lead_time_days": 4,
+    "current_stock": 60,
+    "on_order": 0,
+    "unit_cost": 260
+  },
+  {
+    "product_id": "P012",
+    "name": "Eggs Dozen",
+    "category": "Dairy",
+    "lead_time_days": 2,
+    "current_stock": 700,
+    "on_order": 0,
+    "unit_cost": 70
+  },
+  {
+    "product_id": "P013",
+    "name": "Detergent 1kg",
+    "category": "Household",
+    "lead_time_days": 6,
+    "current_stock": 150,
+    "on_order": 0,
+    "unit_cost": 190
+  },
+  {
+    "product_id": "P014",
+    "name": "Ice Cream Tub",
+    "category": "Frozen",
+    "lead_time_days": 3,
+    "current_stock": 90,
+    "on_order": 0,
+    "unit_cost": 150
+  },
+  {
+    "product_id": "P015",
+    "name": "Instant Noodles",
+    "category": "Snacks",
+    "lead_time_days": 3,
+    "current_stock": 260,
+    "on_order": 0,
+    "unit_cost": 14
+  }
+]
