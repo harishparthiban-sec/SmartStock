@@ -9,7 +9,8 @@ const USE_REAL_DATA = true;
  * - Vercel prod: set VITE_API_URL in Vercel project environment variables
  *                to your deployed backend URL, e.g. https://smartstock-api.vercel.app
  */
-const API_BASE_URL = (import.meta.env.VITE_API_URL as string | undefined)?.replace(/\/$/, '') ?? 'http://localhost:8000';
+const isLocalhost = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
+const API_BASE_URL = (import.meta.env.VITE_API_URL as string | undefined)?.replace(/\/$/, '') ?? (isLocalhost ? 'http://localhost:8000' : '');
 
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
