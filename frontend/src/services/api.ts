@@ -159,6 +159,8 @@ export interface CopilotResponse {
 }
 
 export async function askCopilot(query: string, history?: { role: string; content: string }[]): Promise<CopilotResponse> {
+  const q = query.toLowerCase();
+
   // 1. Try real SmartStock FastAPI backend /api/copilot/chat
   try {
     const res = await fetch('http://localhost:8000/api/copilot/chat', {
@@ -194,7 +196,6 @@ export async function askCopilot(query: string, history?: { role: string; conten
 
   // 2. Intelligent local fallback if backend is unreachable
   await delay(300);
-  const q = query.toLowerCase();
 
   // Depletion timeline / run out first
   if (q.includes("run out") || q.includes("first") || q.includes("timeline") || q.includes("deplet")) {
