@@ -3,6 +3,14 @@ import { MOCK_PRODUCTS, MOCK_INVENTORY, MOCK_FORECAST, MOCK_HOLIDAYS, MOCK_ANALO
 
 const USE_REAL_DATA = true;
 
+/**
+ * Backend base URL.
+ * - Local dev:   http://localhost:8000   (uvicorn running locally)
+ * - Vercel prod: set VITE_API_URL in Vercel project environment variables
+ *                to your deployed backend URL, e.g. https://smartstock-api.vercel.app
+ */
+const API_BASE_URL = (import.meta.env.VITE_API_URL as string | undefined)?.replace(/\/$/, '') ?? 'http://localhost:8000';
+
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 export async function getProducts(): Promise<Product[]> {
@@ -163,7 +171,7 @@ export async function askCopilot(query: string, history?: { role: string; conten
 
   // 1. Try real SmartStock FastAPI backend /api/copilot/chat
   try {
-    const res = await fetch('http://localhost:8000/api/copilot/chat', {
+    const res = await fetch(`${API_BASE_URL}/api/copilot/chat`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

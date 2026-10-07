@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "node scripts/adapter.js && vite",
-    "build": "node scripts/adapter.js && tsc -b && vite build",
+    "build": "node scripts/adapter.js || true && tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview"
   },
