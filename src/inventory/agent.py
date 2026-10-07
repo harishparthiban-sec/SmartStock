@@ -378,3 +378,42 @@ def ask_copilot_agent(
             "error_detail": str(exc),
             "provider": "smartstock-fallback",
         }
+
+
+if __name__ == "__main__":
+    import sys
+    from src.inventory.engine import compute_reorder, get_copilot_recommendations
+
+    print("=" * 60)
+    print(" SmartStock AI Copilot Agent - Test Runner")
+    print("=" * 60)
+
+    # Load data
+    prod_path = "data/products.csv" if os.path.exists("data/products.csv") else "tests/fixtures/products_stub.csv"
+    fc_path = "data/forecast.csv" if os.path.exists("data/forecast.csv") else "tests/fixtures/forecast_stub.csv"
+    err_path = "data/forecast_error.csv" if os.path.exists("data/forecast_error.csv") else "tests/fixtures/error_stub.csv"
+
+    p_df = pd.read_csv(prod_path)
+    f_df = pd.read_csv(fc_path)
+    e_df = pd.read_csv(err_path) if os.path.exists(err_path) else None
+
+    orders = compute_reorder(p_df, f_df, e_df)
+    copilot_df = get_copilot_recommendations(orders, f_df)
+
+    has_key = bool(get_api_key())
+    print(f"API Key configured: {has_key} (Provider: {'Google Gemini' if has_key else 'Deterministic Engine (Fallback)'})")
+    print(f"Monitored Products: {len(copilot_df)}\n")
+
+    test_questions = [
+        "Why should I order P001 right now?",
+        "Which products are at critical risk of stockout?",
+        "What promotions or markdown discounts should we run for overstocked items?",
+    ]
+
+    for q in test_questions:
+        print(f"\nUser: {q}")
+        print("-" * 50)
+        res = ask_copilot_agent(q, copilot_df)
+        print(f"[{res['provider']} | {res['model']}]")
+        print(res["reply"])
+        print()
