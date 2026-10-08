@@ -157,7 +157,7 @@ class CopilotChatMessage(BaseModel):
 class CopilotChatRequest(BaseModel):
     message: str
     history: Optional[List[CopilotChatMessage]] = None
-    model: Optional[str] = "gemini-2.5-flash"
+    model: Optional[str] = "gemini-3.8-flash"
 
 
 # ---------------------------------------------------------------------------
@@ -305,7 +305,7 @@ def chat_copilot(body: CopilotChatRequest):
         message=body.message,
         df=copilot_df,
         conversation_history=history_dicts,
-        model_name=body.model or "gemini-2.5-flash",
+        model_name=body.model or "gemini-3.8-flash",
     )
     return result
 

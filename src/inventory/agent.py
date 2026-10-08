@@ -40,17 +40,25 @@ def get_api_key() -> Optional[str]:
     Ignores dummy placeholders like 'your-gemini-api-key'.
     """
     key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
-    # If not in environment, check local .env file
-    if not key and os.path.exists(".env"):
-        try:
-            with open(".env", "r", encoding="utf-8") as f:
-                for line in f:
-                    line = line.strip()
-                    if line.startswith("GEMINI_API_KEY=") or line.startswith("GOOGLE_API_KEY="):
-                        key = line.split("=", 1)[1].strip()
+    # If not in environment, check .env file in CWD or repo root
+    if not key:
+        possible_paths = [
+            ".env",
+            os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), ".env"),
+        ]
+        for env_path in possible_paths:
+            if os.path.exists(env_path):
+                try:
+                    with open(env_path, "r", encoding="utf-8") as f:
+                        for line in f:
+                            line = line.strip()
+                            if line.startswith("GEMINI_API_KEY=") or line.startswith("GOOGLE_API_KEY="):
+                                key = line.split("=", 1)[1].strip()
+                                break
+                    if key:
                         break
-        except Exception:
-            pass
+                except Exception:
+                    pass
 
     if not key:
         return None
@@ -333,14 +341,16 @@ def generate_fallback_response(
         return "\n".join(lines)
 
     # Case 5: General overview
-    reorder_df = df[df["order_qty"] > 0]
+    reorder_df = df[df["order_qty"] > 0] if "order_qty" in df.columns else pd.DataFrame()
     total_reorder = reorder_df["order_qty"].sum() if not reorder_df.empty else 0
+    critical_count = len(df[df['urgency'] == 'CRITICAL']) if 'urgency' in df.columns else 0
+    overstock_count = len(df[df['status'] == 'OVERSTOCK']) if 'status' in df.columns else 0
     return (
         f"SmartStock Inventory Overview:\n\n"
         f"- Total Catalog: {len(df)} products monitored\n"
         f"- Products Requiring Reorder: {len(reorder_df)} products ({total_reorder:,.0f} total units)\n"
-        f"- Critical Stockout Risks: {len(df[df['urgency'] == 'CRITICAL'])} products\n"
-        f"- Overstocked Items: {len(df[df['status'] == 'OVERSTOCK'])} products\n\n"
+        f"- Critical Stockout Risks: {critical_count} products\n"
+        f"- Overstocked Items: {overstock_count} products\n\n"
         f"You can ask me questions like:\n"
         f"- What should I order today?\n"
         f"- Which items will run out of stock first?\n"
@@ -353,7 +363,7 @@ def ask_copilot_agent(
     message: str,
     df: pd.DataFrame,
     conversation_history: Optional[List[Dict[str, str]]] = None,
-    model_name: str = "gemini-2.5-flash",
+    model_name: str = "gemini-3.8-flash",
 ) -> Dict[str, Any]:
     """Interacts with the SmartStock AI Copilot Agent.
 
@@ -445,6 +455,7 @@ def ask_copilot_agent(
         )
 
         reply_text = ""
+        active_model = model_name
 
         # Path A: Modern google-genai SDK using recommended chats.create
         if _GENAI_SDK == "google-genai":
@@ -460,16 +471,29 @@ def ask_copilot_agent(
                         )
                     )
 
-            chat = client.chats.create(
-                model=model_name,
-                config=types.GenerateContentConfig(
-                    system_instruction=system_instruction,
-                    temperature=0.3,
-                ),
-                history=chat_history_contents,
-            )
-            response = chat.send_message(message)
-            reply_text = response.text or ""
+            model_candidates = [model_name, "gemini-3.8-flash", "gemini-1.5-flash", "gemini-1.5-pro"]
+            seen = set()
+            ordered_candidates = [m for m in model_candidates if not (m in seen or seen.add(m))]
+
+            for candidate in ordered_candidates:
+                try:
+                    chat = client.chats.create(
+                        model=candidate,
+                        config=types.GenerateContentConfig(
+                            system_instruction=system_instruction,
+                            temperature=0.3,
+                        ),
+                        history=chat_history_contents,
+                    )
+                    response = chat.send_message(message)
+                    reply_text = response.text or ""
+                    active_model = candidate
+                    if reply_text:
+                        break
+                except Exception as m_err:
+                    if "404" in str(m_err) or "NOT_FOUND" in str(m_err):
+                        continue
+                    raise m_err
 
         # Path B: Legacy google.generativeai SDK
         elif _GENAI_SDK == "legacy-genai":
@@ -487,7 +511,7 @@ def ask_copilot_agent(
 
         return {
             "reply": reply_text,
-            "model": model_name,
+            "model": active_model,
             "referenced_products": referenced_for_cards,
             "timeline": timeline_items,
             "status": "success",
