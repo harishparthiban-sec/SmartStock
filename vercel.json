@@ -15,29 +15,15 @@
   ],
   "routes": [
     {
-      "src": "/api/(?!.*\\.json$)(.*)",
+      "src": "/api/(.*)",
       "dest": "api/index.py"
     },
     {
-      "src": "/api/(.*\\.json)",
-      "dest": "frontend/api/$1"
-    },
-    {
-      "src": "/assets/(.*)",
-      "dest": "frontend/assets/$1"
-    },
-    {
-      "src": "/(favicon\\.svg|icons\\.svg)",
-      "dest": "frontend/$1"
-    },
-    {
-      "src": "/(.*\\.(?:js|css|json|ico|svg|png|jpg|webp|woff|woff2|txt|map))",
-      "dest": "frontend/$1"
+      "handle": "filesystem"
     },
     {
       "src": "/(.*)",
-      "dest": "frontend/index.html",
-      "status": 200
+      "dest": "/index.html"
     }
   ],
   "env": {
