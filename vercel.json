@@ -16,23 +16,18 @@
   "routes": [
     {
       "src": "/api/(.*\\.json)",
-      "dest": "frontend/api/$1"
+      "dest": "/api/$1"
     },
     {
       "src": "/api/(.*)",
-      "dest": "api/index.py"
+      "dest": "/api/index.py"
     },
     {
-      "src": "/assets/(.*)",
-      "dest": "frontend/assets/$1"
-    },
-    {
-      "src": "/(.*\\.(?:js|css|json|ico|svg|png|jpg|webp|woff|woff2))",
-      "dest": "frontend/$1"
+      "handle": "filesystem"
     },
     {
       "src": "/(.*)",
-      "dest": "frontend/index.html"
+      "dest": "/index.html"
     }
   ],
   "env": {
